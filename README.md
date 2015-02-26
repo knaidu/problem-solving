@@ -14,5 +14,5 @@ Each post has 5 sections: problem statement, examples, algorithm, code (ruby), t
 
 In addition to standard topics like algorithms, data structures and puzzles, I've also added a system design section which focuses on a broad range of topics, like scaling, sharding, designing clones of existing services etc.
 
-## Lincense
+## License
 Hope you find this book useful and share it with others. No license restrictions, none of that crap. Do whatever !
