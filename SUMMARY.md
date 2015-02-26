@@ -1,0 +1,20 @@
+# Summary
+
+* [Introduction](README.md)
+* [Searching](searching/README.md)
+   * [Increasing-Decreasing](searching/Increasing-Decreasing Array.md)
+   * [Num Occurrences](searching/Num. Occurrences.md)
+   * [Rotated Sorted](searching/Rotated Sorted.md)
+* [Arrays](arrays/README.md)
+   * [Array Flattening](arrays/Array Flattening.md)
+   * [Say and Tell](arrays/say_and_tell.md)
+* [Math](math/README.md)
+   * [Perfect Square](math/Perfect Square.md)
+* [Strings](strings/README.md)
+   * [Anagrams](strings/Anagrams.md)
+   * [Last Name Sort](strings/Last Name Sort.md)
+   * [Substring Check](strings/substring_check.md)
+* [Stacks and Queues](stacks_and_queues/README.md)
+   * [Queue with 2 stacks](stacks_and_queues/queue_with_2_stacks.md)
+   * [Max stack](stacks_and_queues/max_stack.md)
+
