@@ -9,6 +9,8 @@
    * [Array Flattening](arrays/Array Flattening.md)
    * [Say and Tell](arrays/say_and_tell.md)
    * [Dutch National Flag](arrays/dutch_national_flag.md)
+   * [Max Difference](arrays/max_difference.md)
+   * [Sample offline data](arrays/sample_offline_data)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
 * [Strings](strings/README.md)
