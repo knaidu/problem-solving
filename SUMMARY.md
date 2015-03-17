@@ -17,6 +17,8 @@
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
    * [Substring Check](strings/substring_check.md)
+   * [Word cloud data](strings/word_cloud_data.md)
+   * [Print Duplicate](strings/print_duplicate.md)
 * [Stacks and Queues](stacks_and_queues/README.md)
    * [Queue with 2 stacks](stacks_and_queues/queue_with_2_stacks.md)
    * [Max stack](stacks_and_queues/max_stack.md)
