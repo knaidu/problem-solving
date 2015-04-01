@@ -19,7 +19,9 @@
    * [Substring Check](strings/substring_check.md)
    * [Word cloud data](strings/word_cloud_data.md)
    * [Print Duplicate](strings/print_duplicate.md)
+   * [Non Repeating Char](strings/non_repeating_char.md)
 * [Stacks and Queues](stacks_and_queues/README.md)
    * [Queue with 2 stacks](stacks_and_queues/queue_with_2_stacks.md)
    * [Max stack](stacks_and_queues/max_stack.md)
+   * [Bracket Validator](stacks_and_queues/bracket_validator.md)
 

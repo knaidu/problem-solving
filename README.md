@@ -1,10 +1,10 @@
 # Introduction
 
 ## History
-This started out as a collection of interview questions and solutions I've accumulated over the years in Evernote. I've shared it with a few friends in the past. They found it quite valuable and scored some amazing jobs, heck one of them gifted me a bottle of wine when he got his offer!
+This started out as a collection of interview questions and solutions I've accumulated over the years in Evernote. I've shared it with a few friends in the past and the feedback was quite positive.
 
 ## Sources
-I've scoured through several forums like careercup and glassdoor. While they're an excellent source for questions, finding good solutions or explanations is a PITA.
+I've scoured through several forums like careercup and glassdoor. While they're an excellent source for questions, finding good solutions with explanations is quite hard.
 
 ## Organization
 Each post has 5 sections: problem statement, examples, algorithm, code, test cases and a discussion on time-complexity.

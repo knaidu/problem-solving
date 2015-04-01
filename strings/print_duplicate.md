@@ -1,5 +1,5 @@
 # Print Duplicate
-Given a string print only the duplicate chars in the string
+Print only the duplicate chars in the given string.
 
 ## Example
 ```
@@ -28,17 +28,14 @@ class PrintDuplicate
   def report_duplicate
     @text.each_char do |c|
       c = c.downcase
-      if @char_set.include?(c)
-        @duplicates += c
-      else
-        @char_set.add(c)
-      end
+      @char_set.include?(c) ? @duplicates += c : @char_set.add(c)
     end
-    puts "Duplicate chars: #{@duplicates}"
+
+    @duplicates
   end
 end
 
-PrintDuplicate.new("test")
+puts PrintDuplicate.new("test")
 ```
 
 ## Test cases
