@@ -23,16 +23,6 @@ Given a sorted array which contains scores that range from 0 to 100. Write a pro
     * But the gain is future queries are relatively cheap/free
     * Use approach 2 when space is a constraint, and the chances of repeated queries are pretty low.
 
-## Code
-```
-
-```
-
-## Test cases
-```
-
-```
-
 ## Time complexity
 - Approach 1: Scanning all elements O(n) + Lookup in hash table O(1)
 - Approach 2: Binary search for first occurrence O(log n) + Binary search for last occurrence O(log n) = O(log n)

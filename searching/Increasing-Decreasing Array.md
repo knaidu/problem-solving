@@ -10,15 +10,5 @@ Find the maximum element in an array which is first increasing and then decreasi
       * if they are decreasing then search the left sub array
       * else we have found the max element
 
-## Code
-```
-
-```
-
-## Test cases
-```
-
-```
-
 ## Time complexity
 Since we are using the binary search technique, its O(log n)

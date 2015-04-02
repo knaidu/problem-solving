@@ -14,15 +14,5 @@ search([35,42,5,15,27,29], 27) # => 4
 - Else if, key > a[low] || key < a[mid]
     - Search in the left sub-array
 
-## Code
-```
-
-```
-
-## Test cases
-```
-
-```
-
 ## Time complexity
 O(log n), since we are essentially using binary search with a little bit of modification
