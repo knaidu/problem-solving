@@ -11,6 +11,7 @@
    * [Dutch National Flag](arrays/dutch_national_flag.md)
    * [Max Difference](arrays/max_difference.md)
    * [Sample offline data](arrays/sample_offline_data.md)
+   * [Unique Integer](arrays/unique_integer.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
 * [Strings](strings/README.md)
