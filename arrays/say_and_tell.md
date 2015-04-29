@@ -13,7 +13,7 @@ A say and tell array first lists the count of the element in the original array 
 3. Iterate over unique elements in the array and generate the say and tell array
 
 ## Code
-```
+```ruby
 def say_and_tell(seed_array)
   raise ArgumentError, "Invalid input, seed array must have at least 1 element" unless seed_array.size > 0
   compute_result_from(seed_array, count_elements_in(seed_array))

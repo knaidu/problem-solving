@@ -18,14 +18,14 @@ flatten [[[1,2,3]]] # => [[1,2,3]]
 
 ## Code
 Ruby magic
-```
+```ruby
 def flatten(array)
   array.flatten 1
 end
 ```
 
 Detailed implementation
-```
+```ruby
 def flatten(array)
   result = []
 

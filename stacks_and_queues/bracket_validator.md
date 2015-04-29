@@ -14,7 +14,7 @@ Write a braces/brackets/parentheses validator.
 - After you parse the entire string if any elements are still left in the stack then we the string did not have valid paranthesis
 
 ## Code
-```
+```ruby
 def is_valid(input)
   matchers = { '(' => ')', '{' => '}', '[' => ']' }
   openers = matchers.keys

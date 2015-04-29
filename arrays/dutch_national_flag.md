@@ -14,7 +14,7 @@ Result => [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]
 3. And middle section will have elements equal to the pivot
 
 ## Code
-```
+```ruby
 def swap(x, y, a)
   temp = a[x]
   a[x] = a[y]

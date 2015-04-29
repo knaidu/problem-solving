@@ -13,7 +13,7 @@ Output: e
 
 
 ## Code
-```
+```ruby
 class NonRepeatingChar
   attr_reader :result
 

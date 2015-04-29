@@ -14,7 +14,7 @@ get_squares(1..100) # => [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 
 ## Code
-```
+```ruby
 def get_squares(array)
   array.select{ |i| Math.sqrt(i) % 1 == 0 }.uniq.sort
 end

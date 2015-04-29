@@ -21,13 +21,13 @@ Approach 2:
 
 ## Code
 Approach 1:
-```
+```ruby
 def grabscrab(anagram, dictionary)
   dictionary.select{|w| anagram.chars.sort == w.chars.sort}
 end
 ```
 Approach 2:
-```
+```ruby
 def grabscrab anagram, dictionary
   indexed_dictionary = process_dictionary(dictionary)
   result = []

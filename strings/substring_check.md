@@ -8,9 +8,7 @@ Given a string s and substring sub, find if it exists.
 2. If there is no match then reset subPtr and proceed with sPtr.
 
 ## Code
-
-```
-
+```ruby
 bool substringExists(string& str, string& substr) {
 	int m = str.size();
 	int n = substr.size();
@@ -30,7 +28,6 @@ bool substringExists(string& str, string& substr) {
 
 	return FALSE;
 }
-
 ```
 
 ## Time complexity

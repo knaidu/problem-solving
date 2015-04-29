@@ -13,7 +13,7 @@ Output => 4
 - The remainder will be the unique number in the array
 
 ## Code
-```
+```ruby
 def uniq_integer(input_array)
   unique = 0
   input_array.each do |num|

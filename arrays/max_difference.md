@@ -13,7 +13,7 @@ compute_max_diff([1,2,3,4,5,6,7,8,9]) # => 8
 - Once all elements are exhaused the max diff is available in max_diff_so_far
 
 ## Code
-```
+```ruby
 def compute_max_diff(elements)
   max_diff_so_far = 0
   min_so_far = 999

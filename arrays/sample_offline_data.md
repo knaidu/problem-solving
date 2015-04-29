@@ -14,7 +14,7 @@ offline_sampling([1,2,3,4,5,6,7,8,9], 3) # => [2, 4, 6]
 - Now the result is available in the last k elements of the array
 
 ## Code
-```
+```ruby
 def offline_sampling(array, k)
   if k <= 1
     return array[rand(array.size)]

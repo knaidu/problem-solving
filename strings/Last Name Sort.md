@@ -33,7 +33,7 @@ Returns =>
 
 ## Code
 Approach 1:
-```
+```ruby
 def sort_reindeer reindeer_names
   reindeer_names.sort do |r1, r2|
     r1.split(' ')[1] <=> r2.split(' ')[1]
@@ -42,7 +42,7 @@ end
 ```
 
 Approach 2:
-```
+```ruby
 def sort_reindeer(reindeer_names)
   reindeer_names.sort_by{|a| a.split(' ').last }
 end

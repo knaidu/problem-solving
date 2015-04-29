@@ -15,7 +15,7 @@ Q.pop # => 1
 3. At this time the order gets reversed and when poped from stack 2 the order gets reversed once again thus giving us the FIFO order.
 
 ## Code
-```
+```ruby
 class Queue
   def initialize
     @stack1 = []

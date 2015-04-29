@@ -14,7 +14,7 @@ Output: lo
     - Else append it to the set
 
 ## Code
-```
+```ruby
 require 'set'
 
 class PrintDuplicate

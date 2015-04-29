@@ -17,7 +17,7 @@ Output: {"after"=>1, "beating"=>1, "the"=>2, "eggs"=>1, "dana"=>1, "read"=>1, "n
     - Capitalized words
 
 ## Code
-```
+```ruby
 class WordCloud
   attr_reader :text, :word_count_hash
 
