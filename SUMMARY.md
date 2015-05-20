@@ -28,4 +28,9 @@
    * [Queue with 2 stacks](stacks_and_queues/queue_with_2_stacks.md)
    * [Max stack](stacks_and_queues/max_stack.md)
    * [Bracket Validator](stacks_and_queues/bracket_validator.md)
+* [Linked Lists](linked_lists/README.md)
+   * [Overlapping lists without cycle](linked_lists/overlapping_lists_without_cycle.md)
+   * [Copy a postings list](linked_lists/copy_a_postings_list.md)
+   * [Determine start of the cycle](linked_lists/determine_start_of_the_cycle.md)
+   * [Even-odd merge](linked_lists/even-odd_merge.md)
 
