@@ -34,4 +34,5 @@
    * [Determine start of the cycle](linked_lists/determine_start_of_the_cycle.md)
    * [Even-odd merge](linked_lists/even-odd_merge.md)
    * [Reverse a sublist](linked_lists/reverse_a_sublist.md)
+   * [Cyclic right shift](linked_lists/cyclic_right_shift.md)
 
