@@ -35,4 +35,5 @@
    * [Even-odd merge](linked_lists/even-odd_merge.md)
    * [Reverse a sublist](linked_lists/reverse_a_sublist.md)
    * [Cyclic right shift](linked_lists/cyclic_right_shift.md)
+   * [Median in a circular list](linked_lists/median_in_a_circular_list.md)
 
