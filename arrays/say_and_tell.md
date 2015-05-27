@@ -1,48 +1,52 @@
-# Say and Tell
-Given a seed array, return a "say and tell" array
-A say and tell array first lists the count of the element in the original array and then lists the element itself
+# Look and Say
+Find the nth integer in a look and say array starting at 1
 
-### Example
+## Example
 ```
-[1,2,3] #=> [1,1, 1,2, 1,3]
+Look and say array:
+<1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211>
 ```
 
-## Algorithm
-1. Iterate over the array
-2. Keep track of the count of every element
-3. Iterate over unique elements in the array and generate the say and tell array
+## Solution
+- Use 2 pointers i and j to keep track of the equal integers
+- Increment j until the values in i and j are no longer same
+- Use the diff in j-i as the counter
+- Do this until we exhaust all integers in the given array
+- Repeat above for each step until and feed the result into the next step n times
 
 ## Code
 ```ruby
-def say_and_tell(seed_array)
-  raise ArgumentError, "Invalid input, seed array must have at least 1 element" unless seed_array.size > 0
-  compute_result_from(seed_array, count_elements_in(seed_array))
+def find_nth(n)
+  a = [1]
+  n.times do
+    result = look_and_say(a)
+    a = result
+  end
+
+  return a
 end
 
-def count_elements_in(seed_array)
-  count_hash = {}
-  seed_array.each { |num| count_hash.include?(num) ? count_hash[num] += 1 : count_hash[num] = 1 }
+def look_and_say(a)
+  i = 0
+  j = 0
+  result = []
 
-  count_hash
-end
+  while i < a.length
+    j += 1 if j < a.length
+    if a[i] != a[j]
+      result << j-i << a[i]
+      i = j
+      count = 1
+    end
+  end
 
-
-def compute_result_from(seed_array, count_hash)
-  result_array = []
-  seed_array.uniq.each { |num| result_array << count_hash[num] << num }
-
-  result_array
+  result
 end
 ```
 
-## Test cases
-```
-say_and_tell([1,2,3]) # => [1,1,1,2,1,3]
-say_and_tell([1,1,1,1,1,1,1,2,2,2,2,2,3,3,3]) # => [7, 1, 5, 2, 3, 3]
-say_and_tell([]) # => ArgumentError: Invalid input, seed array must have at least 1 element
-```
+## Time complexity
+- For every step we're iterating through m integers, O(m)
+- We're repeating each step n thimes, O(n)
+- Overall complexity is: O(m*n)
+- m here is mostly finite and can be considered constant.
 
-### Time complexity
-1. O(N) to iterate over the array and count elements
-2. O(N) to generate uniq array
-3. O(N) to generate final result

@@ -8,7 +8,7 @@ Output: e
 ```
 
 ## Algorithm
-- Parse through the given string and build a hash of char frequency and position, e.g {'t' => <5, 0>} meaning char 't' was seen 5 time and the first occurrence was at position 0.
+- Parse through the given string and build a hash of char frequency and position, e.g {'t' => <5, 0>} meaning char 't' was seen 5 times and the first occurrence was at position 0.
 - Parse through this hash and find the char with frequency 1 and lowest position (i.e. the first occurrence)
 
 
