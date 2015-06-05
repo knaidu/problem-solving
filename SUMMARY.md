@@ -30,6 +30,7 @@
    * [Replace and remove](strings/replace_and_remove.md)
    * [Interconvert string to int](strings/interconvert_string_to_int.md)
    * [Permutation palindrome](strings/permutation_palindrome.md)
+   * [Matching paranthesis](strings/matching_paranthesis.md)
 * [Stacks and Queues](stacks_and_queues/README.md)
    * [Queue with 2 stacks](stacks_and_queues/queue_with_2_stacks.md)
    * [Max stack](stacks_and_queues/max_stack.md)
