@@ -14,6 +14,7 @@
    * [Unique Integer](arrays/unique_integer.md)
    * [2 SUM](arrays/2_sum.md)
    * [Product array](arrays/product_array.md)
+   * [Merging meeting times](arrays/merging_meeting_times.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
 * [Strings](strings/README.md)
