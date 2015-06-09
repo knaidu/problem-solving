@@ -17,6 +17,7 @@
    * [Merging meeting times](arrays/merging_meeting_times.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
+   * [Temperature tracker](math/temperature_tracker.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
