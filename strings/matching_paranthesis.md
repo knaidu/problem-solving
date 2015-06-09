@@ -41,7 +41,7 @@ end
 We're using O(1) space for counting the number of open brackets and O(n) time since we are traversing the string only once
 
 ## Variant
-If we had to perform this search repeatedly, we wouldn't want to incurr the O(n) cost each time. We can pre-process the string and store the opening and closing index pairs in a data structure.
+If we had to perform this search repeatedly, we wouldn't want to incur the O(n) cost each time. We can pre-process the string and store the opening and closing index pairs in a data structure.
 
 - Traverse the string L to R and for every opening bracket push its index into a stack
 - For every closing bracket pop from stack, and store the indices in their respective hash
