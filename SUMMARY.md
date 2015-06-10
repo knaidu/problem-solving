@@ -5,6 +5,8 @@
    * [Increasing-Decreasing](searching/Increasing-Decreasing Array.md)
    * [Num Occurrences](searching/Num. Occurrences.md)
    * [Rotated Sorted](searching/Rotated Sorted.md)
+* [Sorting](sorting/README.md)
+   * [Top scores](sorting/top_scores.md)
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/Array Flattening.md)
    * [Look and Say](arrays/say_and_tell.md)
