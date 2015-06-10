@@ -6,6 +6,7 @@
    * [Num Occurrences](searching/Num. Occurrences.md)
    * [Rotated Sorted](searching/Rotated Sorted.md)
 * [Sorting](sorting/README.md)
+   * [Merge sorted arrays](arrays/merge_sorted_arrays.md)
    * [Top scores](sorting/top_scores.md)
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/Array Flattening.md)
