@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Permutation palindrome | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/matching_paranthesis.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/interconvert_string_to_int.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.13" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -618,7 +618,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.13" data-path="strings/permutation_palindrome.html">
+        <li class="chapter active" data-level="5.13" data-path="strings/permutation_palindrome.html">
             
                 
                     <a href="../strings/permutation_palindrome.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,53 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1244">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="permutation-palindrome">Permutation palindrome</h1>
+<p>Write an efficient function that checks whether any permutation of an input string is apalindrome.</p>
+<h2 id="example">Example</h2>
+<ul>
+<li>&quot;civic&quot; should return true</li>
+<li>&quot;ivicc&quot; should return true</li>
+<li>&quot;civil&quot; should return false</li>
+<li>&quot;livci&quot; should return false</li>
+</ul>
+<h2 id="solution">Solution</h2>
+<ul>
+<li>Count the number of occurrences of each char and then analyze them</li>
+<li>There must be at max only one odd_pair, all the rest must be even</li>
+<li>If there is more than one odd pair then it cannot be permuted into a palindrome</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>is_permutation_palindrome(str)
+    char_hash = {}
+    str.each_char <span class="hljs-keyword">do</span> |c|
+        <span class="hljs-keyword">if</span> char_hash[c]
+            char_hash[c] = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">else</span>
+            char_hash[c] = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    odd_pair_seen = <span class="hljs-keyword">false</span>
+    char_hash.each <span class="hljs-keyword">do</span> |c, i|
+        <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>
+            <span class="hljs-keyword">if</span> odd_pair_seen
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>
+            <span class="hljs-keyword">else</span>
+                odd_pair_seen = <span class="hljs-keyword">true</span>
+            <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>O(n) since we traverse the string once</li>
+<li>O(n) space complexity, since we are storing char counts and occurrence values</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1240,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/interconvert_string_to_int.html" class="navigation navigation-prev " aria-label="Previous page: Interconvert string to int"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/matching_paranthesis.html" class="navigation navigation-next " aria-label="Next page: Matching paranthesis"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

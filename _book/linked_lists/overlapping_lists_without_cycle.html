@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Overlapping lists without cycle | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/reverse_a_list.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/README.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.1" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -742,7 +742,7 @@
                 
     
         
-        <li class="chapter " data-level="7.1" data-path="linked_lists/overlapping_lists_without_cycle.html">
+        <li class="chapter active" data-level="7.1" data-path="linked_lists/overlapping_lists_without_cycle.html">
             
                 
                     <a href="../linked_lists/overlapping_lists_without_cycle.html">
@@ -1183,9 +1183,69 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1193">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="overlapping-lists-without-cycle">Overlapping lists without cycle</h1>
+<p>Let hI and h2 be the heads of lists Ll and L2, respectively. Assume that L1and L2 are well-formed, that is each consists ofafinite sequence of nodes. (In particular, neither list has a cycle.)</p>
+<p>How would you determine if there exists a node r reachable from both hI and h2 by following the next fields? If such a node exists, find the node that appears earliest when traversing the lists.</p>
+<p>You are constrained to use no more than constant additional storage.</p>
+<h2 id="solution">Solution</h2>
+<p>Find length of the first list</p>
+<ul>
+<li><p>While traversing keep a counter and increment it untilwe reach the last node</p>
+<pre><code class="lang-ruby"><span class="hljs-keyword">while</span> first.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
+  count += <span class="hljs-number">1</span>
+  first = first.<span class="hljs-keyword">next</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<p>Repeat the same for the second list</p>
+<ul>
+<li><p>Once we reach the last node if its same as the last node of the first list then the 2 lists are overlapping</p>
+<pre><code class="lang-ruby"><span class="hljs-keyword">if</span> ptr1 != ptr2
+  puts <span class="hljs-string">"Lists are non-overlapping"</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">nil</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<p>Now determine the overlapping node</p>
+<ul>
+<li><p>For the list with longer length increment the head pointer by the difference in length,</p>
+<pre><code class="lang-ruby">ptr1 = head1
+ptr2 = head2
+
+if count1 &gt; count 2 // find the longer list
+  diff = count1 - count2
+  while diff != 0
+      ptr1 = ptr1.next
+      diff -= 1
+  end
+else
+  while diff != 0
+      ptr2 = ptr2.next
+      diff -= 1
+  end
+end
+</code></pre>
+</li>
+<li><p>Now increment the head pointer of both the lists by one, at each step check if the lists have overlapped by checking if</p>
+<pre><code class="lang-ruby"><span class="hljs-keyword">while</span> ptr1 != ptr2
+  ptr1 = ptr1.<span class="hljs-keyword">next</span>
+  ptr2 = ptr2.<span class="hljs-keyword">next</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">return</span> ptr /<span class="hljs-regexp">/ overlapping node</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>O(n) to traverse the first list twice</li>
+<li>O(m) to traverse the second list twice</li>
+<li>O(m+n) overall complexity</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1256,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/README.html" class="navigation navigation-prev " aria-label="Previous page: Linked Lists"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/reverse_a_list.html" class="navigation navigation-next " aria-label="Next page: Reverse a list"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Reverse sentence | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/test_if_palindrome.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/phone_number_mnemonic.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.8" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -538,7 +538,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.8" data-path="strings/reverse_sentence.html">
+        <li class="chapter active" data-level="5.8" data-path="strings/reverse_sentence.html">
             
                 
                     <a href="../strings/reverse_sentence.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,46 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1248">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="reverse-sentence">Reverse sentence</h1>
+<p>Given a sentence as a string, reverse it.</p>
+<h2 id="example">Example</h2>
+<pre><code>reverse(&#39;Hello world&#39;) #=&gt; &#39;world Hello&#39;
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>First reverse the entire sentence</li>
+<li>Then reverse each work in-place</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>reverse_word(word)
+  left_ptr = <span class="hljs-number">0</span>
+  right_ptr = word.size - <span class="hljs-number">1</span>
+  <span class="hljs-keyword">while</span> (left_ptr &lt; right_ptr)
+    temp = word[left_ptr]
+    word[left_ptr] = word[right_ptr]
+    word[right_ptr] = temp
+    left_ptr += <span class="hljs-number">1</span>
+    right_ptr -= <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  word
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>reverse_sentence1(sentence)
+  result_sentence = <span class="hljs-string">''</span>
+  sentence = reverse_word(sentence)
+  words_in_sentence = sentence.split(<span class="hljs-string">' '</span>)
+  words_in_sentence.each <span class="hljs-keyword">do</span> |word|
+    result_sentence &lt;&lt; reverse_word(word) + <span class="hljs-string">' '</span>
+  <span class="hljs-keyword">end</span>
+
+  result_sentence
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<p>To reverse the entire sentence we are traversing over the string twice (once to reverse the entire sentence and then to reverse each word).
+There for O(n+n) = O(n)</p>
 
                     
                     </section>
@@ -1196,10 +1233,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/phone_number_mnemonic.html" class="navigation navigation-prev " aria-label="Previous page: Phone number mnemonic"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/test_if_palindrome.html" class="navigation navigation-next " aria-label="Next page: Test if palindrome"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

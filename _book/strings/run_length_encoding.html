@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Run length encoding | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/replace_and_remove.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/test_if_palindrome.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.10" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -570,7 +570,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.10" data-path="strings/run_length_encoding.html">
+        <li class="chapter active" data-level="5.10" data-path="strings/run_length_encoding.html">
             
                 
                     <a href="../strings/run_length_encoding.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,79 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1249">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="run-length-encoding">Run length encoding</h1>
+<p>Implement run-length encoding and decoding functions. Assume the string to be encoded consists of letters of the alphabet, with no digits, and the string to be decoded is a valid encoding.</p>
+<h2 id="solution">Solution</h2>
+<p>Encoding</p>
+<ul>
+<li>Use 2 pointers to parse through the string, the left and right pointer indicates the first and last occurrence of the char to be encoded.</li>
+<li><p>Computer the number of occurrences, then update the pointers to point to the next char</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>encode
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'INVALID INPUT'</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">@data</span>.<span class="hljs-keyword">nil</span>?
+
+      result = <span class="hljs-string">''</span>
+
+      i = <span class="hljs-number">0</span>
+      j = i
+
+      <span class="hljs-keyword">while</span> i &lt; data.length
+        j += <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> j &lt; data.length
+
+        <span class="hljs-keyword">if</span> data[i] != data[j]
+          result = <span class="hljs-string">"<span class="hljs-subst">#{result}</span><span class="hljs-subst">#{j-i}</span><span class="hljs-subst">#{data[i]}</span>"</span>
+          i = j
+        <span class="hljs-keyword">end</span>
+      <span class="hljs-keyword">end</span>
+
+      result
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<p>Decoding</p>
+<ul>
+<li>Use left and right pointer such that left points to the number of occurrence and right points to the char to be decoded</li>
+<li><p>Carefully handle cases where there can be multiple digits in the number of occurrence field</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>decode(encoded_data)
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'Invalid encoding'</span> <span class="hljs-keyword">if</span> encoded_data.<span class="hljs-keyword">nil</span>? || encoded_data.length &lt; <span class="hljs-number">2</span>
+
+      i = <span class="hljs-number">0</span>
+      j = <span class="hljs-number">1</span>
+      result = <span class="hljs-string">''</span>
+
+      <span class="hljs-keyword">while</span> j &lt;= encoded_data.length
+        <span class="hljs-keyword">if</span> char?(encoded_data[j])
+          result = expand(encoded_data[i...j].to_i, encoded_data[j], result)
+        <span class="hljs-keyword">else</span>
+          j += <span class="hljs-number">1</span>
+          <span class="hljs-keyword">next</span>
+        <span class="hljs-keyword">end</span>
+
+        i = j+<span class="hljs-number">1</span>
+        j = i+<span class="hljs-number">1</span>
+      <span class="hljs-keyword">end</span>
+
+      result
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>char?(c)
+      c.to_i == <span class="hljs-number">0</span> &amp;&amp; !(<span class="hljs-string">"<span class="hljs-subst">#{c.to_i}</span>"</span> == c)
+    <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>expand(num, c, result)
+      num.times <span class="hljs-keyword">do</span>
+        result = <span class="hljs-string">"<span class="hljs-subst">#{result}</span><span class="hljs-subst">#{c}</span>"</span>
+      <span class="hljs-keyword">end</span>
+
+      result
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="time-complexity">Time complexity</h2>
+<p>In both cases since we are traversing the string only once, its O(n)</p>
 
                     
                     </section>
@@ -1196,10 +1266,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/test_if_palindrome.html" class="navigation navigation-prev " aria-label="Previous page: Test if palindrome"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/replace_and_remove.html" class="navigation navigation-next " aria-label="Next page: Replace and remove"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

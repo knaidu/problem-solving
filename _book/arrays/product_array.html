@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Product array | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../arrays/merging_meeting_times.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/2_sum.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="3.8" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -318,7 +318,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.8" data-path="arrays/product_array.html">
+        <li class="chapter active" data-level="3.8" data-path="arrays/product_array.html">
             
                 
                     <a href="../arrays/product_array.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,46 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1217">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="product-array">Product array</h1>
+<p>Write a function get_products_of_all_ints_except_at_index() that takes an array of integers and returns an array of the products.</p>
+<h2 id="example">Example</h2>
+<pre><code>input: [1,7,3,4]
+output: [84, 12, 28, 21]
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li>Concept to use is maintaining product_so_far when traversing from left to right and right to left, optimizing for space and computing the result as follows:</li>
+<li><p>Step 1: Calculate product so far when traversing L to R</p>
+<pre><code class="lang-ruby">  result = [<span class="hljs-number">1</span>] * (array.size) <span class="hljs-comment"># initialize to 1</span>
+
+  product = <span class="hljs-number">1</span>
+  i = <span class="hljs-number">0</span>
+
+  <span class="hljs-keyword">while</span> i &lt; array.size
+      result[i] = product
+      product = product * array[i]
+      i += <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>Step 2: Calculate product so far traversing right to left and calcualte the final product array using the product_so_far from the previous step</p>
+<pre><code class="lang-ruby">  product = <span class="hljs-number">1</span>
+  i = array.size - <span class="hljs-number">1</span>
+
+  <span class="hljs-keyword">while</span> i &gt;= <span class="hljs-number">0</span>
+      result[i] = result[i] * product
+      product = product * array[i]
+      i -= <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="complexity">Complexity</h2>
+<ul>
+<li>Time: O(n) since we are traversing the array twice</li>
+<li>Space: O(n) additional space for the result array, instead of O(n) * 3 if we use 3 arrays for storing intermediate products.</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1233,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/2_sum.html" class="navigation navigation-prev " aria-label="Previous page: 2 SUM"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../arrays/merging_meeting_times.html" class="navigation navigation-next " aria-label="Next page: Merging meeting times"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

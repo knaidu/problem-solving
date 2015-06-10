@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Zip a list | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/remove_kth_last_element.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/test_for_palindromicity.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.12" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -918,7 +918,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.12" data-path="linked_lists/zip_a_list.html">
+        <li class="chapter active" data-level="7.12" data-path="linked_lists/zip_a_list.html">
             
                 
                     <a href="../linked_lists/zip_a_list.html">
@@ -1183,9 +1183,116 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1208">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="zip-a-list">Zip a list</h1>
+<p>The zip of a list is creating a new list by having 2 pointers one from the start and one from the end and picking one node each and merging into a new list.</p>
+<h2 id="example">Example</h2>
+<pre><code>List: 1,2,3,4,5,6
+Zip:  1,6,2,5,3,4
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li><p>Split the list in the middle, into 2 lists</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>split
+  slow = <span class="hljs-variable">@head</span>
+  fast = <span class="hljs-variable">@head</span>
+  prev = slow
+
+  <span class="hljs-keyword">while</span> slow &amp;&amp; fast &amp;&amp; fast.<span class="hljs-keyword">next</span>
+    prev = slow
+    slow = slow.<span class="hljs-keyword">next</span>
+    fast = fast.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>
+  <span class="hljs-keyword">end</span>
+
+  prev.<span class="hljs-keyword">next</span> = <span class="hljs-keyword">nil</span>
+  slow
+<span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>Reverse the second list</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>reverse(head)
+      puts <span class="hljs-string">'Reversing ..'</span>
+
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">nil</span> <span class="hljs-keyword">if</span> head.<span class="hljs-keyword">nil</span>?
+      <span class="hljs-keyword">return</span> head <span class="hljs-keyword">if</span> head.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">nil</span>?
+
+      <span class="hljs-keyword">if</span> head.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">nil</span>?
+        prev = head
+        curr = prev.<span class="hljs-keyword">next</span>
+        curr.<span class="hljs-keyword">next</span> = prev
+        prev.<span class="hljs-keyword">next</span> = <span class="hljs-keyword">nil</span>
+        head = curr
+        <span class="hljs-keyword">return</span> head
+      <span class="hljs-keyword">end</span>
+
+      prev = head
+      curr = prev.<span class="hljs-keyword">next</span>
+      fwd = prev.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>
+      prev.<span class="hljs-keyword">next</span> = <span class="hljs-keyword">nil</span>
+
+      <span class="hljs-keyword">while</span> fwd.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
+        curr.<span class="hljs-keyword">next</span> = prev
+        prev = curr
+        curr = fwd
+        fwd = fwd.<span class="hljs-keyword">next</span>
+      <span class="hljs-keyword">end</span>
+
+      fwd.<span class="hljs-keyword">next</span> = curr
+      curr.<span class="hljs-keyword">next</span> = prev
+
+      fwd
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>Now merge the 2 lists</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>merge_list(first, second)
+      <span class="hljs-keyword">return</span> second <span class="hljs-keyword">if</span> first.<span class="hljs-keyword">nil</span>?
+      <span class="hljs-keyword">return</span> first <span class="hljs-keyword">if</span> second.<span class="hljs-keyword">nil</span>?
+
+      head = first
+      curr = first
+      first = first.<span class="hljs-keyword">next</span>
+
+      <span class="hljs-keyword">while</span>(first &amp;&amp; second)
+        curr.<span class="hljs-keyword">next</span> = second
+        second = second.<span class="hljs-keyword">next</span>
+        curr = curr.<span class="hljs-keyword">next</span>
+        curr.<span class="hljs-keyword">next</span> = first
+        first = first.<span class="hljs-keyword">next</span>
+        curr = curr.<span class="hljs-keyword">next</span>
+      <span class="hljs-keyword">end</span>
+
+      <span class="hljs-keyword">if</span> first
+        curr.<span class="hljs-keyword">next</span> = first
+      <span class="hljs-keyword">elsif</span> second
+        curr.<span class="hljs-keyword">next</span> = second
+      <span class="hljs-keyword">end</span>
+
+      head
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>At a high level zip function looks like this</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>zip
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">nil</span>?
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">nil</span>?
+
+      first = <span class="hljs-variable">@head</span>
+      second = split
+      second = reverse(second)
+
+      <span class="hljs-variable">@head</span> = merge_list(first, second)
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>O(n) to split</li>
+<li>O(n) to reverse</li>
+<li>O(n) to merge</li>
+<li>Overall O(n)</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1303,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/test_for_palindromicity.html" class="navigation navigation-prev " aria-label="Previous page: Test for palindromicity"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/remove_kth_last_element.html" class="navigation navigation-next " aria-label="Next page: Remove kth last element"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

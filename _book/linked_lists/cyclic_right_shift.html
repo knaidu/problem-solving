@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Cyclic right shift | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/median_in_a_circular_list.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/reverse_a_sublist.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.9" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -870,7 +870,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.9" data-path="linked_lists/cyclic_right_shift.html">
+        <li class="chapter active" data-level="7.9" data-path="linked_lists/cyclic_right_shift.html">
             
                 
                     <a href="../linked_lists/cyclic_right_shift.html">
@@ -1183,9 +1183,39 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1195">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="cyclic-right-shift">Cyclic right shift</h1>
+<p>Given a linked list, implement a cyclic right action on it.</p>
+<h2 id="solution">Solution</h2>
+<ul>
+<li>For a cyclic right shift the last node of the list must be disconnected and re-attached to the start of the linked list</li>
+<li>Traverse to the last node, keeping track of the last but one node as well</li>
+<li>Make the last but one node the last node of the list, attach the last node to the head of the list and return the new head</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>cyclic_right_shift
+    <span class="hljs-keyword">if</span> <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">nil</span>?
+      <span class="hljs-keyword">return</span>
+    <span class="hljs-keyword">end</span>
+
+    prev = <span class="hljs-variable">@head</span>
+    curr = <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span>
+
+    <span class="hljs-keyword">while</span> curr.<span class="hljs-keyword">next</span>
+      prev = curr
+      curr = curr.<span class="hljs-keyword">next</span>
+    <span class="hljs-keyword">end</span>
+
+    prev.<span class="hljs-keyword">next</span> = <span class="hljs-keyword">nil</span>
+    curr.<span class="hljs-keyword">next</span> = <span class="hljs-variable">@head</span>
+    <span class="hljs-variable">@head</span> = curr
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<p>O(n) since we traversed the list only once during the cyclic right shift operation</p>
+<h2 id="variation">Variation</h2>
+<p>Take in a number x and implement cyclic right shift action x times</p>
 
                     
                     </section>
@@ -1196,10 +1226,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/reverse_a_sublist.html" class="navigation navigation-prev " aria-label="Previous page: Reverse a sublist"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/median_in_a_circular_list.html" class="navigation navigation-next " aria-label="Next page: Median in a circular list"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Remove duplicates | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/merge_two_sorted_lists.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/remove_kth_last_element.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.14" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -950,7 +950,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.14" data-path="linked_lists/remove_duplicates.html">
+        <li class="chapter active" data-level="7.14" data-path="linked_lists/remove_duplicates.html">
             
                 
                     <a href="../linked_lists/remove_duplicates.html">
@@ -1183,9 +1183,38 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1202">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="remove-duplicates">Remove duplicates</h1>
+<p>Given a strted linked list, remove duplicates from them</p>
+<h2 id="example">Example</h2>
+<pre><code>Input list: 1,1,1,1,1,2,2,2,2,2,3,4,5
+Output list: 1,2,3,4,5
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li>Traverse the list and keep current and next pointers,</li>
+<li>Compare current with the next pointers and delete them if duplicate, if not move the current pointer to the next node</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>remove_duplicates
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">nil</span>?
+
+    prev = <span class="hljs-variable">@head</span>
+    curr = prev.<span class="hljs-keyword">next</span>
+
+    <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span>
+      <span class="hljs-keyword">if</span> prev.data == curr.data
+        prev.<span class="hljs-keyword">next</span> = curr.<span class="hljs-keyword">next</span>
+      <span class="hljs-keyword">else</span>
+        prev = curr
+      <span class="hljs-keyword">end</span>
+
+      curr = curr.<span class="hljs-keyword">next</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<p>O(n) since we&#39;re doing a single pass over the linked list</p>
 
                     
                     </section>
@@ -1196,10 +1225,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/remove_kth_last_element.html" class="navigation navigation-prev " aria-label="Previous page: Remove kth last element"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/merge_two_sorted_lists.html" class="navigation navigation-next " aria-label="Next page: Merge two sorted lists"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

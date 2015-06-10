@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Temperature tracker | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/README.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../math/Perfect Square.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="4.2" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -388,7 +388,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="math/temperature_tracker.html">
+        <li class="chapter active" data-level="4.2" data-path="math/temperature_tracker.html">
             
                 
                     <a href="../math/temperature_tracker.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,55 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1223">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="temperature-tracker">Temperature tracker</h1>
+<p>Write a class TempTracker with these methods:</p>
+<ul>
+<li>insert()—records a new temperature</li>
+<li>get_max()—returns the highest temp we&#39;ve seen so far</li>
+<li>get_min()—returns the lowest temp we&#39;ve seen so far</li>
+<li>get_mean()—returns the mean of all temps we&#39;ve seen so far</li>
+<li>get_mode()—returns the mode of all temps we&#39;ve seen so far</li>
+</ul>
+<p>Optimize for space and time. Favor speeding up the get_ functions over speeding up the insert() function.</p>
+<h2 id="solution">Solution</h2>
+<ul>
+<li>Hint: all the temperatures need not be stored</li>
+<li>We can calculate min, max on the fly</li>
+<li>We&#39;ll need to store sum and count to calculate mean</li>
+<li>For mode, we&#39;ll have to store occurrences and keep track of the number with max occurrence</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-comment"># The crux of the the problem is in the insert method, rest of the code is straightforward</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>insert(temperature)
+
+    <span class="hljs-comment"># for mode</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-variable">@temperature_hash</span>[temperature]
+      <span class="hljs-variable">@temperature_hash</span>[temperature] += <span class="hljs-number">1</span>
+      <span class="hljs-keyword">if</span> <span class="hljs-variable">@temperature_hash</span>[temperature] &gt; <span class="hljs-variable">@max_occurrence</span>
+        <span class="hljs-variable">@max_occurrence</span> = <span class="hljs-variable">@temperature_hash</span>[temperature]
+        <span class="hljs-variable">@mode</span> = temperature
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">else</span>
+      <span class="hljs-variable">@temperature_hash</span>[temperature] = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment"># for min and max</span>
+    <span class="hljs-variable">@max</span> = temperature <span class="hljs-keyword">if</span> temperature &gt; <span class="hljs-variable">@max</span>
+    <span class="hljs-variable">@min</span> = temperature <span class="hljs-keyword">if</span> temperature &lt; <span class="hljs-variable">@min</span>
+
+    <span class="hljs-comment"># for mean</span>
+    <span class="hljs-variable">@sum</span> += temperature
+    <span class="hljs-variable">@count</span> += <span class="hljs-number">1</span>
+    <span class="hljs-variable">@mean</span> = <span class="hljs-variable">@sum</span>/<span class="hljs-variable">@count</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>O(1) for all operations</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1242,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../math/Perfect Square.html" class="navigation navigation-prev " aria-label="Previous page: Perfect Square"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/README.html" class="navigation navigation-next " aria-label="Next page: Strings"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

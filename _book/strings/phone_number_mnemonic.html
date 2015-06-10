@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Phone number mnemonic | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/reverse_sentence.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/non_repeating_char.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.7" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -522,7 +522,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.7" data-path="strings/phone_number_mnemonic.html">
+        <li class="chapter active" data-level="5.7" data-path="strings/phone_number_mnemonic.html">
             
                 
                     <a href="../strings/phone_number_mnemonic.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,77 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1238">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="phone-number-mnemonic">Phone number mnemonic</h1>
+<p>Write a function which takes as input a phone number, specified as a string of digits, return all possible character sequences that correspond to the phone number. The cell phone keypad is specified by a mapping M that takes a digit and returns the corresponding set of characters. The character sequences do not have to be legal words or phrases.</p>
+<h2 id="example">Example</h2>
+<pre><code>PhoneMnemonic.new(&#39;23&#39;) #=&gt; AD, AE, AF, BD, BE, BF ..
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<p>Use backtracking</p>
+<ul>
+<li>Start with the last phone number</li>
+<li>Append all its chars into an array</li>
+<li>Move to the next phone number and compute all combinations of the current number and all chars previously in the array</li>
+<li>Repeat this until we reach the first digit</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PhoneMnemonic</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>initialize(phone_number)
+    cell_phone_mapping = {
+        <span class="hljs-string">'2'</span> =&gt; <span class="hljs-string">'ABC'</span>,
+        <span class="hljs-string">'3'</span> =&gt; <span class="hljs-string">'DEF'</span>,
+        <span class="hljs-string">'4'</span> =&gt; <span class="hljs-string">'GHI'</span>,
+        <span class="hljs-string">'5'</span> =&gt; <span class="hljs-string">'JKL'</span>,
+        <span class="hljs-string">'6'</span> =&gt; <span class="hljs-string">'MNO'</span>,
+        <span class="hljs-string">'7'</span> =&gt; <span class="hljs-string">'PQRS'</span>,
+        <span class="hljs-string">'8'</span> =&gt; <span class="hljs-string">'TUV'</span>,
+        <span class="hljs-string">'9'</span> =&gt; <span class="hljs-string">'WXYZ'</span>,
+        <span class="hljs-string">'0'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'1'</span> =&gt; <span class="hljs-string">''</span>
+    }
+
+    puts generate_char_sequences(cell_phone_mapping, phone_number)
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>generate_char_sequences(cell_phone_mapping, phone_number)
+    result_array = initialize_result_array(cell_phone_mapping[phone_number[phone_number.size - <span class="hljs-number">1</span>]])
+
+    i = phone_number.size - <span class="hljs-number">2</span>
+    <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span>)
+      next_result_array = combine_char_with_result_array(cell_phone_mapping[phone_number[i]], result_array)
+      result_array = next_result_array
+      next_result_array = []
+      i -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+
+    result_array
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># Initialize result set with all values from the last number</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>initialize_result_array(letters)
+    result_array = []
+    letters.each_char <span class="hljs-keyword">do</span> |c|
+      result_array &lt;&lt; c
+    <span class="hljs-keyword">end</span>
+
+    result_array
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>combine_char_with_result_array(letters, result_array)
+    next_result_array = []
+    letters.each_char <span class="hljs-keyword">do</span> |c|
+      result_array.each <span class="hljs-keyword">do</span> |r|
+        next_result_array &lt;&lt; c + r
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    next_result_array
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<p>Since there are no more than 4 possible characters for each digit, the number of recursive calls T(n) satisfies T(n) ≤ 4T(n − 1), which solves to T(n) = O(4^n). For the function calls that entail recursion, the time spent within the function, not including the recursive calls, is O(1). For the base case, printing a sequence of length n takes time O(n). Therefore, the time complexity is O(4^n * n).</p>
 
                     
                     </section>
@@ -1196,10 +1264,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/non_repeating_char.html" class="navigation navigation-prev " aria-label="Previous page: Non Repeating Char"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/reverse_sentence.html" class="navigation navigation-next " aria-label="Next page: Reverse sentence"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

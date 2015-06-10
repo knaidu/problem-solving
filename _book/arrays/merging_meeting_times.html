@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Merging meeting times | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../math/README.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/product_array.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="3.9" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -334,7 +334,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.9" data-path="arrays/merging_meeting_times.html">
+        <li class="chapter active" data-level="3.9" data-path="arrays/merging_meeting_times.html">
             
                 
                     <a href="../arrays/merging_meeting_times.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,68 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1210">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="merging-meeting-times">Merging meeting times</h1>
+<p>Write a function condense_meeting_times() that takes an array of meeting time ranges and returns an array of condensed ranges.</p>
+<h2 id="example">Example</h2>
+<pre><code>i/p: [(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)]
+o/p: [(0, 1), (3, 8), (9, 12)]
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li>First the meeting times must be sorted by start_time</li>
+<li>Once sorted, traverse the array and check if 2 intervals can be merged or not</li>
+<li>Appropriately merge them and append to the result array</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Interval</span></span>
+  <span class="hljs-keyword">attr_accessor</span> <span class="hljs-symbol">:start</span>, <span class="hljs-symbol">:stop</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>initialize(start, stop)
+    <span class="hljs-variable">@start</span> = start
+    <span class="hljs-variable">@stop</span> = stop
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Assuming meeting have already been sorted</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>merge(sorted_times)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">nil</span> <span class="hljs-keyword">if</span> sorted_times.<span class="hljs-keyword">nil</span>?
+
+  merged_meetings = []
+
+  <span class="hljs-comment"># Start with the first interval and treat it as merged</span>
+  merged_start = sorted_times[<span class="hljs-number">0</span>].start
+  merged_stop = sorted_times[<span class="hljs-number">0</span>].stop
+
+  sorted_times.each <span class="hljs-keyword">do</span> |current_interval|
+    <span class="hljs-comment"># if they can be merged, merge them</span>
+    <span class="hljs-keyword">if</span> merged_stop &gt; current_interval.start
+      merged_stop = merged_stop &gt;= current_interval.stop ? merged_stop <span class="hljs-symbol">:</span> current_interval.stop
+
+    <span class="hljs-comment"># distinct intervals found, append to result</span>
+    <span class="hljs-keyword">else</span>
+      merged_meetings &lt;&lt; <span class="hljs-constant">Interval</span>.new(merged_start, merged_stop)
+      merged_start = current_interval.start
+      merged_stop = current_interval.stop
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># append final interval to the result</span>
+  merged_meetings &lt;&lt; <span class="hljs-constant">Interval</span>.new(merged_start, merged_stop)
+
+  merged_meetings
+<span class="hljs-keyword">end</span>
+
+sorted_intervals = [<span class="hljs-constant">Interval</span>.new(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>), <span class="hljs-constant">Interval</span>.new(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>), <span class="hljs-constant">Interval</span>.new(<span class="hljs-number">3</span>,<span class="hljs-number">8</span>)]
+
+merge(sorted_intervals).inspect
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>O(n log n) to sort the array by start_time</li>
+<li>O(n) to traverse and merge intervals</li>
+<li>O(n) extra space for the result</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1255,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/product_array.html" class="navigation navigation-prev " aria-label="Previous page: Product array"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../math/README.html" class="navigation navigation-next " aria-label="Next page: Math"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

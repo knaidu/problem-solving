@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Median in a circular list | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/test_for_palindromicity.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/cyclic_right_shift.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.10" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -886,7 +886,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.10" data-path="linked_lists/median_in_a_circular_list.html">
+        <li class="chapter active" data-level="7.10" data-path="linked_lists/median_in_a_circular_list.html">
             
                 
                     <a href="../linked_lists/median_in_a_circular_list.html">
@@ -1183,9 +1183,32 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1198">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="median-in-a-circular-list">Median in a circular list</h1>
+<p>Given a circular linked list find the median node</p>
+<h2 id="solution">Solution</h2>
+<ul>
+<li><p>Use the fast ptr slow ptr approach, when the fast ptr reaches the head of the list, then the slow ptr is at the median of the list</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>find_median
+      <span class="hljs-keyword">return</span> <span class="hljs-variable">@head</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span> == <span class="hljs-variable">@head</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-variable">@head</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span> == <span class="hljs-variable">@head</span>
+
+      fast = <span class="hljs-variable">@head</span>.<span class="hljs-keyword">next</span>
+      slow = <span class="hljs-variable">@head</span>
+
+      <span class="hljs-keyword">while</span> fast != <span class="hljs-variable">@head</span> &amp;&amp; fast.<span class="hljs-keyword">next</span> != <span class="hljs-variable">@head</span>
+        fast = fast.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>
+        slow = slow.<span class="hljs-keyword">next</span>
+      <span class="hljs-keyword">end</span>
+
+      <span class="hljs-keyword">return</span> slow
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="time-complexity">Time complexity</h2>
+<p>O(n) since we traverse the list only once to find the median</p>
 
                     
                     </section>
@@ -1196,10 +1219,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/cyclic_right_shift.html" class="navigation navigation-prev " aria-label="Previous page: Cyclic right shift"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/test_for_palindromicity.html" class="navigation navigation-next " aria-label="Next page: Test for palindromicity"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

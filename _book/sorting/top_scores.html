@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Top scores | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../arrays/README.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/merge_sorted_arrays.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="2.2" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -168,7 +168,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="sorting/top_scores.html">
+        <li class="chapter active" data-level="2.2" data-path="sorting/top_scores.html">
             
                 
                     <a href="../sorting/top_scores.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,49 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1232">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="top-scores">Top scores</h1>
+<p>Write a function that takes:</p>
+<ul>
+<li>a list of unsorted_scores</li>
+<li>the highest_possible_score in the game</li>
+</ul>
+<p>and returns a sorted list of scores in less than O(nlg(n)) time.</p>
+<h2 id="example">Example</h2>
+<pre><code>i/p: [3,4,3,2,4,3,5,6,7,5,6,7,1,2,8,9,9]
+o/p: [1,2,2,3,3,3,4,4,5,5,6,6,7,7,8,9,9]
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li>Hint: To get better than O(nlogn) performance use counting sort</li>
+<li>Another indication to use counting sort is, we&#39;re provided with the highest possible score, which can be used to created a counting array and keep track of element counts</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>top_scores(scores, max_score)
+  <span class="hljs-comment"># Count number of times a score has been seen</span>
+  scores_count = [<span class="hljs-number">0</span>] * max_score
+
+  <span class="hljs-comment"># Count</span>
+  scores.each <span class="hljs-keyword">do</span> |score|
+    scores_count[score] += <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  sorted_scores = []
+
+  <span class="hljs-comment"># Print in sorted order</span>
+  scores_count.each_with_index <span class="hljs-keyword">do</span> |count, i|
+    count.times { sorted_scores &lt;&lt; i }
+  <span class="hljs-keyword">end</span>
+
+  sorted_scores
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>O(n) to count</li>
+<li>O(n) to construct the sorted result</li>
+<li>This is less than ideal since we are using up extra space for storing score counts, but if the highest_possible_score is not a very large number, then its a great trade-off to achieve O(n) sorting time.</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1236,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/merge_sorted_arrays.html" class="navigation navigation-prev " aria-label="Previous page: Merge sorted arrays"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../arrays/README.html" class="navigation navigation-next " aria-label="Next page: Arrays"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>2 SUM | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../arrays/product_array.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/unique_integer.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="3.7" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -302,7 +302,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.7" data-path="arrays/2_sum.html">
+        <li class="chapter active" data-level="3.7" data-path="arrays/2_sum.html">
             
                 
                     <a href="../arrays/2_sum.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,41 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1211">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="2-sum">2 SUM</h1>
+<p>Given an array, find a pair in the array that would add up to the given sum.</p>
+<h2 id="example">Example</h2>
+<pre><code>find_pair(array = [1,2,3,4,5], sum = 5) =&gt; Pair: 1 and 4
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>Traverse the array, for every element check<ul>
+<li>If (sum - element) exits</li>
+<li>If it does return true, else insert sum - element into a hash</li>
+</ul>
+</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>find_pair(array, sum)
+  i = <span class="hljs-number">0</span>
+  pair_exists = {}
+  <span class="hljs-keyword">while</span> i &lt; array.size
+    <span class="hljs-keyword">if</span> pair_exists.<span class="hljs-keyword">include</span>?(array[i])
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+    <span class="hljs-keyword">else</span>
+      pair_exists[sum - array[i]] = <span class="hljs-keyword">true</span>
+    <span class="hljs-keyword">end</span>
+    i += <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<p>O(n) - to process the array into a hash
+O(n) - to traverse the array to find sum-x element
+O(1) - to lookup sum-x in the hash table
+Overall: O(n+n) = O(n)</p>
 
                     
                     </section>
@@ -1196,10 +1228,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/unique_integer.html" class="navigation navigation-prev " aria-label="Previous page: Unique Integer"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../arrays/product_array.html" class="navigation navigation-next " aria-label="Next page: Product array"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

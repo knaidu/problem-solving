@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Word cloud data | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/print_duplicate.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/substring_check.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.4" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -474,7 +474,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.4" data-path="strings/word_cloud_data.html">
+        <li class="chapter active" data-level="5.4" data-path="strings/word_cloud_data.html">
             
                 
                     <a href="../strings/word_cloud_data.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,10 +1183,79 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1252">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="word-cloud-data">Word cloud data</h1>
+<p>Write code that takes a long string and builds its word cloud data in a hash map, where the keys are words and the values are the number of times the words occured.</p>
+<h2 id="example">Example</h2>
+<pre><code>Input: &quot;After beating the eggs, Dana read the next step:&quot;)
+Output: {&quot;after&quot;=&gt;1, &quot;beating&quot;=&gt;1, &quot;the&quot;=&gt;2, &quot;eggs&quot;=&gt;1, &quot;dana&quot;=&gt;1, &quot;read&quot;=&gt;1, &quot;next&quot;=&gt;1, &quot;step&quot;=&gt;1}
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>Scan one character at a time<ul>
+<li>If its an valid char, then append to current word</li>
+<li>If its a delimiter then push current word to hash and skip over the delimiter</li>
+</ul>
+</li>
+<li>Handle corner cases carefully<ul>
+<li>Hyphenated word</li>
+<li>Multiple delimiters</li>
+<li>Capitalized words</li>
+</ul>
+</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WordCloud</span></span>
+  <span class="hljs-keyword">attr_reader</span> <span class="hljs-symbol">:text</span>, <span class="hljs-symbol">:word_count_hash</span>
 
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span><span class="hljs-keyword">self</span>.create(text)
+    <span class="hljs-variable">@text</span> = text
+    <span class="hljs-variable">@word_count_hash</span> = {}
+    <span class="hljs-keyword">self</span>.process
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span><span class="hljs-keyword">self</span>.is_letter(c)
+    <span class="hljs-string">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'</span>.<span class="hljs-keyword">include</span>?(c)
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span><span class="hljs-keyword">self</span>.is_delimiter(c)
+    <span class="hljs-string">'.,-: '</span>.<span class="hljs-keyword">include</span>?(c)
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span><span class="hljs-keyword">self</span>.add_to_hash(word)
+    <span class="hljs-keyword">if</span> <span class="hljs-variable">@word_count_hash</span>[word]
+      count = <span class="hljs-variable">@word_count_hash</span>[word]
+      <span class="hljs-variable">@word_count_hash</span>[word] = count + <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>
+      <span class="hljs-variable">@word_count_hash</span>[word] = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span><span class="hljs-keyword">self</span>.process
+    current_word = <span class="hljs-string">''</span>
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..<span class="hljs-variable">@text</span>.size-<span class="hljs-number">1</span>
+      c = <span class="hljs-variable">@text</span>[i]
+      <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.is_letter(c)
+        current_word += c
+
+      <span class="hljs-keyword">elsif</span> <span class="hljs-keyword">self</span>.is_delimiter(c)
+        <span class="hljs-keyword">self</span>.add_to_hash(current_word.downcase) <span class="hljs-keyword">unless</span> current_word == <span class="hljs-string">''</span>
+        current_word = <span class="hljs-string">''</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">self</span>.add_to_hash(current_word) <span class="hljs-keyword">unless</span> current_word == <span class="hljs-string">''</span>
+
+    puts <span class="hljs-string">"Hash: <span class="hljs-subst">#{<span class="hljs-variable">@word_count_hash</span>}</span>"</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="test-cases">Test cases</h2>
+<pre><code>WordCloud.create(&quot;After beating the eggs, Dana read the next step:&quot;)
+WordCloud.create(&quot;Hello Hello World&quot;)
+WordCloud.create(&quot;Hello Hello.. World World    .... hello--world&quot;)
+</code></pre>
                     
                     </section>
                 
@@ -1196,10 +1265,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/substring_check.html" class="navigation navigation-prev " aria-label="Previous page: Substring Check"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/print_duplicate.html" class="navigation navigation-next " aria-label="Next page: Print Duplicate"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

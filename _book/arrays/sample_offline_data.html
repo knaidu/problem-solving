@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Sample offline data | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../arrays/unique_integer.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/max_difference.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="3.5" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -270,7 +270,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.5" data-path="arrays/sample_offline_data.html">
+        <li class="chapter active" data-level="3.5" data-path="arrays/sample_offline_data.html">
             
                 
                     <a href="../arrays/sample_offline_data.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,44 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1218">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="sample-offline-data">Sample offline data</h1>
+<p>Let A be an array of n distinct elements. Design an algorithm that returns a subset of k elements of A. All subsets should be equally likely. Use as few calls to the random number generator as possible and use O(1) additional storage. You can return the result in the same array as input.</p>
+<h2 id="example">Example</h2>
+<pre><code>offline_sampling([1,2,3,4,5,6,7,8,9], 1) # =&gt; [5]
+offline_sampling([1,2,3,4,5,6,7,8,9], 2) # =&gt; [3, 9]
+offline_sampling([1,2,3,4,5,6,7,8,9], 3) # =&gt; [2, 4, 6]
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>Generate a random number r and move a[r] towards the end of the array</li>
+<li>Do this k times</li>
+<li>Now the result is available in the last k elements of the array</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>offline_sampling(array, k)
+  <span class="hljs-keyword">if</span> k &lt;= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> array[rand(array.size)]
+  <span class="hljs-keyword">end</span>
+
+  end_ptr = array.size - <span class="hljs-number">1</span>
+  k.times <span class="hljs-keyword">do</span>
+    r = rand(end_ptr)
+    swap(array, r, end_ptr)
+    end_ptr -= <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">return</span> array.slice(end_ptr+<span class="hljs-number">1</span>, array.size-<span class="hljs-number">1</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="test-cases">Test cases</h2>
+<pre><code>offline_sampling([1,2,3,4,5,6,7,8,9], 1) # =&gt; [5]
+offline_sampling([1,2,3,4,5,6,7,8,9], 2) # =&gt; [3, 9]
+offline_sampling([1,2,3,4,5,6,7,8,9], 3) # =&gt; [2, 4, 6]
+offline_sampling([1,2,3,4,5,6,7,8,9], 9) # =&gt; [2, 4, 6, 3, 1, 9, 8, 7, 5]
+</code></pre><h2 id="time-complexity">Time complexity</h2>
+<p>O(k), visiting each element only 1 time and visiting only k elements
+Assumption here is call to rand() is constant</p>
 
                     
                     </section>
@@ -1196,10 +1231,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/max_difference.html" class="navigation navigation-prev " aria-label="Previous page: Max Difference"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../arrays/unique_integer.html" class="navigation navigation-next " aria-label="Next page: Unique Integer"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

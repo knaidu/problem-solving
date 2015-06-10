@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Test if palindrome | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/run_length_encoding.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/reverse_sentence.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.9" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -554,7 +554,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.9" data-path="strings/test_if_palindrome.html">
+        <li class="chapter active" data-level="5.9" data-path="strings/test_if_palindrome.html">
             
                 
                     <a href="../strings/test_if_palindrome.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,41 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1251">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="test-if-palindrome">Test if palindrome</h1>
+<p>Given a string test if its a palindrome</p>
+<h2 id="example">Example</h2>
+<pre><code>hello =&gt; false
+madam =&gt; true
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li>Maintain two pointers, one from the start of the string and the other from the end of the string</li>
+<li>Compare the chars if they are equivalent then increment the left_ptr and decrement the right_ptr until they meet at the center</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>is_palindrome(s)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">if</span> s.length == <span class="hljs-number">1</span>
+
+  <span class="hljs-keyword">if</span> s.length == <span class="hljs-number">2</span>
+    <span class="hljs-keyword">return</span> s[<span class="hljs-number">0</span>] == s[<span class="hljs-number">1</span>]
+  <span class="hljs-keyword">end</span>
+
+  i = <span class="hljs-number">0</span>
+  j = s.length - <span class="hljs-number">1</span>
+
+  <span class="hljs-keyword">while</span> i &lt; j
+    <span class="hljs-keyword">if</span> s[i] != s[j]
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>
+    <span class="hljs-keyword">else</span>
+      i += <span class="hljs-number">1</span>
+      j -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
 
                     
                     </section>
@@ -1196,10 +1228,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/reverse_sentence.html" class="navigation navigation-prev " aria-label="Previous page: Reverse sentence"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/run_length_encoding.html" class="navigation navigation-next " aria-label="Next page: Run length encoding"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

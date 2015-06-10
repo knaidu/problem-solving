@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Primitive types | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../primitive_types/reverse_number.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/merge_two_sorted_lists.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="8" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -987,7 +987,7 @@
         </li>
     
         
-        <li class="chapter " data-level="8" data-path="primitive_types/README.html">
+        <li class="chapter active" data-level="8" data-path="primitive_types/README.html">
             
                 
                     <a href="../primitive_types/README.html">
@@ -1183,9 +1183,39 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1224">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="primitive-types">Primitive types</h1>
+<p>Given an array_of_ints, find the highest_productyou can get from three of the integers.</p>
+<h2 id="solution">Solution</h2>
+<ul>
+<li>The key here is to identify that there will be negative numbers in the array of ints, and that the highest product could result out of 2 lowest negative values as well.</li>
+<li>For example: 2, -100, -100 would result in 20000.</li>
+<li>We should therefor keep track of the highest_product_of_3, highest_product_of_2, lowest_product_of_2, highest_num and lowest_num.</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>highest_product_of_3(array)
+    highest = max(array[<span class="hljs-number">0</span>], array[<span class="hljs-number">1</span>])
+    lowest = min(array[<span class="hljs-number">0</span>], array[<span class="hljs-number">1</span>])
+
+    highest_of_2 = array[<span class="hljs-number">0</span>] * array[<span class="hljs-number">1</span>]
+    lowest_of_2 = array[<span class="hljs-number">0</span>] * array[<span class="hljs-number">1</span>]
+
+    highest_product_of_3 = array[<span class="hljs-number">0</span>] * array[<span class="hljs-number">1</span>] * array[<span class="hljs-number">2</span>]
+
+    i = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> i &lt; arr.length
+        highest = max(highest, array[i])
+        lowest = min(lowest, array[i])
+
+        highest_product_of_3 = max(
+            highest_product_of_3,
+            highest_of_2 * array[i],
+            lowest_of_2 * array[i]
+        )
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
 
                     
                     </section>
@@ -1196,10 +1226,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/merge_two_sorted_lists.html" class="navigation navigation-prev " aria-label="Previous page: Merge two sorted lists"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../primitive_types/reverse_number.html" class="navigation navigation-next " aria-label="Next page: Reverse number"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

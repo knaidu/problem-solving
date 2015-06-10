@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Max Difference | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../arrays/sample_offline_data.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/dutch_national_flag.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="3.4" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -254,7 +254,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.4" data-path="arrays/max_difference.html">
+        <li class="chapter active" data-level="3.4" data-path="arrays/max_difference.html">
             
                 
                     <a href="../arrays/max_difference.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,40 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1214">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="max-difference">Max Difference</h1>
+<p>Design an algorithm that determines the maximum profit that could have been made by buying and then selling a single share over a given day range, subject to the constraint that the buy and the sell have to take place at the start of the day.</p>
+<h2 id="example">Example</h2>
+<pre><code>compute_max_diff([1,2,3,4,5,6,7,8,9]) # =&gt; 8
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>Keep a running counter of the max_diff_so_far</li>
+<li>Keep a running counter of the min_so_far</li>
+<li>Run through the entire array</li>
+<li>Once all elements are exhaused the max diff is available in max_diff_so_far</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>compute_max_diff(elements)
+  max_diff_so_far = <span class="hljs-number">0</span>
+  min_so_far = <span class="hljs-number">999</span>
+  elements.each <span class="hljs-keyword">do</span> |e|
+    max_diff_so_far = [max_diff_so_far, e - min_so_far].max
+    min_so_far = [e, min_so_far].min
+  <span class="hljs-keyword">end</span>
+
+  max_diff_so_far
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="test-cases">Test cases</h2>
+<pre><code>compute_max_diff([1,2,3,4,5,6,7,8,9]) # =&gt; 8
+compute_max_diff([9,1]) # =&gt; 0
+compute_max_diff([5,15,3]) # =&gt; 10
+compute_max_diff([5,15,3,20]) # =&gt; 17
+</code></pre><h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>O(n), since we are looping over the array only once.</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1227,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/dutch_national_flag.html" class="navigation navigation-prev " aria-label="Previous page: Dutch National Flag"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../arrays/sample_offline_data.html" class="navigation navigation-next " aria-label="Next page: Sample offline data"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

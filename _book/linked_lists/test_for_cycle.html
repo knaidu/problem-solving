@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Test for cycle | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/determine_start_of_the_cycle.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/copy_a_postings_list.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.4" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -790,7 +790,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.4" data-path="linked_lists/test_for_cycle.html">
+        <li class="chapter active" data-level="7.4" data-path="linked_lists/test_for_cycle.html">
             
                 
                     <a href="../linked_lists/test_for_cycle.html">
@@ -1183,9 +1183,36 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1206">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="test-for-cycle">Test for cycle</h1>
+<p>Given a linked list, test if it has a cycle in it, i.e the tail node does not point to nil, it points to another node in the list.</p>
+<h2 id="solution">Solution</h2>
+<p>Use the fast_ptr and slow_ptr method to detect if a cycle exists in the list</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>is_loop(head)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">if</span> head == <span class="hljs-keyword">nil</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">if</span> head.ptr == <span class="hljs-keyword">nil</span>
+
+  slow_ptr = head
+  fast_ptr = head
+  fast_ptr = fast_ptr.ptr
+  fast_ptr = fast_ptr.ptr
+
+  <span class="hljs-keyword">while</span> fast_ptr != <span class="hljs-keyword">nil</span> &amp;&amp; slow_ptr != <span class="hljs-keyword">nil</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span> slow_ptr == fast_ptr
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+    <span class="hljs-keyword">end</span>
+
+    slow_ptr = slow_ptr.ptr
+    fast_ptr = fast_ptr.ptr
+    fast_ptr = fast_ptr.ptr <span class="hljs-keyword">if</span> fast_ptr != <span class="hljs-keyword">nil</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="time-complexity">Time complexity</h2>
+<p>O(n) since we are traversing the list only once</p>
 
                     
                     </section>
@@ -1196,10 +1223,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/copy_a_postings_list.html" class="navigation navigation-prev " aria-label="Previous page: Copy a postings list"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/determine_start_of_the_cycle.html" class="navigation navigation-next " aria-label="Next page: Determine start of the cycle"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

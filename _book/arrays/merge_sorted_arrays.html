@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Merge sorted arrays | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../sorting/top_scores.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../sorting/README.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="2.1" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -152,7 +152,7 @@
                 
     
         
-        <li class="chapter " data-level="2.1" data-path="arrays/merge_sorted_arrays.html">
+        <li class="chapter active" data-level="2.1" data-path="arrays/merge_sorted_arrays.html">
             
                 
                     <a href="../arrays/merge_sorted_arrays.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,74 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1215">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="merge-sorted-arrays">Merge sorted arrays</h1>
+<p>Given 2 arrays that contain numbers that are already in sorted order, merge them into a single sorted array in O(n) time. Assume there is enough space at the end of first array to accommodate the result array.</p>
+<h2 id="example">Example</h2>
+<pre><code>i/p:
+ [3,4,6,10,11,15,nil,nil,nil,nil,nil,nil]
+ [1,5,8,12,14,19]
+
+o/p:
+ [1,3,4,5,6,8,10,11,12,14,15,19]
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li>Hint: Since there is additional space towards the end of the array begin the comparison and merge from the end of the arrays</li>
+<li>Find the larger element from the tail of the arrays and proceed towards the start of the array</li>
+<li>Make sure you handle the case with disproportionte array sizes after the merge</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby">
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>sorted_merge(a1, a2)
+  <span class="hljs-keyword">return</span> a2 <span class="hljs-keyword">if</span> a1.<span class="hljs-keyword">nil</span>?
+  <span class="hljs-keyword">return</span> a1 <span class="hljs-keyword">if</span> a2.<span class="hljs-keyword">nil</span>?
+
+  <span class="hljs-comment"># find last element in a1</span>
+  i = a1.size
+  <span class="hljs-keyword">while</span> a1[i].<span class="hljs-keyword">nil</span>?
+    i -= <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># last element in a2</span>
+  j = a2.size - <span class="hljs-number">1</span>
+
+  <span class="hljs-comment"># last element of sorted array</span>
+  k = a1.size - <span class="hljs-number">1</span>
+
+  <span class="hljs-keyword">while</span> i&gt;=<span class="hljs-number">0</span> &amp;&amp; j&gt;=<span class="hljs-number">0</span>
+    puts <span class="hljs-string">"a1[i]: <span class="hljs-subst">#{a1[i]}</span>, a2[j]: <span class="hljs-subst">#{a2[j]}</span>"</span>
+    <span class="hljs-keyword">if</span> a1[i] &gt; a2[j]
+      a1[k] = a1[i]
+      i -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>
+      a1[k] = a2[j]
+      j -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+    k -= <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># Elements left in a1</span>
+  <span class="hljs-keyword">while</span> i &gt; <span class="hljs-number">0</span>
+    a1[k] = a <span class="hljs-number">1</span>[i]
+    i -= <span class="hljs-number">1</span>
+    k -= <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># Elements left in a2</span>
+  <span class="hljs-keyword">while</span> j &gt; <span class="hljs-number">0</span>
+    a1[k] = a2[j]
+    j -= <span class="hljs-number">1</span>
+    k -= <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  a1
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="complexity">Complexity</h2>
+<ul>
+<li>O(n) since we are traversing over both arrays only once</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1261,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../sorting/README.html" class="navigation navigation-prev " aria-label="Previous page: Sorting"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../sorting/top_scores.html" class="navigation navigation-next " aria-label="Next page: Top scores"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

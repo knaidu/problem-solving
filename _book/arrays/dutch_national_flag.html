@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Dutch National Flag | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../arrays/max_difference.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/say_and_tell.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="3.3" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -238,7 +238,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="arrays/dutch_national_flag.html">
+        <li class="chapter active" data-level="3.3" data-path="arrays/dutch_national_flag.html">
             
                 
                     <a href="../arrays/dutch_national_flag.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,56 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1213">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="dutch-national-flag">Dutch National Flag</h1>
+<p>Write a function that takes an array A of length n and an index i into A, and rearranges the elements such that all elements less than A[i] appear first, followed by elements equal to A[i], followed by elements greater than A[i]. Your algorithm should have O(1) space complexity and O(n) time complexity.</p>
+<h2 id="example">Example</h2>
+<pre><code>Array  =&gt; [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2], Pivot  =&gt; 4
+Result =&gt; [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ol>
+<li>Use a smaller pointer starting at index 0 to move elements lesser than pivot</li>
+<li>Use a larger pointer to starting at last element of array, to move elementslarger than pivot</li>
+<li>And middle section will have elements equal to the pivot</li>
+</ol>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>swap(x, y, a)
+  temp = a[x]
+  a[x] = a[y]
+  a[y] = temp
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>dnf(a, i)
+  pivot = a[i]
+  smaller = <span class="hljs-number">0</span>
+  equal = <span class="hljs-number">0</span>
+  larger = a.length - <span class="hljs-number">1</span>
+
+  <span class="hljs-keyword">while</span>(equal &lt;= larger) <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span> a[equal] &lt; pivot
+      swap(equal, smaller, a)
+      smaller += <span class="hljs-number">1</span>
+      equal += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">elsif</span> a[equal] == pivot
+      equal += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-comment"># a[equal] &gt; pivot</span>
+      swap(equal, larger, a)
+      larger -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  a
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="test-cases">Test Cases</h2>
+<pre><code>Array in reverse order:
+dnf([9,8,7,6,5,4,3,2,1], 4) =&gt; [1,2,3,4,5,6,7,8,9]
+
+Array with only 3 types of elements:
+dnf([0,1,2,0,1,2,0,1,2,0,1,2], 4) =&gt; [0,0,0,0,1,1,1,1,2,2,2,2]
+</code></pre><h2 id="time-complexity">Time complexity</h2>
+<p>O(n), since we loop over all the elements only once.</p>
 
                     
                     </section>
@@ -1196,10 +1243,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/say_and_tell.html" class="navigation navigation-prev " aria-label="Previous page: Look and Say"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../arrays/max_difference.html" class="navigation navigation-next " aria-label="Next page: Max Difference"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

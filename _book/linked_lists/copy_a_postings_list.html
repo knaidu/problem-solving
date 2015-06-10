@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Copy a postings list | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/test_for_cycle.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/reverse_a_list.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.3" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -774,7 +774,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.3" data-path="linked_lists/copy_a_postings_list.html">
+        <li class="chapter active" data-level="7.3" data-path="linked_lists/copy_a_postings_list.html">
             
                 
                     <a href="../linked_lists/copy_a_postings_list.html">
@@ -1183,9 +1183,59 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1201">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="copy-a-postings-list">Copy a postings list</h1>
+<p>You are given a postings list, where each node in the linked list has 2 pointers, one pointing to the next node and other pointing to a random node in the list. Duplicate this list.</p>
+<h2 id="solution">Solution</h2>
+<ul>
+<li><p>Duplicate each node and carefully link the duplicate node t the next node in the list</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>duplicate_list(head)
+      curr = head
+
+      <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span>
+          curr_result = <span class="hljs-constant">Node</span>.new(curr.data)
+          curr_result.<span class="hljs-keyword">next</span> = curr.<span class="hljs-keyword">next</span>
+          curr.<span class="hljs-keyword">next</span> = curr_result
+          curr = curr_result.<span class="hljs-keyword">next</span>
+      <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>Now, for each node update the jump pointer appropriately, using the the fact that the jump pointer of a node in the new list must point to the jump_ptr.next of the original list (since the duplicate is the next node for every node in original list)</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>update_jump_ptr(head)
+      curr = head
+
+      <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span>
+          curr.<span class="hljs-keyword">next</span>.jump = curr.jump.<span class="hljs-keyword">next</span> <span class="hljs-keyword">if</span> curr.jump != <span class="hljs-keyword">nil</span>
+          curr = curr.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span> <span class="hljs-keyword">if</span> curr.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
+      <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>Separate the duplicate nodes from the original list into its own list and return its head</p>
+<pre><code class="lang-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>update_next_ptr(head)
+      prev = head
+      new_head = prev.<span class="hljs-keyword">next</span>
+      curr = prev.<span class="hljs-keyword">next</span>
+
+      <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span>
+          prev.<span class="hljs-keyword">next</span> = curr.<span class="hljs-keyword">next</span>
+          curr.<span class="hljs-keyword">next</span> = curr.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span> <span class="hljs-keyword">if</span> curr.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
+          prev = prev.<span class="hljs-keyword">next</span>
+          curr = curr.<span class="hljs-keyword">next</span>
+      <span class="hljs-keyword">end</span>
+
+      new_head
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="complexity">Complexity</h2>
+<ul>
+<li>Time complexity: O(n) - since we are traversing the list constant (3) times.</li>
+<li>Space complexity: We did not use any additional storage to keep track of the jump pointers.</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1246,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/reverse_a_list.html" class="navigation navigation-prev " aria-label="Previous page: Reverse a list"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/test_for_cycle.html" class="navigation navigation-next " aria-label="Next page: Test for cycle"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

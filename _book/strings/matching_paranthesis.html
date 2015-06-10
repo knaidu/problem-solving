@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Matching paranthesis | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../stacks_and_queues/README.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/permutation_palindrome.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.14" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -634,7 +634,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.14" data-path="strings/matching_paranthesis.html">
+        <li class="chapter active" data-level="5.14" data-path="strings/matching_paranthesis.html">
             
                 
                     <a href="../strings/matching_paranthesis.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,71 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1242">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="matching-paranthesis">Matching paranthesis</h1>
+<p>Write a function that, given a sentence like the one above, along with the position of an opening parenthesis, finds the corresponding closing parenthesis.</p>
+<h2 id="example">Example</h2>
+<pre><code>Input:
+String - &quot;Sometimes (when I nest them (my parentheticals) too much (like this (and this))) they get confusing.&quot;
+Opening bracket index - 10
+
+Output:
+Closing bracket index - 79
+</code></pre><h2 id="solution">Solution</h2>
+<ul>
+<li>Traverse the string and keep track of the number of brackets seen, for every opening bracket increment the count and for every closing bracket decrement the count</li>
+<li>For the closing bracket the makes the count back to 1, that means we have found the matching bracket for the input index.</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>matching_paranthesis(str, num)
+  <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> str.<span class="hljs-keyword">nil</span>?
+  <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> str[num] != <span class="hljs-string">'('</span>
+
+  i = num + <span class="hljs-number">1</span>
+  num_open = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">while</span> i &lt; str.size
+    <span class="hljs-keyword">if</span> str[i] == <span class="hljs-string">'('</span> <span class="hljs-comment"># opening brace</span>
+      num_open += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">elsif</span> str[i] == <span class="hljs-string">')'</span> <span class="hljs-comment"># closing brace</span>
+      num_open -= <span class="hljs-number">1</span>
+      <span class="hljs-keyword">return</span> i <span class="hljs-keyword">if</span> num_open == <span class="hljs-number">0</span>
+    <span class="hljs-keyword">end</span>
+    i += <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="complexity">Complexity</h2>
+<p>We&#39;re using O(1) space for counting the number of open brackets and O(n) time since we are traversing the string only once</p>
+<h2 id="variant">Variant</h2>
+<p>If we had to perform this search repeatedly, we wouldn&#39;t want to incur the O(n) cost each time. We can pre-process the string and store the opening and closing index pairs in a data structure.</p>
+<ul>
+<li>Traverse the string L to R and for every opening bracket push its index into a stack</li>
+<li><p>For every closing bracket pop from stack, and store the indices in their respective hash</p>
+<pre><code class="lang-ruby">  <span class="hljs-comment"># After pre-processing</span>
+  closing_bracket_index = {<span class="hljs-number">10</span> =&gt; <span class="hljs-number">79</span>}
+  <span class="hljs-comment"># { opening_index =&gt; closing_index }</span>
+
+  opening_bracket_index = {<span class="hljs-number">79</span> =&gt; <span class="hljs-number">10</span>}
+  <span class="hljs-comment"># { closing_ndex =&gt; closing_index }</span>
+</code></pre>
+</li>
+<li>Now for any given index in the string, if its an &#39;(&#39; we can lookup its matching closing bracket hash and vice versa.<pre><code class="lang-ruby">  <span class="hljs-keyword">if</span> str[i] == <span class="hljs-string">'('</span>
+      <span class="hljs-keyword">return</span> closing_bracket_index.find(i)
+  <span class="hljs-keyword">elsif</span> str[i] == <span class="hljs-string">')'</span>
+      <span class="hljs-keyword">return</span> opening_bracket_index.find(i)
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li>Complexity<ul>
+<li>O(n) space complexity,</li>
+<li>O(1) for lookup,</li>
+<li>O(n) pre-processing</li>
+</ul>
+</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1258,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/permutation_palindrome.html" class="navigation navigation-prev " aria-label="Previous page: Permutation palindrome"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../stacks_and_queues/README.html" class="navigation navigation-next " aria-label="Next page: Stacks and Queues"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

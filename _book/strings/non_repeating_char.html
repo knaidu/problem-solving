@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Non Repeating Char | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/phone_number_mnemonic.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/print_duplicate.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.6" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -506,7 +506,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.6" data-path="strings/non_repeating_char.html">
+        <li class="chapter active" data-level="5.6" data-path="strings/non_repeating_char.html">
             
                 
                     <a href="../strings/non_repeating_char.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,79 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1243">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="non-repeating-char">Non Repeating Char</h1>
+<p>Given a string, find the first non-repeating character in it.</p>
+<h2 id="example">Example</h2>
+<pre><code>Input: test
+Output: e
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>Parse through the given string and build a hash of char frequency and position, e.g {&#39;t&#39; =&gt; <5, 0>} meaning char &#39;t&#39; was seen 5 times and the first occurrence was at position 0.</li>
+<li>Parse through this hash and find the char with frequency 1 and lowest position (i.e. the first occurrence)</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NonRepeatingChar</span></span>
+  <span class="hljs-keyword">attr_reader</span> <span class="hljs-symbol">:result</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>initialize(text)
+    <span class="hljs-variable">@text</span> = text
+    <span class="hljs-variable">@char_count_hash</span> = {}
+    compute_char_count_and_position
+    <span class="hljs-variable">@result</span> = find_first_non_repeating_char
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>compute_char_count_and_position
+    <span class="hljs-variable">@text</span>.each_char.with_index <span class="hljs-keyword">do</span> |c, i|
+      <span class="hljs-variable">@char_count_hash</span>[c] ? increment_char_count(c) <span class="hljs-symbol">:</span> <span class="hljs-variable">@char_count_hash</span>[c] = <span class="hljs-constant">Occurrence</span>.new(<span class="hljs-number">1</span>, i)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>find_first_non_repeating_char
+    lowest_position = <span class="hljs-variable">@text</span>.size
+    non_repeating_char = <span class="hljs-string">''</span>
+    <span class="hljs-variable">@char_count_hash</span>.each <span class="hljs-keyword">do</span> |c, occurrence|
+      <span class="hljs-keyword">if</span>(occurrence.frequency == <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">if</span> (lowest_position &gt; occurrence.position)
+          lowest_position = [lowest_position, occurrence.position].min
+          non_repeating_char = c
+        <span class="hljs-keyword">end</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    non_repeating_char
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>increment_char_count(c)
+    occurrence = <span class="hljs-variable">@char_count_hash</span>[c]
+    occurrence.frequency += <span class="hljs-number">1</span>
+    <span class="hljs-variable">@char_count_hash</span>[c] = occurrence
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Occurrence</span></span>
+  <span class="hljs-keyword">attr_accessor</span> <span class="hljs-symbol">:frequency</span>, <span class="hljs-symbol">:position</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>initialize(frequency, position)
+    <span class="hljs-variable">@frequency</span> = frequency
+    <span class="hljs-variable">@position</span> = position
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+
+<span class="hljs-constant">NonRepeatingChar</span>.new(<span class="hljs-string">'tesla'</span>).result
+</code></pre>
+<h2 id="test-cases">Test cases</h2>
+<pre><code>NonRepeatingChar.new(&#39;tesla&#39;).result #=&gt; t
+NonRepeatingChar.new(&#39;teslat&#39;).result #=&gt; e
+NonRepeatingChar.new(&#39;teslate&#39;).result #=&gt; s
+NonRepeatingChar.new(&#39;teslates&#39;).result #=&gt; l
+NonRepeatingChar.new(&#39;teslatesl&#39;).result #=&gt; a
+NonRepeatingChar.new(&#39;teslatesla&#39;).result #=&gt; nil
+</code></pre><h2 id="time-complexity">Time complexity</h2>
+<p>O(n) - to parse the given string
+O(n)- to parse the hash in the worst case assuming all chars are unique</p>
 
                     
                     </section>
@@ -1196,10 +1266,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/print_duplicate.html" class="navigation navigation-prev " aria-label="Previous page: Print Duplicate"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/phone_number_mnemonic.html" class="navigation navigation-next " aria-label="Next page: Phone number mnemonic"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

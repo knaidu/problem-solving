@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Print Duplicate | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../strings/non_repeating_char.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../strings/word_cloud_data.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="5.5" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -490,7 +490,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.5" data-path="strings/print_duplicate.html">
+        <li class="chapter active" data-level="5.5" data-path="strings/print_duplicate.html">
             
                 
                     <a href="../strings/print_duplicate.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,52 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1246">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="print-duplicate">Print Duplicate</h1>
+<p>Print only the duplicate chars in the given string.</p>
+<h2 id="example">Example</h2>
+<pre><code>Input: Hello World
+Output: lo
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>Loop through all chars in the string</li>
+<li>Use a Set data structure to keep track of the chars seen so far<ul>
+<li>When visiting each char, if the char is already in the set then report as duplicate,</li>
+<li>Else append it to the set</li>
+</ul>
+</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">'set'</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PrintDuplicate</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>initialize(text)
+    <span class="hljs-variable">@text</span> = text
+    <span class="hljs-variable">@char_set</span> = <span class="hljs-constant">Set</span>.new()
+    <span class="hljs-variable">@duplicates</span> = <span class="hljs-string">''</span>
+    report_duplicate
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>report_duplicate
+    <span class="hljs-variable">@text</span>.each_char <span class="hljs-keyword">do</span> |c|
+      c = c.downcase
+      <span class="hljs-variable">@char_set</span>.<span class="hljs-keyword">include</span>?(c) ? <span class="hljs-variable">@duplicates</span> += c <span class="hljs-symbol">:</span> <span class="hljs-variable">@char_set</span>.add(c)
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-variable">@duplicates</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+puts <span class="hljs-constant">PrintDuplicate</span>.new(<span class="hljs-string">"test"</span>)
+</code></pre>
+<h2 id="test-cases">Test cases</h2>
+<pre><code>PrintDuplicate.new(&quot;lL&quot;) #=&gt; &#39;l&#39;
+PrintDuplicate.new(&quot;tesT&quot;) #=&gt; &#39;t&#39;
+PrintDuplicate.new(&quot;tesT121&quot;) #=&gt; &#39;t1&#39;
+</code></pre><h2 id="time-complexity">Time complexity</h2>
+<p>O(n), since we are looping over the string just once.
+Checking set membership is just O(1)</p>
 
                     
                     </section>
@@ -1196,10 +1239,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/word_cloud_data.html" class="navigation navigation-prev " aria-label="Previous page: Word cloud data"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../strings/non_repeating_char.html" class="navigation navigation-next " aria-label="Next page: Non Repeating Char"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

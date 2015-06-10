@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Reverse a sublist | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../linked_lists/cyclic_right_shift.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../linked_lists/even-odd_merge.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="7.8" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -854,7 +854,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.8" data-path="linked_lists/reverse_a_sublist.html">
+        <li class="chapter active" data-level="7.8" data-path="linked_lists/reverse_a_sublist.html">
             
                 
                     <a href="../linked_lists/reverse_a_sublist.html">
@@ -1183,9 +1183,49 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1205">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="reverse-a-sublist">Reverse a sublist</h1>
+<p>Given a linked list with head ptr, a start and an end pointer, reverse the sublist from start_ptr to end_ptr</p>
+<h2 id="examples">Examples</h2>
+<p>input list: 1, 2, 3, 4, 5, 6, 7, 8</p>
+<p>start_ptr = 3</p>
+<p>end_ptr = 6</p>
+<p>output list: 1, 2, 3, <strong>7, 6, 5, 4</strong>, 8</p>
+<h2 id="solution">Solution</h2>
+<ul>
+<li><p>Keep track of the node before start_ptr and after end_ptr to adjust pointers accordingly after reversing the sublist</p>
+<pre><code class="lang-ruby">  after_end = end_ptr.<span class="hljs-keyword">next</span>
+
+  before_start = head
+  <span class="hljs-keyword">while</span> before_start.<span class="hljs-keyword">next</span> != start_ptr
+      before_start = before_start.<span class="hljs-keyword">next</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>Reverse the list from start_ptr until end_ptr</p>
+<pre><code class="lang-ruby">  prev = start_ptr
+  curr = start_ptr.next
+  fwd = start_ptr.next.next
+
+  // Point prev to
+  prev.next = after_end
+
+  while curr != end_ptr.next
+      curr.next = prev
+      prev = curr
+      curr = fwd
+      fwd = fwd.next
+  end
+
+  // Adjust start and end of the lists accordingly
+  before_start.next = prev
+  start_ptr.next = curr
+</code></pre>
+</li>
+</ul>
+<h2 id="time-complexity">Time complexity</h2>
+<p>O(n) since we&#39;re traversing the list only once</p>
 
                     
                     </section>
@@ -1196,10 +1236,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/even-odd_merge.html" class="navigation navigation-prev " aria-label="Previous page: Even-odd merge"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../linked_lists/cyclic_right_shift.html" class="navigation navigation-next " aria-label="Next page: Cyclic right shift"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Stacks and Queues | Introduction</title>
+        <title>Unique Integer | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../stacks_and_queues/queue_with_2_stacks.html" />
+    <link rel="next" href="../arrays/2_sum.html" />
     
     
-    <link rel="prev" href="../strings/matching_paranthesis.html" />
+    <link rel="prev" href="../arrays/sample_offline_data.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="6" data-basepath=".." data-revision="1433953249583">
+    <div class="book"  data-level="3.6" data-basepath=".." data-revision="1433953249583">
     
 
 <div class="book-summary">
@@ -286,7 +286,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.6" data-path="arrays/unique_integer.html">
+        <li class="chapter active" data-level="3.6" data-path="arrays/unique_integer.html">
             
                 
                     <a href="../arrays/unique_integer.html">
@@ -655,7 +655,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6" data-path="stacks_and_queues/README.html">
+        <li class="chapter " data-level="6" data-path="stacks_and_queues/README.html">
             
                 
                     <a href="../stacks_and_queues/README.html">
@@ -1183,9 +1183,38 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1233">
+                    <section class="normal" id="section-gitbook_1220">
                     
-                        <h1 id="stacks-and-queues">Stacks and Queues</h1>
+                        <h1 id="unique-integer">Unique Integer</h1>
+<p>Given the array of IDs, which contains many duplicate integers and one unique integer, find the unique integer. All integers have one duplicate except the unique integer.</p>
+<h2 id="example">Example</h2>
+<pre><code>Input =&gt; [1,1,2,2,3,3,4]
+Output =&gt; 4
+</code></pre><h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>Use the XOR operator, it cancels out the bits when an integer is XOR&#39;d with itself</li>
+<li>XOR all the elements of the array</li>
+<li>The remainder will be the unique number in the array</li>
+</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>uniq_integer(input_array)
+  unique = <span class="hljs-number">0</span>
+  input_array.each <span class="hljs-keyword">do</span> |num|
+    unique = unique ^ num
+  <span class="hljs-keyword">end</span>
+
+  unique
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="test-cases">Test cases</h2>
+<pre><code>uniq_integer([1,1,2,2,3,3,4]) #=&gt; 4
+uniq_integer([1,1,2,2,3,3,4,3,3]) #=&gt; 4
+uniq_integer([1,1]) #=&gt; 0
+</code></pre><h2 id="time-complexity">Time complexity</h2>
+<ul>
+<li>Visiting each element only once, therefore O(n)</li>
+<li>Using only O(1) space</li>
+</ul>
 
                     
                     </section>
@@ -1196,10 +1225,10 @@
         </div>
 
         
-        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/sample_offline_data.html" class="navigation navigation-prev " aria-label="Previous page: Sample offline data"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../stacks_and_queues/queue_with_2_stacks.html" class="navigation navigation-next " aria-label="Next page: Queue with 2 stacks"><i class="fa fa-angle-right"></i></a>
+        <a href="../arrays/2_sum.html" class="navigation navigation-next " aria-label="Next page: 2 SUM"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
