@@ -61,6 +61,7 @@
    * [Reverse number](primitive_types/reverse_number.md)
    * [Highest product of 3](primitive_types/highest_product_of_3.md)
    * [Find unique](primitive_types/find_unique.md)
+   * [Which appears twice](primitive_types/which_appears_twice.md)
 * [Trees](trees/README)
    * [BST checker](trees/bst_checker.md)
 
