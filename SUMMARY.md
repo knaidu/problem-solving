@@ -58,6 +58,7 @@
    * [Remove kth last element](linked_lists/remove_kth_last_element.md)
    * [Remove duplicates](linked_lists/remove_duplicates.md)
    * [Merge two sorted lists](linked_lists/merge_two_sorted_lists.md)
+   * [Delete a node](linked_lists/delete_a_node.md)
 * [Primitive types](primitive_types/README.md)
    * [Reverse number](primitive_types/reverse_number.md)
    * [Highest product of 3](primitive_types/highest_product_of_3.md)
