@@ -19,6 +19,7 @@
    * [2 SUM](arrays/2_sum.md)
    * [Product array](arrays/product_array.md)
    * [Merging meeting times](arrays/merging_meeting_times.md)
+   * [Find duplicate](arrays/find_duplicate.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
    * [Temperature tracker](math/temperature_tracker.md)
