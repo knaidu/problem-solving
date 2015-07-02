@@ -13,7 +13,7 @@ o/p: 4 => duplicate element
 - For example:
 
 ```
-2,4,6,4,5,1,3
+array: [2,4,6,4,5,1,3]
 1st half: 2,4,6,4
 2nd half: 5,1,3,7
 1st half of a hypothetically sorted array would be: 1,2,3

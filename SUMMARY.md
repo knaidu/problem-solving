@@ -20,6 +20,7 @@
    * [Product array](arrays/product_array.md)
    * [Merging meeting times](arrays/merging_meeting_times.md)
    * [Find duplicate](arrays/find_duplicate.md)
+   * [Delete duplicatees from sorted array](arrays/delete_duplicatees_form_sorted_array.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
    * [Temperature tracker](math/temperature_tracker.md)
