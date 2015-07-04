@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Remove kth last element | Introduction</title>
+        <title>Nth Fibonacci number | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../linked_lists/remove_duplicates.html" />
+    <link rel="next" href="../primitive_types/check_palindromic_number.html" />
     
     
-    <link rel="prev" href="../linked_lists/zip_a_list.html" />
+    <link rel="prev" href="../primitive_types/which_appears_twice.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="7.13" data-basepath=".." data-revision="1435973354111">
+    <div class="book"  data-level="8.5" data-basepath=".." data-revision="1435973354111">
     
 
 <div class="book-summary">
@@ -998,7 +998,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
+        <li class="chapter " data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
             
                 
                     <a href="../linked_lists/remove_kth_last_element.html">
@@ -1148,7 +1148,7 @@
         </li>
     
         
-        <li class="chapter " data-level="8.5" data-path="primitive_types/nth_fibonacci_number.html">
+        <li class="chapter active" data-level="8.5" data-path="primitive_types/nth_fibonacci_number.html">
             
                 
                     <a href="../primitive_types/nth_fibonacci_number.html">
@@ -1311,43 +1311,55 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1460">
+                    <section class="normal" id="section-gitbook_1487">
                     
-                        <h1 id="remove-kth-last-element">Remove kth last element</h1>
-<p>Given a singly linked list and k, find and remove the kth element from the end</p>
+                        <h1 id="nth-fibonacci-number">Nth Fibonacci number</h1>
+<p>Write a function fib() that a takes an integer n and returns the nth fibonacci number.</p>
 <h2 id="example">Example</h2>
-<pre><code>List: 1,2,3,4,5,6,7,8,9
-k: 4
-Output: 1,2,3,4,5,7,8,9
+<pre><code>fibo(5) =&gt; 5
+fibo(10) =&gt; 55
 </code></pre><h2 id="solution">Solution</h2>
 <ul>
-<li><p>Use the tail_ptr technique to find the kth last element</p>
-<pre><code class="lang-ruby">  tail = head
-  curr = head
-  count = <span class="hljs-number">1</span>
-
-  <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span> &amp;&amp; count &lt; k
-    curr = curr.<span class="hljs-keyword">next</span>
-    count += <span class="hljs-number">1</span>
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-keyword">while</span> curr.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
-    curr = curr.<span class="hljs-keyword">next</span>
-    tail = tail.<span class="hljs-keyword">next</span>
-  <span class="hljs-keyword">end</span>
-</code></pre>
-</li>
-<li><p>To delete and element, instead of having a prev pointer the easy way is to copy data from the next ptr and delete the next node</p>
-<pre><code class="lang-ruby">  temp = tail.<span class="hljs-keyword">next</span>
-  tail.data = temp.data
-  tail.<span class="hljs-keyword">next</span> = temp.<span class="hljs-keyword">next</span>
-</code></pre>
-</li>
+<li>We can use a top down recursive approach and memoize it to make it effecient, but we&#39;re adding extra O(n) space here.</li>
+<li>Or we can use a bottom up iterative approch and avoid using the extra space</li>
 </ul>
-<h2 id="time-complexity">Time complexity</h2>
+<h2 id="recursive-code">Recursive Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>fibo_helper(n, fibo_hash)
+  <span class="hljs-keyword">return</span> n <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span> || n == <span class="hljs-number">1</span>
+
+  <span class="hljs-keyword">return</span> fibo_hash[n] <span class="hljs-keyword">if</span> fibo_hash[n]
+
+  fibo_helper(n-<span class="hljs-number">1</span>, fibo_hash) + fibo_helper(n-<span class="hljs-number">2</span>, fibo_hash)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>fibo_recursive(n)
+  fibo_hash = {}
+
+  fibo_helper(n, fibo_hash)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="iterative-code">Iterative code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>fibo_iterative(n)
+  <span class="hljs-keyword">return</span> n <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span> || n == <span class="hljs-number">1</span>
+
+  i = <span class="hljs-number">2</span>
+  current = <span class="hljs-number">1</span>
+  prev = <span class="hljs-number">0</span>
+
+  <span class="hljs-keyword">while</span> i &lt;= n
+    fib = current + prev
+    prev = current
+    current = fib
+    i += <span class="hljs-number">1</span>
+  <span class="hljs-keyword">end</span>
+
+  fib
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="complexity">Complexity</h2>
 <ul>
-<li>Single pass to find the kth last node</li>
-<li>O(1) to delete the kth node</li>
+<li>O(n) time and O(1) space using the iterative approach</li>
+<li>O(n) time and O(n) space using the memoized recursive approach</li>
 </ul>
 
                     
@@ -1359,10 +1371,10 @@ Output: 1,2,3,4,5,7,8,9
         </div>
 
         
-        <a href="../linked_lists/zip_a_list.html" class="navigation navigation-prev " aria-label="Previous page: Zip a list"><i class="fa fa-angle-left"></i></a>
+        <a href="../primitive_types/which_appears_twice.html" class="navigation navigation-prev " aria-label="Previous page: Which appears twice"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../linked_lists/remove_duplicates.html" class="navigation navigation-next " aria-label="Next page: Remove duplicates"><i class="fa fa-angle-right"></i></a>
+        <a href="../primitive_types/check_palindromic_number.html" class="navigation navigation-next " aria-label="Next page: Check palindromic number"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

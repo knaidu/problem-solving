@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Remove kth last element | Introduction</title>
+        <title>Delete duplicatees from sorted array | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../linked_lists/remove_duplicates.html" />
+    <link rel="next" href="../math/README.html" />
     
     
-    <link rel="prev" href="../linked_lists/zip_a_list.html" />
+    <link rel="prev" href="../arrays/find_duplicate.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="7.13" data-basepath=".." data-revision="1435973354111">
+    <div class="book"  data-level="3.11" data-basepath=".." data-revision="1435973354111">
     
 
 <div class="book-summary">
@@ -382,7 +382,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.11" data-path="arrays/delete_duplicatees_form_sorted_array.html">
+        <li class="chapter active" data-level="3.11" data-path="arrays/delete_duplicatees_form_sorted_array.html">
             
                 
                     <a href="../arrays/delete_duplicatees_form_sorted_array.html">
@@ -998,7 +998,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
+        <li class="chapter " data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
             
                 
                     <a href="../linked_lists/remove_kth_last_element.html">
@@ -1311,44 +1311,37 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1460">
+                    <section class="normal" id="section-gitbook_1470">
                     
-                        <h1 id="remove-kth-last-element">Remove kth last element</h1>
-<p>Given a singly linked list and k, find and remove the kth element from the end</p>
+                        <h1 id="delete-duplicatees-from-sorted-array">Delete duplicatees from sorted array</h1>
+<p>Given a sorted array with duplicate elements, eliminate the duplicate elements in place.</p>
 <h2 id="example">Example</h2>
-<pre><code>List: 1,2,3,4,5,6,7,8,9
-k: 4
-Output: 1,2,3,4,5,7,8,9
+<pre><code>i/p: [1,1,1,2,3,4,4,4,5,6,7,7,7]
+o/p: [1,2,3,4,5,6,7]
 </code></pre><h2 id="solution">Solution</h2>
 <ul>
-<li><p>Use the tail_ptr technique to find the kth last element</p>
-<pre><code class="lang-ruby">  tail = head
-  curr = head
-  count = <span class="hljs-number">1</span>
-
-  <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span> &amp;&amp; count &lt; k
-    curr = curr.<span class="hljs-keyword">next</span>
-    count += <span class="hljs-number">1</span>
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-keyword">while</span> curr.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
-    curr = curr.<span class="hljs-keyword">next</span>
-    tail = tail.<span class="hljs-keyword">next</span>
-  <span class="hljs-keyword">end</span>
-</code></pre>
-</li>
-<li><p>To delete and element, instead of having a prev pointer the easy way is to copy data from the next ptr and delete the next node</p>
-<pre><code class="lang-ruby">  temp = tail.<span class="hljs-keyword">next</span>
-  tail.data = temp.data
-  tail.<span class="hljs-keyword">next</span> = temp.<span class="hljs-keyword">next</span>
-</code></pre>
-</li>
+<li>Use 2 pointers read and write, check for duplicates and overwrite the write pointer with the next unique element</li>
 </ul>
-<h2 id="time-complexity">Time complexity</h2>
-<ul>
-<li>Single pass to find the kth last node</li>
-<li>O(1) to delete the kth node</li>
-</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>eliminate_duplicates(a)
+
+    write = <span class="hljs-number">0</span>
+    read = <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">while</span> (read &lt; a.size)
+        <span class="hljs-keyword">if</span> a[read] == a[read - <span class="hljs-number">1</span>]
+            read += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>
+            a[write] = a[read-<span class="hljs-number">1</span>]
+            write += <span class="hljs-number">1</span>
+            read += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="complexity">Complexity</h2>
+<p>O(n) time complexity, since we traverse that array only once
+O(1) space complexity, since we do not use any additional space to store the elements.</p>
 
                     
                     </section>
@@ -1359,10 +1352,10 @@ Output: 1,2,3,4,5,7,8,9
         </div>
 
         
-        <a href="../linked_lists/zip_a_list.html" class="navigation navigation-prev " aria-label="Previous page: Zip a list"><i class="fa fa-angle-left"></i></a>
+        <a href="../arrays/find_duplicate.html" class="navigation navigation-prev " aria-label="Previous page: Find duplicate"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../linked_lists/remove_duplicates.html" class="navigation navigation-next " aria-label="Next page: Remove duplicates"><i class="fa fa-angle-right"></i></a>
+        <a href="../math/README.html" class="navigation navigation-next " aria-label="Next page: Math"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

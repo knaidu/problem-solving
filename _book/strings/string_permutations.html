@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Remove kth last element | Introduction</title>
+        <title>String permutations | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../linked_lists/remove_duplicates.html" />
+    <link rel="next" href="../stacks_and_queues/README.html" />
     
     
-    <link rel="prev" href="../linked_lists/zip_a_list.html" />
+    <link rel="prev" href="../strings/matching_paranthesis.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="7.13" data-basepath=".." data-revision="1435973354111">
+    <div class="book"  data-level="5.15" data-basepath=".." data-revision="1435973354111">
     
 
 <div class="book-summary">
@@ -698,7 +698,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.15" data-path="strings/string_permutations.html">
+        <li class="chapter active" data-level="5.15" data-path="strings/string_permutations.html">
             
                 
                     <a href="../strings/string_permutations.html">
@@ -998,7 +998,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
+        <li class="chapter " data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
             
                 
                     <a href="../linked_lists/remove_kth_last_element.html">
@@ -1311,44 +1311,44 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1460">
+                    <section class="normal" id="section-gitbook_1513">
                     
-                        <h1 id="remove-kth-last-element">Remove kth last element</h1>
-<p>Given a singly linked list and k, find and remove the kth element from the end</p>
+                        <h1 id="string-permutations">String permutations</h1>
+<p>Write a recursive function for generating all permutations of an input string</p>
 <h2 id="example">Example</h2>
-<pre><code>List: 1,2,3,4,5,6,7,8,9
-k: 4
-Output: 1,2,3,4,5,7,8,9
+<pre><code>i/p: cat
+o/p: [&quot;tac&quot;, &quot;atc&quot;, &quot;act&quot;, &quot;tca&quot;, &quot;cta&quot;, &quot;cat&quot;]
 </code></pre><h2 id="solution">Solution</h2>
 <ul>
-<li><p>Use the tail_ptr technique to find the kth last element</p>
-<pre><code class="lang-ruby">  tail = head
-  curr = head
-  count = <span class="hljs-number">1</span>
-
-  <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span> &amp;&amp; count &lt; k
-    curr = curr.<span class="hljs-keyword">next</span>
-    count += <span class="hljs-number">1</span>
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-keyword">while</span> curr.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
-    curr = curr.<span class="hljs-keyword">next</span>
-    tail = tail.<span class="hljs-keyword">next</span>
-  <span class="hljs-keyword">end</span>
-</code></pre>
-</li>
-<li><p>To delete and element, instead of having a prev pointer the easy way is to copy data from the next ptr and delete the next node</p>
-<pre><code class="lang-ruby">  temp = tail.<span class="hljs-keyword">next</span>
-  tail.data = temp.data
-  tail.<span class="hljs-keyword">next</span> = temp.<span class="hljs-keyword">next</span>
-</code></pre>
-</li>
+<li>Think of solving this with a string without the last char and then appending the last char in every possible position in the string</li>
+<li>Recursively implement this for string lengths of all sizes</li>
 </ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>get_permutations(str)
+
+  <span class="hljs-keyword">return</span> [str] <span class="hljs-keyword">if</span> str.size == <span class="hljs-number">1</span>
+
+  last_char = str[str.size-<span class="hljs-number">1</span>...str.size]
+  str = str[<span class="hljs-number">0</span>...str.size-<span class="hljs-number">1</span>]
+
+  permutations_except_last = get_permutations(str)
+
+  permutations = []
+
+  permutations_except_last.each <span class="hljs-keyword">do</span> |str|
+    i = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> i &lt;= str.size <span class="hljs-keyword">do</span>
+      result = str[<span class="hljs-number">0</span>...i] + last_char + str[i...str.size]
+      permutations &lt;&lt; result
+      i += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  permutations
+<span class="hljs-keyword">end</span>
+</code></pre>
 <h2 id="time-complexity">Time complexity</h2>
-<ul>
-<li>Single pass to find the kth last node</li>
-<li>O(1) to delete the kth node</li>
-</ul>
+<p>O(n*n!), n! for producing permutations of a string, repeating this n times per substring+last char combination.</p>
 
                     
                     </section>
@@ -1359,10 +1359,10 @@ Output: 1,2,3,4,5,7,8,9
         </div>
 
         
-        <a href="../linked_lists/zip_a_list.html" class="navigation navigation-prev " aria-label="Previous page: Zip a list"><i class="fa fa-angle-left"></i></a>
+        <a href="../strings/matching_paranthesis.html" class="navigation navigation-prev " aria-label="Previous page: Matching paranthesis"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../linked_lists/remove_duplicates.html" class="navigation navigation-next " aria-label="Next page: Remove duplicates"><i class="fa fa-angle-right"></i></a>
+        <a href="../stacks_and_queues/README.html" class="navigation navigation-next " aria-label="Next page: Stacks and Queues"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

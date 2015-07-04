@@ -67,6 +67,7 @@
    * [Find unique](primitive_types/find_unique.md)
    * [Which appears twice](primitive_types/which_appears_twice.md)
    * [Nth Fibonacci number](primitive_types/nth_fibonacci_number.md)
+   * [Check palindromic number](primitive_types/check_palindromic_number.md)
 * [Trees](trees/README)
    * [BST checker](trees/bst_checker.md)
 

@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Remove kth last element | Introduction</title>
+        <title>Delete a node | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../linked_lists/remove_duplicates.html" />
+    <link rel="next" href="../primitive_types/README.html" />
     
     
-    <link rel="prev" href="../linked_lists/zip_a_list.html" />
+    <link rel="prev" href="../linked_lists/merge_two_sorted_lists.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="7.13" data-basepath=".." data-revision="1435973354111">
+    <div class="book"  data-level="7.16" data-basepath=".." data-revision="1435973354111">
     
 
 <div class="book-summary">
@@ -998,7 +998,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
+        <li class="chapter " data-level="7.13" data-path="linked_lists/remove_kth_last_element.html">
             
                 
                     <a href="../linked_lists/remove_kth_last_element.html">
@@ -1046,7 +1046,7 @@
         </li>
     
         
-        <li class="chapter " data-level="7.16" data-path="linked_lists/delete_a_node.html">
+        <li class="chapter active" data-level="7.16" data-path="linked_lists/delete_a_node.html">
             
                 
                     <a href="../linked_lists/delete_a_node.html">
@@ -1311,44 +1311,30 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1460">
+                    <section class="normal" id="section-gitbook_1452">
                     
-                        <h1 id="remove-kth-last-element">Remove kth last element</h1>
-<p>Given a singly linked list and k, find and remove the kth element from the end</p>
-<h2 id="example">Example</h2>
-<pre><code>List: 1,2,3,4,5,6,7,8,9
-k: 4
-Output: 1,2,3,4,5,7,8,9
-</code></pre><h2 id="solution">Solution</h2>
+                        <h1 id="delete-a-node">Delete a node</h1>
+<p>Given a pointer to a node, delete that node preferably in O(1)</p>
+<h2 id="solution">Solution</h2>
 <ul>
-<li><p>Use the tail_ptr technique to find the kth last element</p>
-<pre><code class="lang-ruby">  tail = head
-  curr = head
-  count = <span class="hljs-number">1</span>
-
-  <span class="hljs-keyword">while</span> curr != <span class="hljs-keyword">nil</span> &amp;&amp; count &lt; k
-    curr = curr.<span class="hljs-keyword">next</span>
-    count += <span class="hljs-number">1</span>
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-keyword">while</span> curr.<span class="hljs-keyword">next</span> != <span class="hljs-keyword">nil</span>
-    curr = curr.<span class="hljs-keyword">next</span>
-    tail = tail.<span class="hljs-keyword">next</span>
-  <span class="hljs-keyword">end</span>
-</code></pre>
-</li>
-<li><p>To delete and element, instead of having a prev pointer the easy way is to copy data from the next ptr and delete the next node</p>
-<pre><code class="lang-ruby">  temp = tail.<span class="hljs-keyword">next</span>
-  tail.data = temp.data
-  tail.<span class="hljs-keyword">next</span> = temp.<span class="hljs-keyword">next</span>
-</code></pre>
-</li>
+<li>If the node is not the last node then we can copy the data from then next node, delete the next node and adjust the pointers</li>
+<li>If the node is the last, then we&#39;ll have to traverse the list and find prev to last node and then delete the last node</li>
+<li>Tradeoff: If there are any pointers to the next node, they will become dangling pointers</li>
 </ul>
-<h2 id="time-complexity">Time complexity</h2>
-<ul>
-<li>Single pass to find the kth last node</li>
-<li>O(1) to delete the kth node</li>
-</ul>
+<h2 id="code">Code</h2>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>delete_node(head, node)
+    <span class="hljs-keyword">if</span> node.<span class="hljs-keyword">next</span> != <span class="hljs-constant">NULL</span>
+        node.data = node.<span class="hljs-keyword">next</span>.data
+        node.<span class="hljs-keyword">next</span> = node.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>
+    <span class="hljs-keyword">else</span>
+        prev = find_prev(head)
+        prev.<span class="hljs-keyword">next</span> = <span class="hljs-constant">NULL</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="complexity">Complexity</h2>
+<p>O(1) when the node to be deleted is not the last node in the list
+O(n) if it is the last node</p>
 
                     
                     </section>
@@ -1359,10 +1345,10 @@ Output: 1,2,3,4,5,7,8,9
         </div>
 
         
-        <a href="../linked_lists/zip_a_list.html" class="navigation navigation-prev " aria-label="Previous page: Zip a list"><i class="fa fa-angle-left"></i></a>
+        <a href="../linked_lists/merge_two_sorted_lists.html" class="navigation navigation-prev " aria-label="Previous page: Merge two sorted lists"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../linked_lists/remove_duplicates.html" class="navigation navigation-next " aria-label="Next page: Remove duplicates"><i class="fa fa-angle-right"></i></a>
+        <a href="../primitive_types/README.html" class="navigation navigation-next " aria-label="Next page: Primitive types"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
