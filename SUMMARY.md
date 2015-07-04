@@ -22,6 +22,7 @@
    * [Find duplicate](arrays/find_duplicate.md)
    * [Delete duplicatees](arrays/delete_duplicatees_form_sorted_array.md)
    * [Identify the celebrity](arrays/identify_the_celebrity.md)
+   * [Rotate array](arrays/rotate_array.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
    * [Temperature tracker](math/temperature_tracker.md)
