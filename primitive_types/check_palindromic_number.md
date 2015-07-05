@@ -1,4 +1,4 @@
-# Check palindromic number
+# Palindromic number
 Given a number test if its a palindrome.
 
 ## Example
