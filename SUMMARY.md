@@ -10,6 +10,7 @@
    * [Palindromic number](primitive_types/check_palindromic_number.md)
    * [Compute parity](primitive_types/compute_parity.md)
    * [Swap bits](primitive_types/swap_bits.md)
+   * [Reverse bits](primitive_types/reverse_bits.md)
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/Array Flattening.md)
    * [Look and Say](arrays/say_and_tell.md)
