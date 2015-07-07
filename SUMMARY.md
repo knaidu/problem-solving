@@ -12,6 +12,7 @@
    * [Swap bits](primitive_types/swap_bits.md)
    * [Reverse bits](primitive_types/reverse_bits.md)
    * [Closest integer](primitive_types/closest_integer.md)
+   * [Spreadsheet decoding](primitive_types/spreadsheet_decoding.md)
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/Array Flattening.md)
    * [Look and Say](arrays/say_and_tell.md)
