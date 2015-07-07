@@ -13,6 +13,8 @@
    * [Reverse bits](primitive_types/reverse_bits.md)
    * [Closest integer](primitive_types/closest_integer.md)
    * [Spreadsheet decoding](primitive_types/spreadsheet_decoding.md)
+   * [Spreadsheet encoding](primitive_types/spreadsheet_encoding.md)
+   * [Intersecting rectangles](primitive_types/intersecting_rectangles.md)
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/Array Flattening.md)
    * [Look and Say](arrays/say_and_tell.md)
