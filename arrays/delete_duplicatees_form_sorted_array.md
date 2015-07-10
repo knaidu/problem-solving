@@ -1,4 +1,4 @@
-# Delete duplicatees from sorted array
+# Delete duplicat   es from sorted array
 Given a sorted array with duplicate elements, eliminate the duplicate elements in place.
 
 ## Example

@@ -1,5 +1,5 @@
 # Highest product of 3
-Given an array_of_ints, find the highest_productyou can get from three of the integers.
+Given an array_of_ints, find the highest_product you can get from three of the integers.
 
 ## Solution
 - The key here is knowing that we'll have to deal with negative numbers and that the highest product of 3 could be a result of 2 low negative numbers.
@@ -35,7 +35,7 @@ def highest_product_of_3(array)
         )
 
         highest_product_of_2 = max(
-            highest_number * array[i]
+            highest_number * array[i],
             highest_product_of_2
         )
 
