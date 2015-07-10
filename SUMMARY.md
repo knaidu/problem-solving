@@ -33,6 +33,7 @@
    * [Increment BigInteger](arrays/increment_biginteger.md)
    * [Furthest reach](arrays/furthest_reach.md)
    * [Stock span sell twice](arrays/stock_span_sell_twice.md)
+   * [Enumerate primes](arrays/enumerate_primes.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
