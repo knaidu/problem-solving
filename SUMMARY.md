@@ -37,6 +37,7 @@
    * [Array permutations](arrays/array_permutations.md)
    * [Next permutation](arrays/next_permutation.md)
    * [Offline sampling](arrays/offline_sampling.md)
+   * [Compute random permutation](arrays/compute_random_permutation.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)

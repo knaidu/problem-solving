@@ -11,6 +11,7 @@ random() as possible. All subsets should be equally likely.
 ```ruby
 def offline_sampling(arr, k)
     i = 0
+    result = []
     while i<k
         r = random(i, k)
         result << arr[r]
