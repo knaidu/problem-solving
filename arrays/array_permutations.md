@@ -34,4 +34,4 @@ end
 ```
 
 ## Complexity
-Time: O(n * n!)
+Time: O(n * n!), due to n! permutations.
