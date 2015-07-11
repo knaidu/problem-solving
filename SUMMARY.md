@@ -36,6 +36,7 @@
    * [Enumerate primes](arrays/enumerate_primes.md)
    * [Array permutations](arrays/array_permutations.md)
    * [Next permutation](arrays/next_permutation.md)
+   * [Offline sampling](arrays/offline_sampling.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
