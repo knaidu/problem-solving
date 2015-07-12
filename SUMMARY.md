@@ -43,6 +43,7 @@
    * [Sudoku checker](arrays/sudoku_checker.md)
    * [Spiral order](arrays/spiral_order.md)
    * [Rotate matrix](arrays/rotate_matrix.md)
+   * [Pascals triangle](arrays/pascals_triangle.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
