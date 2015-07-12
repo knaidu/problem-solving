@@ -42,6 +42,7 @@
    * [Non-uniform random number](arrays/non-uniform_random_number.md)
    * [Sudoku checker](arrays/sudoku_checker.md)
    * [Spiral order](arrays/spiral_order.md)
+   * [Rotate matrix](arrays/rotate_matrix.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
