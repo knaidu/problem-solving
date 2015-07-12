@@ -40,6 +40,7 @@
    * [Compute random permutation](arrays/compute_random_permutation.md)
    * [Online sampling](arrays/online_sampling.md)
    * [Non-uniform random number](arrays/non-uniform_random_number.md)
+   * [Sudoku checker](arrays/sudoku_checker.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
