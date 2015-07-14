@@ -61,6 +61,7 @@
    * [Matching paranthesis](strings/matching_paranthesis.md)
    * [String permutations](strings/string_permutations.md)
    * [IP address validity](strings/ip_address_validity.md)
+   * [Sinusiodal string](strings/sinusiodal_string.md)
 * [Searching](searching/README.md)
    * [Increasing-Decreasing](searching/Increasing-Decreasing Array.md)
    * [Num Occurrences](searching/Num. Occurrences.md)
