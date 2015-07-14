@@ -15,6 +15,7 @@
    * [Spreadsheet decoding](primitive_types/spreadsheet_decoding.md)
    * [Spreadsheet encoding](primitive_types/spreadsheet_encoding.md)
    * [Intersecting rectangles](primitive_types/intersecting_rectangles.md)
+   * [Random number generator](primitive_types/random_number_generator.md)
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/Array Flattening.md)
    * [Look and Say](arrays/say_and_tell.md)
