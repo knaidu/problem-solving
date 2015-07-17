@@ -83,6 +83,7 @@
    * [Normalize pathnames](stacks_and_queues/normalize_pathnames.md)
    * [BST in sorted order](stacks_and_queues/bst_in_sorted_order.md)
    * [Postings list jump-order](stacks_and_queues/postings_list_jump-order.md)
+   * [Circular Queue](stacks_and_queues/circular_queue.md)
 * [Linked Lists](linked_lists/README.md)
    * [Overlapping lists without cycle](linked_lists/overlapping_lists_without_cycle.md)
    * [Reverse a list](linked_lists/reverse_a_list.md)
