@@ -85,6 +85,7 @@
    * [Postings list jump-order](stacks_and_queues/postings_list_jump-order.md)
    * [Circular Queue](stacks_and_queues/circular_queue.md)
    * [Queue with max](stacks_and_queues/queue_with_max.md)
+   * [Sort a stack](stacks_and_queues/sort_a_stack.md)
 * [Linked Lists](linked_lists/README.md)
    * [Overlapping lists without cycle](linked_lists/overlapping_lists_without_cycle.md)
    * [Reverse a list](linked_lists/reverse_a_list.md)
