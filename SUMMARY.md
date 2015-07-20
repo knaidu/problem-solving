@@ -107,4 +107,5 @@
    * [Delete a node](linked_lists/delete_a_node.md)
 * [Trees](trees/README)
    * [BST checker](trees/bst_checker.md)
+   * [Balanced tree check](trees/balanced_tree_check.md)
 
