@@ -109,4 +109,5 @@
    * [BST checker](trees/bst_checker.md)
    * [Balanced tree check](trees/balanced_tree_check.md)
    * [Symmetric tree check](trees/symmetric_tree_checker.md)
+   * [LCA with parent pointers](trees/lca_with_parent_pointers.md)
 
