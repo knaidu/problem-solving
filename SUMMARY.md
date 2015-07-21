@@ -110,4 +110,5 @@
    * [Balanced tree check](trees/balanced_tree_check.md)
    * [Symmetric tree check](trees/symmetric_tree_checker.md)
    * [LCA with parent pointers](trees/lca_with_parent_pointers.md)
+   * [LCA without parent pointers](trees/lca_without_parent_pointers.md)
 
