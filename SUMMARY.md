@@ -105,11 +105,12 @@
    * [Remove duplicates](linked_lists/remove_duplicates.md)
    * [Merge two sorted lists](linked_lists/merge_two_sorted_lists.md)
    * [Delete a node](linked_lists/delete_a_node.md)
-* [Trees](trees/README)
+* [Trees](trees/README.md)
    * [BST checker](trees/bst_checker.md)
    * [Balanced tree check](trees/balanced_tree_check.md)
    * [Symmetric tree check](trees/symmetric_tree_checker.md)
    * [LCA with parent pointers](trees/lca_with_parent_pointers.md)
    * [LCA without parent pointers](trees/lca_without_parent_pointers.md)
    * [Sum the root to leaf path](trees/sum_the_root_to_leaf_path.md)
+   * [Root-leaf path with specified sum](trees/root-leaf_path_with_specified_sum.md)
 
