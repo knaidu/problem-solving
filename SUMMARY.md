@@ -114,4 +114,5 @@
    * [Sum the root to leaf path](trees/sum_the_root_to_leaf_path.md)
    * [Root-leaf path with specified sum](trees/root-leaf_path_with_specified_sum.md)
    * [Compute kth node](trees/compute_kth_node_in_inorder_traversal.md)
+   * [Inorder traversal constant space](trees/inorder_traversal_constant_space.md)
 
