@@ -43,3 +43,7 @@ def in_order_traversal(root)
     end
 end
 ```
+
+## Complexity
+- O(n) to traverse the entire tree in order
+- O(1) to store temp variables like curr, prev and next
