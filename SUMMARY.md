@@ -119,4 +119,5 @@
    * [Linked list from leaves](trees/linked_list_from_leaves.md)
    * [Exterior of a tree](trees/exterior_of_a_tree.md)
    * [Reconstruct tree (without markers)](trees/reconstruct_tree_without_markers.md)
+   * [Reconstruct tree (with markers)](trees/reconstruct_tree_with_markers.md)
 
