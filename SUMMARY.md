@@ -121,4 +121,5 @@
    * [Reconstruct tree (without markers)](trees/reconstruct_tree_without_markers.md)
    * [Reconstruct tree (with markers)](trees/reconstruct_tree_with_markers.md)
    * [Compute right sibling tree](trees/compute_right_sibling_tree.md)
+   * [Locking in a tree](trees/locking_in_a_tree.md)
 
