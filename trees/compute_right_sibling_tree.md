@@ -10,19 +10,18 @@ every node in the tree.
 ## Code
 ```ruby
 def update_sibling(root)
+    # Process each level, starting at the left most node
     while root
-        update_sibling_helper(root)
+
+        # No need to traverse last row
+        while root && root.left
+            # Update sibling ptr for left and right children
+            root.left.sibling = root.right if root.left
+            root.right.sibling = root.sibling.left if root.sibling
+
+            root = root.sibling
+        end
         root = root.left
-    end
-end
-
-def update_sibling_helper(root)
-    while root && root.left
-        # Update sibling ptr for left and right children
-        root.left.sibling = root.right if root.left
-        root.right.sibling = root.sibling.left if root.sibling
-
-        root = root.sibling
     end
 end
 ```
