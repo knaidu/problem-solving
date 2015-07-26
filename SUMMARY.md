@@ -126,4 +126,5 @@
    * [Merge sorted files](heaps/merge_sorted_files.md)
    * [Increasing decresing array sort](heaps/increasing_decresing_array_sort.md)
    * [Almosted sorted array](heaps/almosted_sorted_array.md)
+   * [Closest stars](heaps/closest_stars.md)
 
