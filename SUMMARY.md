@@ -124,4 +124,5 @@
    * [Locking in a tree](trees/locking_in_a_tree.md)
 * [Heaps](heaps/README.md)
    * [Merge sorted files](heaps/merge_sorted_files.md)
+   * [Increasing decresing array sort](heaps/increasing_decresing_array_sort.md)
 
