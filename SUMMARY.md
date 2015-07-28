@@ -127,4 +127,6 @@
    * [Increasing decresing array sort](heaps/increasing_decresing_array_sort.md)
    * [Almosted sorted array](heaps/almosted_sorted_array.md)
    * [Closest stars](heaps/closest_stars.md)
+   * [Online median](heaps/online_median.md)
+   * [K largest in Heap](heaps/k_largest_in_heap.md)
 
