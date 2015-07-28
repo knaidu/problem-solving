@@ -129,4 +129,5 @@
    * [Closest stars](heaps/closest_stars.md)
    * [Online median](heaps/online_median.md)
    * [K largest in Heap](heaps/k_largest_in_heap.md)
+   * [Implement stack using heap](heaps/implement_stack_using_heap.md)
 
