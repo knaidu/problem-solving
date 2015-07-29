@@ -132,4 +132,6 @@
    * [Implement stack using heap](heaps/implement_stack_using_heap.md)
 * [Searching](searching/README.md)
    * [First occurrence of k](searching/first_occurrence_of_k.md)
+   * [Element greater than k](searching/element_greater_than_k.md)
+   * [Entry same as index](searching/entry_same_as_index.md)
 

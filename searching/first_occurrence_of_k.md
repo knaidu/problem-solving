@@ -17,7 +17,6 @@ First occurrence: 3
 ```ruby
 def first_occurrence(arr, k)
     return nil if arr.nil?
-    return nil if k > arr.size || k < 0
 
     low = 0
     high = arr.size
@@ -29,7 +28,7 @@ def first_occurrence(arr, k)
             low = mid + 1
         else // arr[mid] <= k
             high = mid - 1
-            result = arr[mid]
+            result = mid
         end
     end
 
