@@ -6,7 +6,7 @@ Given an integer find its square root
 - Search in the space 0..n and move closer to the final result in each iteration
 
 ## Code
-``ruby
+```ruby
 def square_root(num)
     return nil if num.nil?
     return num if num == 0
