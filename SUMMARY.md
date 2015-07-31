@@ -138,4 +138,9 @@
    * [Search in a sorted matrix](searching/search_in_a_sorted_matrix.md)
    * [Find min and max simultaneously](searching/find_min_and_max_simultaneously.md)
    * [Kth largest element](searching/kth_largest_element.md)
+   * [Mailbox placement](searching/mailbox_placement.md)
+   * [Find missing IP address](searching/find_missing_ip_address.md)
+* [Hash tables](hash_tables/README.md)
+   * [Parition into anagrams](hash_tables/parition_into_anagrams.md)
+   * [Anonymous letter](hash_tables/anonymous_letter.md)
 
