@@ -145,4 +145,6 @@
    * [Parition into anagrams](hash_tables/parition_into_anagrams.md)
    * [Anonymous letter](hash_tables/anonymous_letter.md)
    * [LRU cache](hash_tables/isbn_cache.md)
+   * [K most frequent strings](hash_tables/k_most_frequent_strings.md)
+   * [Find nearest repetition](hash_tables/find_nearest_repetition.md)
 
