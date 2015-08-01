@@ -111,6 +111,7 @@
    * [Symmetric tree check](trees/symmetric_tree_checker.md)
    * [LCA with parent pointers](trees/lca_with_parent_pointers.md)
    * [LCA without parent pointers](trees/lca_without_parent_pointers.md)
+   * [LCA with close ancestors](hash_tables/lca_with_close_ancestors.md)
    * [Sum the root to leaf path](trees/sum_the_root_to_leaf_path.md)
    * [Root-leaf path with specified sum](trees/root-leaf_path_with_specified_sum.md)
    * [Compute kth node](trees/compute_kth_node_in_inorder_traversal.md)
@@ -143,4 +144,5 @@
 * [Hash tables](hash_tables/README.md)
    * [Parition into anagrams](hash_tables/parition_into_anagrams.md)
    * [Anonymous letter](hash_tables/anonymous_letter.md)
+   * [LRU cache](hash_tables/isbn_cache.md)
 
