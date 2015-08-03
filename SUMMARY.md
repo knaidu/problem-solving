@@ -147,4 +147,7 @@
    * [LRU cache](hash_tables/isbn_cache.md)
    * [K most frequent strings](hash_tables/k_most_frequent_strings.md)
    * [Find nearest repetition](hash_tables/find_nearest_repetition.md)
+   * [Average of top three scores](hash_tables/average_of_top_three_scores.md)
+   * [Find highest affinity pair](hash_tables/find_highest_affinity_pair.md)
+   * [Longest distinct subarray](hash_tables/longest_distinct_subarray.md)
 
