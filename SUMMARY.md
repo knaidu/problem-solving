@@ -150,4 +150,5 @@
    * [Average of top three scores](hash_tables/average_of_top_three_scores.md)
    * [Find highest affinity pair](hash_tables/find_highest_affinity_pair.md)
    * [Longest distinct subarray](hash_tables/longest_distinct_subarray.md)
+   * [Longest contained range](hash_tables/longest_contained_range.md)
 
