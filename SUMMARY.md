@@ -73,6 +73,8 @@
 * [Sorting](sorting/README.md)
    * [Merge sorted arrays](arrays/merge_sorted_arrays.md)
    * [Top scores](sorting/top_scores.md)
+   * [Merge sort in-place](sorting/merge_sort_in-place.md)
+   * [Count frequencies of chars](sorting/count_frequencies_of_chars.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
    * [Temperature tracker](math/temperature_tracker.md)

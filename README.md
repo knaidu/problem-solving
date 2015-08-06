@@ -9,7 +9,5 @@ I've scoured through several forums like careercup and glassdoor. While they're 
 ## Organization
 Each post has 5 sections: problem statement, examples, algorithm, code, test cases and a discussion on time-complexity.
 
-In addition to standard topics like algorithms, data structures and puzzles, I've also added a system design section that focuses on a broad range of topics like scaling, sharding, designing clones of existing services etc.
-
 ## Share
 Hope you find this book useful and share it with others.
