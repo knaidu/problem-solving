@@ -46,7 +46,7 @@ end
 
 ## Time complexity
 - For every step we're iterating through m integers, O(m)
-- We're repeating each step n thimes, O(n)
+- We're repeating each step n times, O(n)
 - Overall complexity is: O(m*n)
 - m here is mostly finite and can be considered constant.
 

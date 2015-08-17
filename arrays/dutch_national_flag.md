@@ -4,7 +4,7 @@ Write a function that takes an array A of length n and an index i into A, and re
 
 ## Example
 ```
-Array  => [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2], Pivot  => 4
+Array  => [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2], Pivot_index  => 4
 Result => [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]
 ```
 

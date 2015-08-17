@@ -75,6 +75,9 @@
    * [Top scores](sorting/top_scores.md)
    * [Merge sort in-place](sorting/merge_sort_in-place.md)
    * [Count frequencies of chars](sorting/count_frequencies_of_chars.md)
+   * [Unique elements](sorting/unique_elements.md)
+   * [Max no. of events](sorting/max_no_of_events.md)
+   * [Disjoint sets insertion](sorting/disjoint_sets_insertion.md)
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
    * [Temperature tracker](math/temperature_tracker.md)
@@ -153,4 +156,7 @@
    * [Find highest affinity pair](hash_tables/find_highest_affinity_pair.md)
    * [Longest distinct subarray](hash_tables/longest_distinct_subarray.md)
    * [Longest contained range](hash_tables/longest_contained_range.md)
+* [Graph](graph/README.md)
+   * [BFS traversal](graph/bfs_traversal.md)
+   * [Clone graph](graph/clone_graph.md)
 

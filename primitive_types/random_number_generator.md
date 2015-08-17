@@ -5,7 +5,7 @@ that produces 0 or 1 with equal probability.
 ## Solution
 - Use the fair coin to produce bits of the random number
 - This will give us a number in the range 0..2^n
-- If that is outside the specified range then repeat above step until.
+- If that is outside the specified range then repeat above step until it lies within range.
 
 ## Code
 ```ruby
