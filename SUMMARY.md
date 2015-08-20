@@ -159,4 +159,5 @@
 * [Graph](graph/README.md)
    * [BFS traversal](graph/bfs_traversal.md)
    * [Clone graph](graph/clone_graph.md)
+   * [Bipartite graph checker](graph/bipartite_graph_checker.md)
 
