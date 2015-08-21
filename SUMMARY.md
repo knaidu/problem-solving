@@ -160,4 +160,6 @@
    * [BFS traversal](graph/bfs_traversal.md)
    * [Clone graph](graph/clone_graph.md)
    * [Bipartite graph checker](graph/bipartite_graph_checker.md)
+   * [Word transformation](graph/word_transformation.md)
+   * [Longest path length](graph/longest_path_length.md)
 
