@@ -162,4 +162,6 @@
    * [Bipartite graph checker](graph/bipartite_graph_checker.md)
    * [Word transformation](graph/word_transformation.md)
    * [Longest path length](graph/longest_path_length.md)
+* [Dynamic Programming](dynamic_programming/README)
+   * [Max subsum](dynamic_programming/max_subsum.md)
 
