@@ -164,4 +164,5 @@
    * [Longest path length](graph/longest_path_length.md)
 * [Dynamic Programming](dynamic_programming/README)
    * [Max subsum](dynamic_programming/max_subsum.md)
+   * [Making change](dynamic_programming/making_change.md)
 
