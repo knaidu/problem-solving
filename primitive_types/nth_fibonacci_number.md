@@ -8,7 +8,8 @@ fibo(10) => 55
 ```
 
 ## Solution
-- We can use a top down recursive approach and memoize it to make it effecient, but we're adding extra O(n) space here.
+- We can use a top down recursive approach and memoize it to make it effecient, but we're adding
+  extra O(n) space here.
 - Or we can use a bottom up iterative approch and avoid using the extra space
 
 ## Recursive Code
@@ -18,7 +19,10 @@ def fibo_helper(n, fibo_hash)
 
   return fibo_hash[n] if fibo_hash[n]
 
-  fibo_helper(n-1, fibo_hash) + fibo_helper(n-2, fibo_hash)
+  fibo_hash[n-1] = fibo_helper(n-1, fibo_hash)
+  fibo_hash[n-2] = fibo_helper(n-2, fibo_hash)
+
+  return fibo_hash[n-1] + fibo_hash[n-2]
 end
 
 def fibo_recursive(n)

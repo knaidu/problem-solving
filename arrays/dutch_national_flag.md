@@ -10,7 +10,7 @@ Result => [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]
 
 ## Algorithm
 1. Use a smaller pointer starting at index 0 to move elements lesser than pivot
-2. Use a larger pointer to starting at last element of array, to move elementslarger than pivot
+2. Use a larger pointer to starting at last element of array, to move elements larger than pivot
 3. And middle section will have elements equal to the pivot
 
 ## Code

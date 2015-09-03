@@ -3,7 +3,7 @@ Given a sudoku board, check if it is a valid solution.
 
 ## Solution
 - Check each row, column and region for validity.
-- Use a has map to test each number's uniqueness
+- Use a hash map to test each number's uniqueness
 
 ## Code
 ```ruby

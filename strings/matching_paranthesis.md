@@ -1,5 +1,5 @@
 # Matching paranthesis
-Write a function that, given a sentence like the one above, along with the position of an opening parenthesis, finds the corresponding closing parenthesis.
+Write a function that, given a sentence like the one below, along with the position of an opening parenthesis, finds the corresponding closing parenthesis.
 
 ## Example
 ```
