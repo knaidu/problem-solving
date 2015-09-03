@@ -183,4 +183,5 @@
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
    * [Subsets of size k](recursion/subsets_of_size_k.md)
+   * [Matching parens](recursion/matching_parens.md)
 
