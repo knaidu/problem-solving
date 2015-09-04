@@ -26,7 +26,7 @@ def matching_parens(n)
 
     # Recurse for n-1
     result = matching_parens(n-1)
-    
+
     result.each do |r|
         # Add () to both ends
         result_set.add("#{r}()")
@@ -39,3 +39,6 @@ def matching_parens(n)
     result_set.to_array
 end
 ```
+
+## Complexity
+- (2k)!/ (k!(k+1)!)

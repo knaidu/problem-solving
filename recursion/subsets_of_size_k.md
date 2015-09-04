@@ -32,5 +32,7 @@ def generate_subset(set, k, offset, partial_result result)
         result = generate_subset(set, k-1, offset+1, partial_result, result)
         partial_result.pop
     end
+
+    result
 end
 ```

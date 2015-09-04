@@ -48,6 +48,7 @@
    * [Boggle game](arrays/boggle_game.md)
    * [Power set](strings/power_set.md)
    * [Populate minesweeper board](arrays/populate_minesweeper_board.md)
+   * [Max possible n](arrays/max_possible_n.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
@@ -69,6 +70,7 @@
    * [Sinusiodal string](strings/sinusiodal_string.md)
    * [Unix tail command](strings/unix_tail_command.md)
    * [Lower and upper case permutations](strings/lower_and_upper_case_permutations.md)
+   * [Combinations of strings with ?](strings/combinations_of_strings_with.md)
 * [Searching](searching/README.md)
    * [Increasing-Decreasing](searching/Increasing-Decreasing Array.md)
    * [Num Occurrences](searching/Num. Occurrences.md)
@@ -183,5 +185,6 @@
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
    * [Subsets of size k](recursion/subsets_of_size_k.md)
+   * [Palindromic decomposition](recursion/palindromic_decomposition.md)
    * [Matching parens](recursion/matching_parens.md)
 
