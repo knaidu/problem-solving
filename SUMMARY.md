@@ -42,7 +42,6 @@
    * [Compute random permutation](arrays/compute_random_permutation.md)
    * [Non-uniform random number](arrays/non-uniform_random_number.md)
    * [Sudoku checker](arrays/sudoku_checker.md)
-   * [Spiral order](arrays/spiral_order.md)
    * [Rotate matrix](arrays/rotate_matrix.md)
    * [Pascals triangle](arrays/pascals_triangle.md)
    * [Boggle game](arrays/boggle_game.md)
@@ -178,6 +177,7 @@
    * [Palindromic decomposition](recursion/palindromic_decomposition.md)
    * [Matching parens](recursion/matching_parens.md)
    * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
+* [Spiral order](arrays/spiral_order.md)
 * [Matrix](martix/README.md)
    * Matrix multiplication
 
