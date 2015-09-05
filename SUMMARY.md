@@ -48,6 +48,9 @@
    * [Power set](strings/power_set.md)
    * [Populate minesweeper board](arrays/populate_minesweeper_board.md)
    * [Max possible n](arrays/max_possible_n.md)
+* [Matrix](martix/README.md)
+   * [Spiral order](arrays/spiral_order.md)
+   * [Matrix multiplication](matrix_multiplication.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
@@ -177,7 +180,4 @@
    * [Palindromic decomposition](recursion/palindromic_decomposition.md)
    * [Matching parens](recursion/matching_parens.md)
    * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
-* [Matrix](martix/README.md)
-   * [Spiral order](arrays/spiral_order.md)
-   * [Matrix multiplication](matrix_multiplication.md)
 
