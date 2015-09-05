@@ -1,4 +1,1 @@
 # Glossary
-
-## Matrix
-
