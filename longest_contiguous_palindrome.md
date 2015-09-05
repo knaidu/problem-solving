@@ -16,31 +16,27 @@ Given a string, find the longest contiguous palindrome.
 
 ## Code
 ```
-def longest_palindrome(str, start_index, palindrome)
+def longest_palindrome(str, current_index, palindrome)
+  # Base case, when we've exhaused all substrings
   return palindrome if str.nil?
 
-  if start_index == str.size
-    return palindrome
-  end
+  # Reached end of string
+  return palindrome if start_index == str.size
 
-  if palindrome.size > str.size - start_index 
-    return palindrome
-  end
-
-  i = start_index
-  while i < str.size do
-    prefix = str[start_index..i]
-    puts "#{prefix}"
-    if is_palindrome(prefix)
-      if prefix.size > palindrome.size        
-        palindrome = prefix
-      end
+  # Short circuit when we've already found the longest possible palindrome in current iteration
+  return palindrome if palindrome.size > str.size - start_index 
+    
+  # Generate all possible strings starting at current_index
+  for i in current_index..str.size do
+    partial_string = str[start_index..i]
+    if is_palindrome(partial_string)
+      palindrome = partial_string if partial_string.size > palindrome.size        
     end
-    i += 1
   end
 
-  start_index += 1
-  palindrome = longest_palindrome(str, start_index, palindrome)
+  # Move to next index and recurse until last index
+  current_index += 1
+  palindrome = longest_palindrome(str, current_index, palindrome)
 
   return palindrome
 end
@@ -48,6 +44,9 @@ end
 def is_palindrome(str)
   str == str.reverse
 end
+
+# Run 
+puts longest_palindrome('racecar', 0, '')
 ```
 
 ## Optimizations
