@@ -36,7 +36,7 @@ def evaluate_expression(str)
                 operator_stack.push(c)
             else
                 evaluate
-            
+            end
         elsif
     end
 end
