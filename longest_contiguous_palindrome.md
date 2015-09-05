@@ -2,3 +2,7 @@
 Given a string, find the longest contiguous palindrome.
 
 ## Example
+```
+
+```
+
