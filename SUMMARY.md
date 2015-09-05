@@ -179,4 +179,5 @@
    * [Matching parens](recursion/matching_parens.md)
    * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
 * [Matrix](martix/README.md)
+   * Matrix multiplication
 
