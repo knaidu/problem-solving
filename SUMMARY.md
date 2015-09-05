@@ -181,4 +181,5 @@
    * [Palindromic decomposition](recursion/palindromic_decomposition.md)
    * [Matching parens](recursion/matching_parens.md)
    * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
+   * recursion/test
 
