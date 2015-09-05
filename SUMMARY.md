@@ -101,6 +101,7 @@
    * [Sort a stack](stacks_and_queues/sort_a_stack.md)
    * [Sunset view](stacks_and_queues/sunset_view.md)
    * [BST Level order](stacks_and_queues/level_order.md)
+   * Expression evaluator
 * [Linked Lists](linked_lists/README.md)
    * [Overlapping lists without cycle](linked_lists/overlapping_lists_without_cycle.md)
    * [Reverse a list](linked_lists/reverse_a_list.md)
