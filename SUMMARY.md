@@ -179,5 +179,5 @@
    * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
 * [Matrix](martix/README.md)
    * [Spiral order](arrays/spiral_order.md)
-   * Matrix multiplication
+   * [Matrix multiplication](matrix_multiplication.md)
 
