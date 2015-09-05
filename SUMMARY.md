@@ -182,5 +182,5 @@
    * [Matching parens](recursion/matching_parens.md)
    * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
    * [Hilbert curve](recursion/hilbert_curve.md)
-   * Generate binary trees
+   * [Generate binary trees](recursion/generate_binary_trees.md)
 
