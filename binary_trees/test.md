@@ -10,6 +10,7 @@ def bst_checker(node)
     return true unless node
     
     if bst_checker(node.left) && bst_checker(node.right)
+        # Test BST property
         return node.left.vale <= node.value && node.value <= node.right.value
     else 
         # Either left or right is not a BST
