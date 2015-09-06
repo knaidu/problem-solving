@@ -36,3 +36,6 @@ def generate_gray_code(num_bits)
     result
 end
 ```
+
+## Complexity
+Since we are generating all possible combinations of bits for a given n, (irrespective of the order), it takes 2^n to generate all combinations of numbers for num digits n.
