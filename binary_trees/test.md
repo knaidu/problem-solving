@@ -18,3 +18,6 @@ def bst_checker(node)
     end
 end
 ```
+
+## Complexity
+- Time: O(n), where n is the number of nodes
