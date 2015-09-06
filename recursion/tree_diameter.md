@@ -48,4 +48,4 @@ end
 
 ## Complexity
 - Time: We're visiting each node only once and bubbling up the max height and diameter at every stage,
-  therefore its linear in the order of nodes, O(V) where v is number of nodes
+  therefore its linear in the order of nodes, O(|V|) where v is number of nodes
