@@ -183,5 +183,5 @@
    * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
    * [Hilbert curve](recursion/hilbert_curve.md)
    * [Generate binary trees](recursion/generate_binary_trees.md)
-   * Sudoku solver
+   * [Sudoku solver](recursion/sudoku_solver.md)
 
