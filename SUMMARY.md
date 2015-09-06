@@ -36,7 +36,6 @@
    * [Furthest reach](arrays/furthest_reach.md)
    * [Stock span sell twice](arrays/stock_span_sell_twice.md)
    * [Enumerate primes](arrays/enumerate_primes.md)
-   * [Array permutations](arrays/array_permutations.md)
    * [Next permutation](arrays/next_permutation.md)
    * [Offline sampling](arrays/offline_sampling.md)
    * [Compute random permutation](arrays/compute_random_permutation.md)
@@ -185,5 +184,6 @@
    * [Generate binary trees](recursion/generate_binary_trees.md)
    * [Sudoku solver](recursion/sudoku_solver.md)
    * [Gray code](recursion/gray_code.md)
+   * [Array permutations](arrays/array_permutations.md)
    * [Tree diameter](recursion/tree_diameter.md)
 
