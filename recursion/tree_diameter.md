@@ -11,7 +11,12 @@ Given the root node to a tree, find the diameter. Diameter is defined as the lon
 ## Code
 ```ruby
 def tree_diameter(node)
-    
+    if node
+        height, diameter = height_and_diameter(node)
+        return diameter
+    else
+        return 0
+    end
 end
 
 # Returns max height and max diameter
