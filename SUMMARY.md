@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-   * [Binary trees](binary_trees/binary_trees.md)
 * [Primitive types](primitive_types/README.md)
    * [Reverse number](primitive_types/reverse_number.md)
    * [Highest product of 3](primitive_types/highest_product_of_3.md)
@@ -174,6 +173,7 @@
 * [Design problems](design_problems/README.md)
    * [Design peta and tera sort](design_problems/design_peta_and_tera_sort.md)
    * [Design distributed throttling](design_problems/design_distributed_throttling.md)
+* [Binary trees](binary_trees/binary_trees.md)
 * [Recursion](recursion/README.md)
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
