@@ -185,5 +185,5 @@
    * [Generate binary trees](recursion/generate_binary_trees.md)
    * [Sudoku solver](recursion/sudoku_solver.md)
    * [Gray code](recursion/gray_code.md)
-   * Tree diameter
+   * [Tree diameter](recursion/tree_diameter.md)
 
