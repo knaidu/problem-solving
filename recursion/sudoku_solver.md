@@ -46,6 +46,9 @@ def sudoku_solver(row, col, board)
             end
         end
     end
+    
+    # None of the values above were valid, backtrack..
+    return false
 end
 
 def valid?(value, row, col, board)
