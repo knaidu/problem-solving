@@ -10,7 +10,9 @@ Given an array, print all its permutations
 - Use a recursive solution, swapping 2 array elements at a time in order
 - Be sure to swap back the elements so that we can continue backtracking
   and do not repeat permutations
-- Use this tree come up with the recursive solution http://d2dskowxfbo68o.cloudfront.net/wp-content/uploads/NewPermutation.gif
+- Use this tree come up with the recursive solution 
+
+![Permutations](http://d2dskowxfbo68o.cloudfront.net/wp-content/uploads/NewPermutation.gif)
 
 ## Code
 ```ruby
