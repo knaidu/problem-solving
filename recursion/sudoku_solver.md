@@ -51,3 +51,5 @@ def valid?(value, row, col, board)
     # since that was the only cell that can potentially have an invalid value
 end
 ```
+## Complexity
+Its NP complete when generalized to n x n grids
