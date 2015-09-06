@@ -35,5 +35,10 @@ def array_permutations(arr)
 end
 ```
 
+## Alternate solution
+- Use the next_permutation method
+- Sort the given array in ascending order, then apply next permutation until all permutations have been generated
+- 1,2,3 => 1,3,2 => 2,1,3 => 2,3,1 => ..
+
 ## Complexity
 Time: O(n * n!), due to n! permutations.
