@@ -1,6 +1,8 @@
 # Sudoku solver
 Given a partially filled out sudoku board, solve it.
 
+![Partially filled sudoku board](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/500px-Sudoku-by-L2G-20050714.svg.png)
+
 ## Solution
 - Use recursion to solve the board
 - Iterate over all the cells in the board, skip over any non-empty cells
