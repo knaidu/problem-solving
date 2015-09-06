@@ -184,5 +184,5 @@
    * [Hilbert curve](recursion/hilbert_curve.md)
    * [Generate binary trees](recursion/generate_binary_trees.md)
    * [Sudoku solver](recursion/sudoku_solver.md)
-   * Gray code
+   * [Gray code](recursion/gray_code.md)
 
