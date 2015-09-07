@@ -62,4 +62,4 @@ end
 ```
 
 ## Complexity
-O(n logk)
+O(n logk), min and max in bst will take O(log k).
