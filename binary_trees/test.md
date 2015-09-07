@@ -6,7 +6,7 @@ Test if the given tree satisfies the binary search tree property
 - Then test the current node and return the status (true/ false)
 
 ## Code
-```
+```ruby
 def bst_checker(node)
     return true unless node
     
