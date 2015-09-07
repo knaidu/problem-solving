@@ -33,3 +33,6 @@ def reverse_in_order(k, node, queue)
     return queue
 end
 ```
+
+## Comeplexity
+- Time: O(n) for traversing all the nodes, then O(k) for elements in the queue
