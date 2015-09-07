@@ -173,7 +173,7 @@
 * [Design problems](design_problems/README.md)
    * [Design peta and tera sort](design_problems/design_peta_and_tera_sort.md)
    * [Design distributed throttling](design_problems/design_distributed_throttling.md)
-* [Binary trees](binary_trees/binary_trees.md)
+* [BST](bst/bst.md)
    * [Test BST](binary_trees/test.md)
    * [Find key](binary_trees/find_key.md)
    * [Next larger](binary_trees/next_larger.md)
