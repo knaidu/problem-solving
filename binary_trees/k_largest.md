@@ -35,4 +35,4 @@ end
 ```
 
 ## Comeplexity
-- Time: O(n) for traversing all the nodes, then O(k) for elements in the queue
+- Time: O(h) for traversing to the rightmost node, then O(k) for inserting k elements into the queue, overall: O(n + k)
