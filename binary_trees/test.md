@@ -2,7 +2,8 @@
 Test if the given tree satisfies the binary search tree property
 
 ## Solution 
-- Test for each child, both of them satisfy BST then test the current node and return the status (true/ false)
+- For each node test if both left and right child satisfies BST property, 
+- Then test the current node and return the status (true/ false)
 
 ## Code
 ```
