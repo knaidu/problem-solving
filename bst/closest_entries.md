@@ -26,21 +26,36 @@ def find_closes_entries(arrays)
     # Each node contains value from an array and the index of that array
     rb_tree = RBTree.new()
     
-    # Populate rbtree with the first element from each of the arrays
+    # Populate rb_tree node with the first element from each of the arrays
     arrays.each.with_index do |arr, i|
-        rb_tree.add(arr.first, i)
+        rb_tree_node = RbTreeNode.new(arr.first, i) # Value and index pair
+        rb_tree.add(rb_tree_node)
     end
     
-    diff = Integer.max
+    result = Integer.max
     
     while true do
-        min_value = rb_tree.min
-        max_value = rb_tree.max
-    
-        diff = 
+        min_node = rb_tree.min 
+        max_node = rb_tree.max
+        diff = max.value - min.value
+        if result > diff
+            result = diff
+            result_elements = update_current_set_of_values(rb_tree)
+        end
+        
+        # Remove the minimul element
+        rb_tree.delete(min_node)
+        
+        # Remove first element from the array where we found min element
+        a = arrays[min_node.index]
+        a.remove_front
+        break if a.size == 0
+        
+        # Add the next element from the array in consideration
+        next_node = RbTreeNode.new(a.first, min_node.index)
+        rb_tree.insert(next_node)
     end
     
-    
-    
+    return result_elements
 end
 ```
