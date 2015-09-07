@@ -49,7 +49,7 @@
    * [Max possible n](arrays/max_possible_n.md)
 * [Matrix](martix/readme.md)
    * [Spiral order](arrays/spiral_order.md)
-   * [Matrix multiplication](matrix_multiplication.md)
+   * [Matrix multiplication](matrix/matrix_multiplication.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
