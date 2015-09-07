@@ -60,3 +60,6 @@ def find_closes_entries(arrays)
     return result_elements
 end
 ```
+
+## Complexity
+O(n logk)
