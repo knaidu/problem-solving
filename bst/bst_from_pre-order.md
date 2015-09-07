@@ -16,7 +16,8 @@ def bst_builder(array)
     lower_bound = Integer.min
     upper_bound = Integer.max
     root_index = 0 # Starting with the first value in array (root of the tree)
-    bst_builder_helper(array, root_index, lower_bound, upper_bound)
+    root, index = bst_builder_helper(array, root_index, lower_bound, upper_bound)
+    return root
 end
 
 def bst_builder_helper(array, root_index, lower_bound, upper_bound)
@@ -27,8 +28,13 @@ def bst_builder_helper(array, root_index, lower_bound, upper_bound)
     end
     
     node = BinaryTreeNode.new(array[root_index])
+    root_index += 1
+    node.left, root_index = bst_builder_helper(array, root_index, lower_bound, node.value)
+    node.right, root_index = bst_builder_helper(array, root_index, node.value, upper_bound)
     
-    node.left = bst_builder_helper(array, root_index + 1, lower_bound, node.value)
-    node.right = bst_builder_helper(array, root_index + 1, node.value, upper_bound)
+    return node, root_index
 end
 ```
+
+## Complexity
+- Time: O(n) since we are visiting each element in the pre-order traversal array only once.
