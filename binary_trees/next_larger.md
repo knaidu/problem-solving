@@ -24,3 +24,6 @@ def next_larger(node, value)
     return nl
 end
 ```
+
+## Complexity
+- Time: Proportional to the height of the tree, O(log n)
