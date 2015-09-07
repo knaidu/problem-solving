@@ -176,7 +176,7 @@
 * [Binary trees](binary_trees/binary_trees.md)
    * [Test BST](binary_trees/test.md)
    * [Find key](binary_trees/find_key.md)
-   * Next larger
+   * [Next larger](binary_trees/next_larger.md)
 * [Recursion](recursion/README.md)
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
