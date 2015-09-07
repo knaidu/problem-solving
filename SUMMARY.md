@@ -179,6 +179,7 @@
    * [Next larger](binary_trees/next_larger.md)
    * [Build BST](binary_trees/build_bst.md)
    * [K largest](binary_trees/k_largest.md)
+   * LCA
 * [Recursion](recursion/README.md)
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
