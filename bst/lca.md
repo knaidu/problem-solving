@@ -20,3 +20,6 @@ def lca_for_bst(node, value1, value2)
     end
 end
 ```
+
+## Complexity
+- O(h) since we're following a BST traversal in this case to find the LCA node.
