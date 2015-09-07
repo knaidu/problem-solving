@@ -175,7 +175,7 @@
    * [Design distributed throttling](design_problems/design_distributed_throttling.md)
 * [Binary trees](binary_trees/binary_trees.md)
    * [test](binary_trees/test.md)
-   * Find key
+   * [Find key](binary_trees/find_key.md)
 * [Recursion](recursion/README.md)
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
