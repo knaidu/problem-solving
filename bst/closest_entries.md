@@ -35,6 +35,7 @@ def find_closes_entries(arrays)
     result = Integer.max
     
     while true do
+        # Find the closest entries and update if its better with the current set
         min_node = rb_tree.min 
         max_node = rb_tree.max
         diff = max.value - min.value
