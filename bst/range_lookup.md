@@ -38,4 +38,4 @@ end
 ```
 
 ## Complexity
-- Time: O(n) since we are potentially visiting all the nodes along the tree.
+- Time: O(n) since we are potentially visiting all the nodes in the BST.
