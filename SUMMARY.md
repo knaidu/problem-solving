@@ -186,7 +186,7 @@
    * [Insert and delete](bst/insert_and_delete.md)
    * [Total ordering](bst/total_ordering.md)
    * [Range lookup](bst/range_lookup.md)
-   * Add credits
+   * [Add credits](bst/add_credits.md)
 * [Recursion](recursion/README.md)
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
