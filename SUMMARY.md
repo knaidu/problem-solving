@@ -185,6 +185,7 @@
    * [Most visited page](bst/most_visited_page.md)
    * [Insert and delete](bst/insert_and_delete.md)
    * [Total ordering](bst/total_ordering.md)
+   * Range lookup
 * [Recursion](recursion/README.md)
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
