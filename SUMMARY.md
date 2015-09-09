@@ -187,7 +187,7 @@
    * [Total ordering](bst/total_ordering.md)
    * [Range lookup](bst/range_lookup.md)
    * [Add credits](bst/add_credits.md)
-   * Count entries in interval
+   * [Count entries in interval](bst/count_entries_in_interval.md)
 * [Recursion](recursion/README.md)
    * [Tower of hanoi](recursion/tower_of_hanoi.md)
    * [N-queens problem](recursion/n-queens_problem.md)
