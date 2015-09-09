@@ -14,11 +14,7 @@ def num_ways(matrix)
     for i in 0..m do
         for j in 0..n do
             if matrix[i][j] == true # No obstacle
-                if i == 0 || j = 0
-                    num_ways[i][j] += 0    
-                else
-                    num_ways[i][j] += num_ways[i-1][j] + num_ways[i][j-1]
-                end
+                num_ways[i][j] = (i == 0 ? 0 : num_ways[i-1][j]) + (j == 0 ? 0 : num_ways[i-1][j] )
             end
         end
     end
