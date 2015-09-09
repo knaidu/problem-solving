@@ -7,3 +7,6 @@ Given a BST where each node is augmented with number of nodes under it, how woul
 - While doing this each time we take the left child we leave the count unchanged, when we take the right child we add 1 + left children to the count
 - Similarly find the right most node that is closest to the end_interval
 - Now subtract this from the total number of nodes at the root to get the number of entries that are within the specified interval
+
+## Complexity
+- Since we are essentially descending down the height of the tree in both cases, the overall complexity is O(log n)
