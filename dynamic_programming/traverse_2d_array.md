@@ -18,5 +18,10 @@ def num_ways(matrix)
             end
         end
     end
+    
+    return num_ways[m-1][n-1]
 end
 ```
+
+## Complexity 
+O(n*m) due to the 2 loops with
