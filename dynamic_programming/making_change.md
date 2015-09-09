@@ -37,13 +37,32 @@ def num_ways_helper(amount, denom, memo)
 
     while amount < 0
         num_ways += num_ways_helper(amount, other_denoms, memo)
-        amount -= chosen_coin
+        amount -= chosen_denom
     end
 
     memo[memo_key] = num_ways
     num_ways
 end
 ```
+
+## Code without recursion
+```
+num_ways = [0] * amount
+num_ways[0] = 1
+
+def num_ways(amount, denom_array)
+    for i in 0..amount do
+        denom_array.each do |current_denom|
+            if i >= current_denom
+                num_ways[i] += num_ways[i-current_denom]
+            end
+        end
+    end
+    
+    return num_ways[amount]
+end
+```
+
 
 ## Complexity
 O(m*n) where m is the number of denoms, and n is the amount
