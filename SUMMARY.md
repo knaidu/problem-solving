@@ -163,7 +163,7 @@
 * [Dynamic Programming](dynamic_programming/readme.md)
    * [Max subsum](dynamic_programming/max_subsum.md)
    * [Making change](dynamic_programming/making_change.md)
-   * Traverse 2d array
+   * [Traverse 2d array](dynamic_programming/traverse_2d_array.md)
 * [Parallel processing](parallel_processing/README.md)
    * [Implement asynchronous callbacks](parallel_processing/implement_asynchronous_callbacks.md)
    * [Implement web server](parallel_processing/implement_web_server.md)
