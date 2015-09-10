@@ -24,4 +24,4 @@ end
 ```
 
 ## Complexity 
-O(n*m) due to the 2 loops with
+O(n*m) due to the 2 loops iterating over the matrix.
