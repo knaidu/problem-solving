@@ -38,9 +38,9 @@ end
 
 def sequence_search_helper(i, j, index)
 
-    # Reached last char of the string s
+    # Reached beyond end of string
     if index == @a.size
-        return @a[i][j] == @s[index]
+        return true
     end
     
     # Check for boundaries or if we've seen this string does not match in earlier recursions
@@ -59,6 +59,4 @@ def sequence_search_helper(i, j, index)
     cache[i][j] = 0 # Indicating failure to find string from this index
     return false
 end
-
-def sequence_search_helper
 ```
