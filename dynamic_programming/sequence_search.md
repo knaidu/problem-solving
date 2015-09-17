@@ -60,3 +60,6 @@ def sequence_search_helper(i, j, index)
     return false
 end
 ```
+
+## Complexity
+- Time: O(mnl), O(m*n) to traverse the matrix and O(l) from each cell in the matrix to check if there is a match
