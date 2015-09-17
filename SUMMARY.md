@@ -154,6 +154,7 @@
    * [Find highest affinity pair](hash_tables/find_highest_affinity_pair.md)
    * [Longest distinct subarray](hash_tables/longest_distinct_subarray.md)
    * [Longest contained range](hash_tables/longest_contained_range.md)
+   * Symmetric Pair
 * [Graph](graph/README.md)
    * [BFS traversal](graph/bfs_traversal.md)
    * [Clone graph](graph/clone_graph.md)
