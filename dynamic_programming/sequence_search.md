@@ -23,7 +23,7 @@ class SequenceSearcher
     def initialize(a, s)
         @a = a
         @s = s
-        @cache = [[1] * @a.size]*@a[0].size
+        @cache = Set.new
     end
 
 def sequence_search
@@ -44,7 +44,7 @@ def sequence_search_helper(i, j, index)
     end
     
     # Check for boundaries or if we've seen this string does not match in earlier recursions
-    if cache[i][j] == 0 || i < 0 || j < 0 || i > a.size || j > a.size
+    if cache.find(i,j,index) || i < 0 || j < 0 || i > a.size || j > a.size
         return false
     end
     
@@ -56,7 +56,7 @@ def sequence_search_helper(i, j, index)
        return true
     end
     
-    cache[i][j] = 0 # Indicating failure to find string from this index
+    cache << {i, j, index} # Indicating failure to find string from this index
     return false
 end
 ```
