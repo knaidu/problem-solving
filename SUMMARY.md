@@ -47,7 +47,7 @@
    * [Power set](strings/power_set.md)
    * [Populate minesweeper board](arrays/populate_minesweeper_board.md)
    * [Max possible n](arrays/max_possible_n.md)
-   * Majority find
+   * [Majority find](arrays/majority_find.md)
 * [Matrix](martix/readme.md)
    * [Spiral order](arrays/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
