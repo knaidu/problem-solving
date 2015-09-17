@@ -35,4 +35,4 @@ end
 
 ## Complexity
 - Time: O(n) since we do only a single pass over the array
-- Space: constant, since we use maxof 5 variables to keep track of rolling sum
+- Space: constant, since we use max of 5 variables to keep track of rolling sum
