@@ -40,7 +40,7 @@ def sequence_search_helper(i, j, index)
 
     # Reached beyond end of string
     if index == @a.size
-        return true
+        return true # Save result to an array if we want all solutions
     end
     
     # Check for boundaries or if we've seen this string does not match in earlier recursions
