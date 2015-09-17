@@ -205,4 +205,5 @@
    * [Gray code](recursion/gray_code.md)
    * [Array permutations](arrays/array_permutations.md)
    * [Tree diameter](recursion/tree_diameter.md)
+   * Longest Palindrome
 
