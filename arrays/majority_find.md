@@ -31,4 +31,4 @@ end
 ```
 
 ## Time complexity
-O(n)
+O(n), additional O(n) for verification
