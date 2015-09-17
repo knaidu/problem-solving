@@ -199,7 +199,7 @@
    * [Subsets of size k](recursion/subsets_of_size_k.md)
    * [Palindromic decomposition](recursion/palindromic_decomposition.md)
    * [Matching parens](recursion/matching_parens.md)
-   * [Longest contiguous palindrome](longest_contiguous_palindrome.md)
+   * [Longest contiguous palindrome](longestcontiguous_palindrome_md.md)
    * [Hilbert curve](recursion/hilbert_curve.md)
    * [Generate binary trees](recursion/generate_binary_trees.md)
    * [Sudoku solver](recursion/sudoku_solver.md)
