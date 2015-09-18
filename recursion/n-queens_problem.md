@@ -13,7 +13,7 @@ Output: [[1,3,0,2], [2,0,3,1]]
 - If there is a conflict
     - then move the queen to next position and repeat
 - If there is no conflict
-    - keep the queen in that position and recurse recurse to the next row
+    - keep the queen in that position and recurse to the next row
 
 ## Code
 ```
