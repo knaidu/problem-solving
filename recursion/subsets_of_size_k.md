@@ -29,8 +29,9 @@ def generate_subset(set, k, offset, partial_result, result)
     num_remaining = k - partial_result.size
     while i < set.size && num_remaining < n-i
         partial_result << set[i]
-        result = generate_subset(set, k-1, offset+1, partial_result, result)
+        result = generate_subset(set, k-1, i+1, partial_result, result)
         partial_result.pop
+        i += 1
     end
 
     result
