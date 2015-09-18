@@ -16,10 +16,10 @@ Output: {1,2}, {1,3}, {2,3}
 def generate_k_subsets(set, k)
     result = []
     partial_result = []
-    generate_subset(set, k, result)
+    generate_subset(set, k, 0, partial_result, result)
 end
 
-def generate_subset(set, k, offset, partial_result result)
+def generate_subset(set, k, offset, partial_result, result)
     if partial_result.size == k
         result << partial_result
         return result
