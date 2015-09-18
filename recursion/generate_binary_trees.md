@@ -14,7 +14,7 @@ def generate_binary_trees(n)
     result = []
     
     # Base case, return null node
-    return nil if n == 0 
+    return [nil] if n == 0 
     
     i = 0
     while i < n-1
