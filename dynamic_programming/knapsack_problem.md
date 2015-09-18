@@ -26,3 +26,6 @@ def knapsack(objects, capacity)
     max_val_at_capacity[capacity]
 end
 ```
+
+## Time complexity
+O(n * k) where n is the number of objects and k is the capacity
