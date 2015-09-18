@@ -169,7 +169,7 @@
    * [Fishing trip](dynamic_programming/fishing_trip.md)
    * [Sequence search](dynamic_programming/sequence_search.md)
    * [Sum 0](dynamic_programming/sum_0.md)
-   * Knapsack problem
+   * [Knapsack problem](dynamic_programming/knapsack_problem.md)
 * [Parallel processing](parallel_processing/README.md)
    * [Implement asynchronous callbacks](parallel_processing/implement_asynchronous_callbacks.md)
    * [Implement web server](parallel_processing/implement_web_server.md)
