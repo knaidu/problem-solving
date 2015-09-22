@@ -17,7 +17,7 @@
    * [Intersecting rectangles](primitive_types/intersecting_rectangles.md)
    * [Random number generator](primitive_types/random_number_generator.md)
 * [Arrays](arrays/README.md)
-   * [Array Flattening](arrays/Array Flattening.md)
+   * [Array Flattening](arrays/array_flattening.md)
    * [Look and Say](arrays/say_and_tell.md)
    * [Dutch National Flag](arrays/dutch_national_flag.md)
    * [Max Difference](arrays/max_difference.md)
