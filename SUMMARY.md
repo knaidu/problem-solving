@@ -1,21 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Primitive types](primitive_types/README.md)
-   * [Reverse number](primitive_types/reverse_number.md)
-   * [Highest product of 3](primitive_types/highest_product_of_3.md)
-   * [Find unique](primitive_types/find_unique.md)
-   * [Which appears twice](primitive_types/which_appears_twice.md)
-   * [Nth Fibonacci number](primitive_types/nth_fibonacci_number.md)
-   * [Palindromic number](primitive_types/check_palindromic_number.md)
-   * [Compute parity](primitive_types/compute_parity.md)
-   * [Swap bits](primitive_types/swap_bits.md)
-   * [Reverse bits](primitive_types/reverse_bits.md)
-   * [Closest integer](primitive_types/closest_integer.md)
-   * [Spreadsheet decoding](primitive_types/spreadsheet_decoding.md)
-   * [Spreadsheet encoding](primitive_types/spreadsheet_encoding.md)
-   * [Intersecting rectangles](primitive_types/intersecting_rectangles.md)
-   * [Random number generator](primitive_types/random_number_generator.md)
+
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/array_flattening.md)
    * [Look and Say](arrays/say_and_tell.md)
