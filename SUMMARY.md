@@ -17,7 +17,7 @@
    * [Intersecting rectangles](primitive_types/intersecting_rectangles.md)
    * [Random number generator](primitive_types/random_number_generator.md)
 * [Matrix](martrix/README.md)
-   * [Spiral order](arrays/spiral_order.md)
+   * [Spiral order](matrix/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
 * [Arrays](arrays/README.md)
    * [Array Flattening](arrays/array_flattening.md)
