@@ -38,3 +38,6 @@ def partition_problem(elements)
     return sum
 end
 ```
+
+## Time complexity
+O(n * sum)
