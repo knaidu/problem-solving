@@ -48,7 +48,7 @@
    * [Populate minesweeper board](arrays/populate_minesweeper_board.md)
    * [Max possible n](arrays/max_possible_n.md)
    * [Majority find](arrays/majority_find.md)
-   * Longest increasing subsequence
+   * [Longest increasing subsequence](arrays/longest_increasing_subsequence.md)
 * [Matrix](matrix/README.md)
    * [Spiral order](matrix/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
