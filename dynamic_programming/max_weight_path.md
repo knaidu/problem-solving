@@ -36,6 +36,7 @@ def max_weight(arr)
         
         curr_row.last += prev_row.last
         
+        # Swap rows, since prev_row is no longer required
         prev_row = curr_row
     end
     
