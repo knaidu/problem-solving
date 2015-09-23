@@ -52,7 +52,7 @@
 * [Matrix](matrix/README.md)
    * [Spiral order](matrix/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
-   * Attacking rooks
+   * [Attacking rooks](matrix/attacking_rooks.md)
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
