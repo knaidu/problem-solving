@@ -5,10 +5,10 @@ to find the max element in the queue at any time.
 ## Solution
 - Maintain another max_queue, head of that queue will be the max element
 - When an element is enqueued
-    - Check tail of max_queue, its its greater than max then insert at tail
-    - If tail is less than max, then remove from tail iteratively until max_queue
-      is empty or tail element is greter than or equal to the element
-- When an elelemt is dequeued
+    - Check tail of max_queue, if tail is greater than element, then insert at tail
+    - If tail is less than element, then remove from tail iteratively until max_queue
+      is empty or tail element is greater than or equal to the element
+- When an element is dequeued
     - Check if its same as max_queue's head, if it is then remove, else no action.
 
 - Concept here is: max queue must contain elements in decreasing order, any element that will
