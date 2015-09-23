@@ -49,3 +49,6 @@ def max_weight(arr)
     max_weight
 end
 ```
+
+## Time complexity
+- The total number of elements is 1 + 2 + 3 + .. n = n * (n+1)/2. Therefore overall time complexity is O(n^2).
