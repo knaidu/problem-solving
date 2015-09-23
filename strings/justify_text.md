@@ -10,6 +10,31 @@ Given an array of words and the length of each line, justify text such that each
 ## Code
 ```ruby
 def justify_text(words, line_length)
+    return nil if words.nil? || line_length == 0
+    
+    curr_line_length = 0
+    curr_words_count = 0
+    
+    for i in 0..words.size do
+        curr_words_count += 1
+        
+        look_ahead_length = words[i].size + curr_line_length + curr_words_count -1 #(num_blanks)
+        
+        if look_ahead_length == line_length
+            result << create_line(words, i - curr_words_count, i, curr_words_count)
+            curr_words_count = 0
+            curr_line_length = 0
+        elsif look_ahead_length > line_length
+            result << create_line(words, i - curr_words_count-1, i, curr_words_count-1)
+        else #look_ahead_length < line_length
+            curr_line_length += words[i].size
+        end
+    end
     
 end
+
+def create_line(words, start, end, num_words_in_line)
+
+end
+
 ```
