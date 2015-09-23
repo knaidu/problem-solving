@@ -75,7 +75,7 @@
    * [Unix tail command](strings/unix_tail_command.md)
    * [Lower and upper case permutations](strings/lower_and_upper_case_permutations.md)
    * [Combinations of strings with ?](strings/combinations_of_strings_with.md)
-   * Justify text
+   * [Justify text](strings/justify_text.md)
 * [Searching](searching/README.md)
    * [Increasing-Decreasing](searching/Increasing-Decreasing Array.md)
    * [Num Occurrences](searching/Num. Occurrences.md)
