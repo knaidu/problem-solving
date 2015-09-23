@@ -21,11 +21,11 @@ def justify_text(words, line_length)
         look_ahead_length = words[i].size + curr_line_length + curr_words_count -1 #(num_blanks)
         
         if look_ahead_length == line_length
-            result << create_line(words, i - curr_words_count, i, curr_words_count)
+            result << create_line(words, i - curr_words_count, i, line_length-curr_line_length)
             curr_words_count = 0
             curr_line_length = 0
         elsif look_ahead_length > line_length
-            result << create_line(words, i - curr_words_count-1, i, curr_words_count-1)
+            result << create_line(words, i - curr_words_count-1, i, line_length-curr_line_length)
         else #look_ahead_length < line_length
             curr_line_length += words[i].size
         end
@@ -33,8 +33,22 @@ def justify_text(words, line_length)
     
 end
 
-def create_line(words, start, end, num_words_in_line)
-
+def create_line(words, start, end, num_spaces)
+    i = start
+    str = ""
+    num_words = end-start
+    while i <= end
+        spaces = Math.ceil(num_spaces/(num_words))
+        str << words[i] 
+        spaces.times do
+            str << " " 
+        end
+        num_spaces = num_spaces - spaces
+    end
+    
+    return str
 end
-
 ```
+
+## Time complexity
+O(n) to build final string and justify the text
