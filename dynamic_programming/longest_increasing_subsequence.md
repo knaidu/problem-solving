@@ -3,7 +3,7 @@ Given an array of integers, find the longest increasing sub-sequence
 
 ## Solution
 - Start examining the array from left to right, keep track of the longest sequence seen so far
-- Once the sequence is no longer increasing restart the count and check if the next sequeunce is longer than the previous one seen
+- Once the sequence is no longer increasing restart the count and check if the next sequence is longer than the previous one seen
 - Repeat this until the end of array
 - We'll need additional book-keeping if we want to track the starting and ending indices of the LIS.
 
