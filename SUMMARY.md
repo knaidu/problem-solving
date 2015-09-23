@@ -172,7 +172,7 @@
    * [Knapsack problem](dynamic_programming/knapsack_problem.md)
    * [Partition elements](dynamic_programming/partition_elements.md)
    * [Word break](dynamic_programming/word_break.md)
-   * Max weight path
+   * [Max weight path](dynamic_programming/max_weight_path.md)
 * [Parallel processing](parallel_processing/README.md)
    * [Implement asynchronous callbacks](parallel_processing/implement_asynchronous_callbacks.md)
    * [Implement web server](parallel_processing/implement_web_server.md)
