@@ -49,6 +49,10 @@ class MaxQueue
         
         return e
     end
+    
+    def max
+        max_queue.first
+    end
 end
 ```
 
