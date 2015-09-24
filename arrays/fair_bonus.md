@@ -28,7 +28,7 @@ def fair_bonus(arr)
   while i >= 0
     if arr[i] > arr[i+1]
       # Max of right neighbor + 1 or current bonus if its the already higher
-      bonus[i] = [bonus[i], bonus[i+1] + 1].max 
+      bonus[i] = [bonus[i], bonus[i+1] + 1].max
     end
     i -= 1
   end
