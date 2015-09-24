@@ -82,6 +82,7 @@
    * [Num Occurrences](searching/Num. Occurrences.md)
    * [Rotated Sorted](searching/Rotated Sorted.md)
    * [Rotation point](searching/rotation_point.md)
+   * Unbounded array search
 * [Sorting](sorting/README.md)
    * [Merge sorted arrays](arrays/merge_sorted_arrays.md)
    * [Top scores](sorting/top_scores.md)
