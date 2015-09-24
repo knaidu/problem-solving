@@ -51,3 +51,6 @@ class MaxQueue
     end
 end
 ```
+
+## Time complexity
+- O(n) to parse over the array moving the sliding window one step at a time
