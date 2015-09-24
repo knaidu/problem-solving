@@ -83,7 +83,7 @@
    * [Rotated Sorted](searching/Rotated Sorted.md)
    * [Rotation point](searching/rotation_point.md)
    * [Unbounded array search](searching/unbounded_array_search.md)
-   * K closest to median
+   * [K closest to median](searching/k_closest_to_median.md)
 * [Sorting](sorting/README.md)
    * [Merge sorted arrays](arrays/merge_sorted_arrays.md)
    * [Top scores](sorting/top_scores.md)
