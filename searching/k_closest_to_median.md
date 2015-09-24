@@ -29,3 +29,9 @@ def get_median(arr)
     find_kth_smallest(arr, arr.size/2+1) # for odd number of elements
 end
 ```
+
+## Time complexity
+- O(n) for finding median
+- O(n) for creating diff_pair array
+- O(n) for finding kth smallest element
+- O(n) to extract first k elements closest to k
