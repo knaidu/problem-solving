@@ -170,7 +170,7 @@
    * [Bipartite graph checker](graph/bipartite_graph_checker.md)
    * [Word transformation](graph/word_transformation.md)
    * [Longest path length](graph/longest_path_length.md)
-   * Shortest unique prefix
+   * [Shortest unique prefix](graph/shortest_unique_prefix.md)
 * [Dynamic Programming](dynamic_programming/readme.md)
    * [Max subsum](dynamic_programming/max_subsum.md)
    * [Making change](dynamic_programming/making_change.md)
