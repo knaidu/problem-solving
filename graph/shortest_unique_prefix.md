@@ -37,7 +37,16 @@ class Trie
         end
     end
     
-    def find_shortest_prefix()
+    def find_shortest_prefix(word)
+        p = root.leaves
+        prefix = ''
+        word.each_char do |c|
+            prefix += c
+            if p[c].nil?
+                return prefix
+            end
+            p = p[c].leaves 
+        end
     end
 end
 
