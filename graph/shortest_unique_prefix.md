@@ -28,29 +28,38 @@ class Trie
     end
     
     def insert_word(word)
-        p = root.leaves
+        leaves = root.leaves
+        node = root
+        # For each char insert a node in the trie
         word.each_char do |c|
-            if p[c].nil?
-                p[c] = TrieNode.new
+            # If char does not exist insert it
+            # else just proceed to the node's children
+            if leaves[c].nil?
+                leaves[c] = TrieNode.new
+                node.leaves = leaves
             end
-            p = p[c].leaves
+            node = leaves[c]
+            leaves = leaves[c].leaves
         end
     end
     
     def find_shortest_prefix(word)
-        p = root.leaves
+        leaves = root.leaves
+        node = root
         prefix = ''
         word.each_char do |c|
             prefix += c
-            if p[c].nil?
+            if leaves[c].nil?
                 return prefix
             end
-            p = p[c].leaves 
+            leaves = leaves[c].leaves 
+            node = leaves[c]
         end
     end
 end
 
 def shortest_unique_prefix(str, dict)
+    # Create a trie and insert words from dict into it
     trie = Trie.new
     dict.each do |word|
         trie.insert(word)
