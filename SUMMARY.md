@@ -111,7 +111,7 @@
    * [Expression evaluator](expression_evaluator.md)
    * [Longest matching paranthesis](stacks_and_queues/longest_matching_paranthesis.md)
    * [Sliding window max](stacks_and_queues/sliding_window_max.md)
-   * Most visited page
+   * [Most visited page](stacks_and_queues/most_visited_page.md)
 * [Linked Lists](linked_lists/README.md)
    * [Overlapping lists without cycle](linked_lists/overlapping_lists_without_cycle.md)
    * [Reverse a list](linked_lists/reverse_a_list.md)
