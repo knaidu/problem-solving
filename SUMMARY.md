@@ -50,6 +50,7 @@
    * [Majority find](arrays/majority_find.md)
    * [Longest increasing subsequence](arrays/longest_increasing_subsequence.md)
    * [Fair bonus](arrays/fair_bonus.md)
+   * Smallest non-constructible vlaue
 * [Matrix](matrix/README.md)
    * [Spiral order](matrix/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
