@@ -52,6 +52,7 @@
    * [Fair bonus](arrays/fair_bonus.md)
    * [Smallest non-constructible vlaue](arrays/smallest_non-constructible_vlaue.md)
    * [Max subsum circular array](arrays/max_subsum_circular_array.md)
+   * Trapping water
 * [Matrix](matrix/README.md)
    * [Spiral order](matrix/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
