@@ -51,3 +51,6 @@ def merge(arr, first, second, end)
     return inversions
 end
 ```
+
+## Time complexity
+O(n log n) for merge sort
