@@ -93,6 +93,7 @@
    * [Unique elements](sorting/unique_elements.md)
    * [Max no. of events](sorting/max_no_of_events.md)
    * [Disjoint sets insertion](sorting/disjoint_sets_insertion.md)
+   * Count inversions
 * [Math](math/README.md)
    * [Perfect Square](math/Perfect Square.md)
    * [Temperature tracker](math/temperature_tracker.md)
