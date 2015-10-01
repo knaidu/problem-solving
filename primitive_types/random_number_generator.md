@@ -27,7 +27,7 @@ def random_number
     if num > t
         return random_number
     else
-        return num
+        return a+num
     end
 end
 ```
