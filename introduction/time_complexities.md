@@ -1,1 +1,2 @@
-Tower of hanoi - 2^n
+# Time complexity cheatsheet
+- Tower of hanoi - 2^n
