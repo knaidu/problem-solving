@@ -10,7 +10,7 @@ Given a number encode it into a spreadsheet column title.
 ## Solution
 - Use mod 26 to get each digit and then convert it into its respective char,
 - Divide by 26 until the number is not 0.
-- Handle the case with Z seperately.
+- Handle the case with Z separately.
 
 ## Code
 ```ruby
