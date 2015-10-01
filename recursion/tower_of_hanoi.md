@@ -38,4 +38,4 @@ end
 
 ## Complexity
 - Time: 2^n
-- To derive it, unrap the iterations, 1 + 2 + 4 + 8 .. leads to 2^n operations
+- To derive it, unwrap the iterations, 1 + 2 + 4 + 8 .. leads to 2^n operations
