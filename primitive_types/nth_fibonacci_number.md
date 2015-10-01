@@ -8,9 +8,9 @@ fibo(10) => 55
 ```
 
 ## Solution
-- We can use a top down recursive approach and memoize it to make it effecient, but we're adding
+- We can use a top down recursive approach and memoize it to make it efficient, but we're adding
   extra O(n) space here.
-- Or we can use a bottom up iterative approch and avoid using the extra space
+- Or we can use a bottom up iterative approach and avoid using the extra space
 
 ## Recursive Code
 ```ruby
