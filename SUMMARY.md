@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-   * [Time complexities](introduction/time_complexities.md)
+   * [Time complexity cheatsheet](introduction/time_complexities.md)
 * [Primitive types](primitive_types/README.md)
    * [Reverse number](primitive_types/reverse_number.md)
    * [Highest product of 3](primitive_types/highest_product_of_3.md)
