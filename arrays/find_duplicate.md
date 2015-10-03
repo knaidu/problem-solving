@@ -8,8 +8,9 @@ o/p: 4 => duplicate element
 ```
 
 ## Solution
-- Key here is to use the fact that there unique positions for each element except the duplicate. Hypothetically if we sort it then we can find the duplicate element. Lets achieve this using a counting approach.
-- Use binary search technique, divide the problem into subproblems at each step by counting which half has more elements than the number of positions.
+- Key here is to use the fact that there unique positions for each element except the duplicate. 
+- Hypothetically if we sort it then we can find the duplicate element. Lets achieve this using a counting approach.
+- Use binary search technique, divide the problem into sub-problems at each step by counting which half has more elements than the number of positions.
 - For example:
 
 ```
