@@ -22,7 +22,7 @@ output: [84, 12, 28, 21]
         i += 1
     end
     ```
-- Step 2: Calculate product so far traversing right to left and calcualte the final product array using the product_so_far from the previous step
+- Step 2: Calculate product so far traversing right to left and calculate the final product array using the product_so_far from the previous step
     ```ruby
     product = 1
     i = array.size - 1
