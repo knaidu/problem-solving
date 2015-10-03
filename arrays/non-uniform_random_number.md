@@ -1,7 +1,7 @@
 # Non-uniform random number
-You are given numbers from t0.. tn and probabilities from p0.. pn which sum upto 1.
+You are given numbers from t0.. tn and probabilities from p0.. pn which sum up to 1.
 Given a random number generator that generates random numbers uniformly between
-[0,1], how would generate a number in T which obey the spsecified probabilities.
+[0,1], how would generate a number in T which obey the specified probabilities.
 
 ## Solution
 - Hint: Think of placing the probabilities along the number line and picking
