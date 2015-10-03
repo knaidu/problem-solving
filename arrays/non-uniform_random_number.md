@@ -17,7 +17,7 @@ def partial_sum(p)
   end
 end
 ```
-- Now generate a random number and find where it lies in this probabiliy sum array
+- Now generate a random number and find where it lies in this probability sum array
 - Use binary search to find it in O(log n)
 ```ruby
 def search(arr, k)
