@@ -44,7 +44,6 @@
    * [Sudoku checker](arrays/sudoku_checker.md)
    * [Rotate matrix](arrays/rotate_matrix.md)
    * [Pascals triangle](arrays/pascals_triangle.md)
-   * [Boggle game](arrays/boggle_game.md)
    * [Power set](strings/power_set.md)
    * [Populate minesweeper board](arrays/populate_minesweeper_board.md)
    * [Max possible n](arrays/max_possible_n.md)
