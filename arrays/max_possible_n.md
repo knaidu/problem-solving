@@ -1,5 +1,5 @@
 # Max possible n
-Given an unsorted array of integers, you need to return maximum possible n such that the array consists at least n values greater than or equals to n. Array can contain duplicate values.
+Given an unsorted array of integers, you need to return maximum possible n such that the array consists at least n values greater than or equal to n. Array can contain duplicate values.
 
 ## Example
 ```
