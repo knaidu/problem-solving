@@ -57,6 +57,7 @@
    * [Matrix multiplication](matrix/matrix_multiplication.md)
    * [Attacking rooks](matrix/attacking_rooks.md)
    * [Boggle game](matrix/matrix/boggle_game.md)
+   * Rotate matrix
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
