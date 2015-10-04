@@ -57,6 +57,7 @@
    * [Spiral order](matrix/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
    * [Attacking rooks](matrix/attacking_rooks.md)
+   * Boggle game
 * [Strings](strings/README.md)
    * [Anagrams](strings/Anagrams.md)
    * [Last Name Sort](strings/Last Name Sort.md)
