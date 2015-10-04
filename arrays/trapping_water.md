@@ -11,7 +11,7 @@ Where = is the water filled up and | is a unit height rectangle
 ```
 
 ## Solution
-- Observe that the rectangel fills up around the max, therefor compute the capacity on the left and right side separately
+- Observe that the rectangle fills up around the max, therefor compute the capacity on the left and right side separately
 - For the left side go from left to max, keep track of max_so far, capacity = diff(max-current_entry)
 - For the right side go from right to max, keep track of max_so far, capacity = diff(max-current_entry)
 
