@@ -44,7 +44,6 @@
    * [Sudoku checker](arrays/sudoku_checker.md)
    * [Pascals triangle](arrays/pascals_triangle.md)
    * [Power set](strings/power_set.md)
-   * [Populate minesweeper board](arrays/populate_minesweeper_board.md)
    * [Max possible n](arrays/max_possible_n.md)
    * [Majority find](arrays/majority_find.md)
    * [Longest increasing subsequence](arrays/longest_increasing_subsequence.md)
