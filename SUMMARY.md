@@ -42,7 +42,6 @@
    * [Compute random permutation](arrays/compute_random_permutation.md)
    * [Non-uniform random number](arrays/non-uniform_random_number.md)
    * [Sudoku checker](arrays/sudoku_checker.md)
-   * [Rotate matrix](arrays/rotate_matrix.md)
    * [Pascals triangle](arrays/pascals_triangle.md)
    * [Power set](strings/power_set.md)
    * [Populate minesweeper board](arrays/populate_minesweeper_board.md)
