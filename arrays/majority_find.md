@@ -13,19 +13,22 @@ def majority_find(arr)
     return if arr.nil?
     
     majority_element = arr[0]
-    count = 0
+    count = 1
+    i = 1
     
-    arr.each.with_index do |e, i|
-        if e == majority_element
+    while i < arr.size
+        if a[i] == majority_element
             count += 1
         else 
             count -= 1
         end
         
         if count == 0
-            majority_element = e
+            majority_element = a[i]
             count = 1
         end
+        
+        i += 1
     end
 end
 ```
