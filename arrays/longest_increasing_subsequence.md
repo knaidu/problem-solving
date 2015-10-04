@@ -19,7 +19,7 @@ def lis(arr)
         while arr[i-1] <= arr[i]
             i += 1
             length += 1
-            lis_length = max(lis_length, length)
+            lis_length = [lis_length, length].max
             break if i == arr.size
         end
         i += 1
