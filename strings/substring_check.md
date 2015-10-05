@@ -32,4 +32,4 @@ bool substringExists(string& str, string& substr) {
 
 ## Time complexity
 
-O(mn), where m is the length of string s, and n is the lenght of substring sub.
+O(mn), where m is the length of string s, and n is the length of substring sub.
