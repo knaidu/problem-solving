@@ -1,6 +1,5 @@
 # Minesweeper
-Given a matrix, num rows, num num columns and num mines, populate a minesweeper board, that is
-ready to play.
+Given a matrix, number of rows, number of columns and number of mines, populate a minesweeper board, that is ready to play.
 
 ## Example
 ```
