@@ -225,5 +225,5 @@
    * [Tree diameter](recursion/tree_diameter.md)
    * [Longest Palindrome](recursion/longest_palindrome.md)
    * [Boggle game](recursion/boggle_game.md)
-   * Phone number mnemonic
+   * [Phone number mnemonic](recursion/phone_number_mnemonic.md)
 
