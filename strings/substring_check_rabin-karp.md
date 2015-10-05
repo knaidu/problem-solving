@@ -56,4 +56,4 @@ end
 ## Time complexity
 The brute force algorithm was O(m*n) here we are avoiding the extra substring comparison by
 computing fingerprint and comparing them instead which ideally is O(1) (depends on the
-hash function). Therefor time complexity of this algorithm is O(n).
+hash function). Therefore time complexity of this algorithm is O(n).
