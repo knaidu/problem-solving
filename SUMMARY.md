@@ -65,7 +65,6 @@
    * [Word cloud data](strings/word_cloud_data.md)
    * [Print Duplicate](strings/print_duplicate.md)
    * [Non Repeating Char](strings/non_repeating_char.md)
-   * [Phone number mnemonic](strings/phone_number_mnemonic.md)
    * [Reverse sentence](strings/reverse_sentence.md)
    * [Test if palindrome](strings/test_if_palindrome.md)
    * [Run length encoding](strings/run_length_encoding.md)
