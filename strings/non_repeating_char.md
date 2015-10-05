@@ -1,4 +1,4 @@
-# Non Repeating Char
+# First Non Repeating Char
 Given a string, find the first non-repeating character in it.
 
 ## Example
