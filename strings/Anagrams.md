@@ -15,9 +15,9 @@ Approach 1:
 
 Approach 2:
 1. Process the dictionary into a hash table
-2. Key: sorted word form the dictionary
+2. Key: sorted word from the dictionary
 3. Value: array of a list of anagrams that exist in the dictionary
-4. Now for the input anagram, sort it and lookup in this hash table
+4. Now for the input anagram, sort it and look up in this hash table
 
 ## Code
 Approach 1:
