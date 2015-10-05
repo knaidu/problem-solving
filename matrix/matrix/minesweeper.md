@@ -3,6 +3,8 @@ Given a matrix, number of rows, number of columns and number of mines, populate 
 
 ## Example
 ```
+1 mine in a 3x3 board
+
 | 1 1 1 |
 | 1 * 1 |
 | 1 1 1 |
