@@ -55,7 +55,6 @@
    * [Spiral order](matrix/spiral_order.md)
    * [Matrix multiplication](matrix/matrix_multiplication.md)
    * [Attacking rooks](matrix/attacking_rooks.md)
-   * [Boggle game](matrix/matrix/boggle_game.md)
    * [Rotate matrix](matrix/matrix/rotate_matrix.md)
    * [Minesweeper](matrix/matrix/minesweeper.md)
 * [Strings](strings/README.md)
