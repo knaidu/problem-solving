@@ -48,4 +48,4 @@ end
 ```
 
 ## Complexity
-O(n) to drop n mines, constant time to increment all the countsap
+O(n) to drop n mines, constant time to increment all the counts around each dropped mine
