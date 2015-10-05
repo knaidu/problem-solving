@@ -225,5 +225,5 @@
    * [Array permutations](arrays/array_permutations.md)
    * [Tree diameter](recursion/tree_diameter.md)
    * [Longest Palindrome](recursion/longest_palindrome.md)
-   * [Boggle game](recursion/recursion/boggle_game.md)
+   * [Boggle game](recursion/boggle_game.md)
 
