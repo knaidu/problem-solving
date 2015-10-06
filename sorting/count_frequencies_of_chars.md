@@ -1,10 +1,6 @@
 # Count frequencies of chars
 Given a string of chars, count the frequencies of each char and report them in sorted order
 
-## Example
-```
-```
-
 ## Solution
 - Sort the string and then apply run-length encoding on the sorted string
 
