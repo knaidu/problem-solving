@@ -1,5 +1,5 @@
 # Unbounded array search
-Given a sorted array that is sorted, how will you search it for a given element
+Given an unbounded array that is sorted, how will you search it for a given element
 
 ## Solution
 - Simultaneously search for the end of the array and the element given using the binary search technique, doubling the size in each iteration
