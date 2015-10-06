@@ -15,7 +15,8 @@ def justify_text(words, line_length)
     curr_line_length = 0
     curr_words_count = 0
     
-    for i in 0..words.size do
+    i = 0
+    while i < words.size do
         curr_words_count += 1
         
         look_ahead_length = words[i].size + curr_line_length + curr_words_count -1 #(num_blanks)
@@ -26,6 +27,8 @@ def justify_text(words, line_length)
             curr_line_length = 0
         elsif look_ahead_length > line_length
             result << create_line(words, i - curr_words_count-1, i, line_length-curr_line_length)
+            curr_words_count = 0
+            curr_line_length = 0
         else #look_ahead_length < line_length
             curr_line_length += words[i].size
         end
@@ -44,6 +47,7 @@ def create_line(words, start, end, num_spaces)
             str << " " 
         end
         num_spaces = num_spaces - spaces
+        num_words -= 1
     end
     
     return str
