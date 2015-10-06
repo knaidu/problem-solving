@@ -1,2 +1,6 @@
 # Time complexity cheatsheet
-- Tower of hanoi - 2^n
+
+| Algorithm | Time complexity |
+| -- | -- |
+| Tower of hanoi | 2^n |
+| String permutations | n*n! |
