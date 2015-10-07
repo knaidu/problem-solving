@@ -41,7 +41,7 @@ def normalize(pathname)
     if c == '.' || c == ''
       # Do nothing
     elsif c == ".."
-      if starts_at_root
+      if starts_at_root && stack.empty?
         raise StandardError.new('Invalid path provided')
       elsif stack.empty? || stack.last == '..'
         stack.push('..')
