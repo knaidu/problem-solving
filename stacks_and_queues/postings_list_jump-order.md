@@ -22,7 +22,7 @@ def jump_order_helper(node, order)
     end
 end
 
-def jump_order_recursive(head)
+def jump_order_non_recursive(head)
     order = 0
     stack = []
     stack.push(head)
