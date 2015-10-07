@@ -11,7 +11,7 @@ Write a braces/brackets/parentheses validator.
 ## Algorithm
 - Use a stack and push every open brace into it
 - When you encounter a closing brace pop the element from the stack and check if it matches with its opening brace
-- After you parse the entire string if any elements are still left in the stack then we the string did not have valid paranthesis
+- After you parse the entire string if any elements are still left in the stack then the string did not have valid paranthesis
 
 ## Code
 ```ruby
