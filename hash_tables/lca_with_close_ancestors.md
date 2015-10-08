@@ -12,11 +12,11 @@ complexity should only depend on the distance between the nodes and not the heig
 def lca(node1, node2)
     hash = {}
     while node1 && node 2
-        if node 1
+        if node1
             if hash[node1]
                 return node1
             else
-                hash[node1] = 1
+                hash[node1] = true
                 node1 = node1.parent
             end
         end
@@ -24,7 +24,7 @@ def lca(node1, node2)
             if hash[node2]
                 return node2
             else
-                hash[node2] = 1
+                hash[node2] = true
                 node2 = node2.parent
             end
         end
