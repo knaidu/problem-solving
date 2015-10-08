@@ -1,5 +1,5 @@
 # K most frequent strings
-You are given an array if non-distinct strings. Find the k most frequently occuring strings.
+You are given an array if non-distinct strings. Find the k most frequently occurring strings.
 
 ## Solution
 - Use a hash table to count the frequencies of each of the strings
