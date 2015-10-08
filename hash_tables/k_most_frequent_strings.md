@@ -5,7 +5,7 @@ You are given an array if non-distinct strings. Find the k most frequently occur
 - Use a hash table to count the frequencies of each of the strings
 - Now, scan through the hash table, process it through a min heap of size k
 - After processing the hash table, k most frequent elements remain in the heap
-- The conmplexity of this approach O(n) to count, O(n log k) to find k largest frequencies
+- The complexity of this approach O(n) to count, O(n log k) to find k largest frequencies
 - This can be improved by applying the pivot and partition technique reducing the time
   complexity to O(n + m)
 
