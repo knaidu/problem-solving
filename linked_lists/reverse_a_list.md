@@ -20,7 +20,7 @@ Given a singly linked list, reverse it and return the new head pointer.
     ```ruby
     prev = head
     curr = prev.next
-    fwd = prev.next.next
+    fwd = curr.next
     prev.next = nil
 
     while fwd.next != nil
