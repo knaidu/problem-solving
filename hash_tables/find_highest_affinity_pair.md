@@ -4,7 +4,7 @@ website_name, user_id. The affinity of a pair of pages is the number of distinct
 both pages. Given a log file return the websites that have highest affinity.
 
 ## Solution
-- Parse over the log file and create a hash map if website -> visited useres
+- Parse over the log file and create a hash map if website -> visited users
 - Find the intersection of all pair of websites, and keep track of the largest intersection so far
 
 ## Code
