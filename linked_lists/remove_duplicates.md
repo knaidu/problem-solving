@@ -1,5 +1,5 @@
 # Remove duplicates
-Given a strted linked list, remove duplicates from them
+Given a sorted linked list, remove duplicates from them
 
 ## Example
 ```
