@@ -28,7 +28,7 @@ def highest_affinity_pair(file)
         hash.each do |website2, list2|
             if website1 != website2
                 intersection_size = intersection(list1, list2)
-                if intersection_siz > max_intersection_size
+                if intersection_size > max_intersection_size
                     max_intersection_size = intersection_size
                     max_affinity_pair = {website1, website2}
                 end
