@@ -1,6 +1,6 @@
 # Compute right sibling tree
-Given a complete binary tree, assume each node has a sibbling pointer that points to the node
-to its right in the graphical representation of the tree. Compute the sibbling node for
+Given a complete binary tree, assume each node has a sibling pointer that points to the node
+to its right in the graphical representation of the tree. Compute the sibling node for
 every node in the tree.
 
 ## Solution
