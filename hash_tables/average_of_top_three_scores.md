@@ -5,7 +5,7 @@ has maximum score averaged across their top three tests.
 ## Solution
 - Read the file and maintain a hash table of student_id => top three scores
 - Use a min heap to dynamically maintain top three scores for each student
-- The parse over the hash and maintain the top student so far
+- Then parse over the hash and maintain the top student so far
 
 ## Code
 ```ruby
