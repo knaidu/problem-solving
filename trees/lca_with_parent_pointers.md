@@ -3,7 +3,7 @@ Given a binary tree where each node also stores parent pointer in addition to le
 
 ## Solution
 - Essentially bring both the nodes to the same level and then scale up towards the root while looking for the LCA.
-- Find the lenght from each of the nodes to the node to root
+- Find the length from each of the nodes to the node to root
 - Decend from the deeper node until the level of both nodes is the same
 - Now decent towards root while checking for LCA
 
