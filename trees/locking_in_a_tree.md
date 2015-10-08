@@ -1,5 +1,5 @@
 # Locking in a tree
-A binary tree node can be locked or unlocked onlu if none of its parents or children are locked.
+A binary tree node can be locked or unlocked only if none of its parents or children are locked.
 Assume each node has parent pointer. Write the following methods -
 - to test if a node is locked
 - to lock a given node, should return if we were able to lock else false
