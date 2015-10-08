@@ -1,6 +1,6 @@
 # LCA without parent pointers
-Given the root of a binary tree, and 2 odes, determine the LCA. Note: The nodes do not have
-parent pointers
+Given the root of a binary tree, and 2 nodes, determine the LCA. Note: The nodes do not have
+parent pointers.
 
 ## Solution
 - Use a recursive solution
