@@ -8,7 +8,7 @@ Pre-order: H,B,F,E,A,C,D,G,I
 ```
 
 ## Solution
-- User pre-order traversal to figure out the root element at each stage
+- Use pre-order traversal to figure out the root element at each stage
 - Using the root element, split the in-order list into nodes that lie on the left and right subtree
 - Recurse until we've processed the entire tree
 
