@@ -13,7 +13,7 @@ Assume each node has parent pointer. Write the following methods -
     - if none of the above are locked, then mark node as locked
 - To unlock
     - mark node as unlocked
-    - update all nodes in the path to parent decrementing their lock count
+    - update all nodes in the path to parent and decrement their lock count
 
 ## Code
 ```ruby
