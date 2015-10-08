@@ -5,7 +5,7 @@ complexity should only depend on the distance between the nodes and not the heig
 ## Solution
 - Use a tandem approach alternating between the two nodes
 - Each time we traverse to the parent node check if it has been visited before using a hash table
-- If it has been visited, then thats the LCA
+- If it has been visited, then that is the LCA
 
 ## Code
 ```ruby
