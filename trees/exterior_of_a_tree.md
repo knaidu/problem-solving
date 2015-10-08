@@ -2,7 +2,7 @@
 Given a binary tree, compute the exterior of the tree. Left view + right view + bottom view.
 
 ## Solution
-- Trick is to handle the left and right subtree seperately
+- Trick is to handle the left and right subtree separately
 - Calculate the left child at each stage unlees left child is not present
 - Then compute the leaf nodes
 - Repeat the same with the right subtree, mirroring left to right
