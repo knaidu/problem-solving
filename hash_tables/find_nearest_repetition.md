@@ -21,7 +21,7 @@ def neareset_repetition(arr)
     nearest_value = ''
     word_hash = {}
 
-    arr.each.with_index do |word|
+    arr.each.with_index do |word, index|
         word_hash[word] = index unless word_hash[word]
 
         last_position = word_hash[word]
