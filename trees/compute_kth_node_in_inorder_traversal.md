@@ -1,10 +1,10 @@
-# Compute kth node in inorder traversal
-Write a program that effeciently computes the kth node appearing in an inorder traversal.
-Assume that each node stores the number of nodes in the subtree rooted at that node.
+# Compute kth node in in-order traversal
+Write a program that efficiently computes the kth node appearing in an in-order traversal.
+Assume that each node stores the number of nodes in the sub-tree rooted at that node.
 
 ## Solution
-- By pass the left or right subtree depending on the number of nodes in that subtree
-- Keep track of k, when bypassing left subtree, subtract the left_num_nodes + root from k.
+- By pass the left or right sub-tree depending on the number of nodes in that sub-tree
+- Keep track of k, when bypassing left sub-tree, subtract the left_num_nodes + root from k.
 
 ## Code
 ```ruby
