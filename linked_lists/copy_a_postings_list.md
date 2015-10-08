@@ -9,10 +9,10 @@ You are given a postings list, where each node in the linked list has 2 pointers
         curr = head
 
         while curr != nil
-            curr_result = Node.new(curr.data)
-            curr_result.next = curr.next
-            curr.next = curr_result
-            curr = curr_result.next
+            duplicate = Node.new(curr.data)
+            duplicate.next = curr.next
+            curr.next = duplicate
+            curr = duplicate.next
         end
     end
     ```
