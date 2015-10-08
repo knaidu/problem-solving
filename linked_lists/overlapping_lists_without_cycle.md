@@ -1,6 +1,6 @@
 # Overlapping lists without cycle
 
-Let hI and h2 be the heads of lists Ll and L2, respectively. Assume that L1and L2 are well-formed, that is each consists ofafinite sequence of nodes. (In particular, neither list has a cycle.)
+Let hI and h2 be the heads of lists Ll and L2, respectively. Assume that L1 and L2 are well-formed, that is each consists of a finite sequence of nodes. (In particular, neither list has a cycle.)
 
 How would you determine if there exists a node r reachable from both hI and h2 by following the next fields? If such a node exists, find the node that appears earliest when traversing the lists.
 
