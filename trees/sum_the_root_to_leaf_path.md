@@ -6,7 +6,7 @@ a number. Sum up all the numbers represented by the binary tree.
 - Use in-order traversal technique
 - Keep track of partial sum
 - Use this trick to construct the full binary number as we move towards leaf
-- num = num * 2 + bit
+    - num = num * 2 + bit
 
 ## Code
 ```ruby
