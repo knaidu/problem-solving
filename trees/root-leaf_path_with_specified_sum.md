@@ -16,6 +16,8 @@ end
 def root_to_leaf_sum_check_helper(root, specified_sum, partial_sum)
     return false if root.nil?
 
+    partial_path_sum += root.data
+    
     # Leaf node
     if root.left.nil? && root.right.nil?
         return partial_sum == specified_sum
