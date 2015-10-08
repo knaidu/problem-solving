@@ -1,5 +1,5 @@
 # Longest distinct sub-array
-Write a program that takes as input an array and returns the length of a longest subarray
+Write a program that takes as input an array and returns the length of the longest sub-array
 with the property that all its elements are distinct.
 
 ## Example
