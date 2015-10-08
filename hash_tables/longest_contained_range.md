@@ -13,8 +13,8 @@ Output: [-2,-1,0,1,2] with length 6
 - Process the elements into a hash
 - Pick each element from the array and expand in both directions until we cannot find it in the
   hash table
-- As these elements are found in the has table remove them
-- Keep track of max size of subarray seen so far
+- As these elements are found in the hash table remove them
+- Keep track of max size of sub-array seen so far
 
 ## Code
 ```ruby
