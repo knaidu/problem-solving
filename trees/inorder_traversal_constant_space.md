@@ -2,7 +2,7 @@
 Given a binary tree with parent node pointers, implement an inorder traversal using constant space.
 
 ## Solution
-- Use the parent pointer to nagivate from child to parent and testing which node must be
+- Use the parent pointer to navigate from child to parent and testing which node must be
  processed next
 
 ## Code
