@@ -16,8 +16,9 @@ def partition_problem(elements)
     
     sum = 0
     t = [0] * (elements.size + 1)
-    elements.each do
-        sum += 0
+    
+    elements.each do |e| 
+        sum += e
     end
     
     elements.each do |e|
