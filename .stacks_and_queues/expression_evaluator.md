@@ -1,31 +1,110 @@
-def max_duffel_bag_value(cake_tuples, weight_capacity):
+# Expression evaluator
+Given a mathematical expression with brackets and operators, write a program to evaluate it and return the result
 
-    # we make an array to hold the maximum possible value at every
-    # duffel bag weight capacity from 0 to weight_capacity
-    # starting each index with value 0
-    max_values_at_capacities = [0] * (weight_capacity + 1)
+## Example
+```
+Input: (1+2)*3-4
+Output: 5
+```
 
-    for current_capacity in xrange(weight_capacity + 1):
+## Solution
+- Use 2 stacks, one for numbers and the other for operators including brackets
+- When a number is found push onto the number stack
+- When an operator is found
+    - If its higher precedence than the one on top of stack then push 
+    - Else, pop the operator along with 2 numbers, evaluate the result and push onto number stack
+- When a ( bracket is found
+    - Push onto operator stack
+- When a ) bracket is found 
+    - Pop an operator, along with top 2 numbers, evaluate it and push the result onto number stack
+    - If a ( is popped, just discard it
+- Once the entire string is processed, repeat above steps until operator stack becomes empty
+    
+## Code
+```ruby
+class ExpressionEvaluator
+    attr_accessors :operator_stack, :number_stack
+    
+    def initialize()
+        @operator_stack = []
+        @number_stack = []
+    end
 
-        # set a variable to hold the max monetary value so far for the current weight capacity
-        current_max_value = 0
+def evaluate_expression(str)
+    return nil unless str
+    
+    operator_stack = []
+    number_stack = []
+    
+    i = 0
+    while i < str.size
+        c = str[i]
+        
+        # Operator        
+        if '+-*/'.include(c)
+            @operator_stack.push(c) if operator_stack.empty?
+            if higher_precedence?(c)
+                @operator_stack.push(c)
+                i += 1
+            else
+                evaluate
+            end
+        
+        # Opening bracket
+        elsif c == '('
+            @operator_stack.push(c)
+            i += 1
+        
+        # Closing bracket
+        elsif c == ')'
+            evaluate
+            i += 1
+        
+        # Number
+        elsif '1234567890'.include?(c)
+            @number_stack.push(c)
+            i += 1
+        end
+    end
+    
+    while !@operator_stack.empty? do
+        evaluate
+    end
+    
+end
 
-        for cake_weight, cake_value in cake_tuples:
+def higher_precedence?(c)
+    return false if '*/'.include?(@operator_stack.top)
+    
+    true
+end
 
-            # if the current cake weighs as much or less than the current weight capacity
-            # it's possible taking the cake would give get a better value
-            if (cake_weight <= current_capacity):
+def evaluate
+    # pop from operator stack
+    op = @operator_stack.pop
+    while op == '('
+        op = @operator_stack.pop
+    end
+    
+    # pop numbers from stack 
+    # re-order the numbers when evaluating
+    num1 = @number_stack.pop
+    num2 = @number_stack.pop
+    
+    if op == '*'
+        result = num2 * num1
+    elsif op == '/'
+        result = num2/num1
+    elsif op == '+'
+        result = num2 + num1
+    elsif op == '-'
+        result = num2 - num1
+    end
+    
+    @number_stack.push(result)
+end
+```
 
-                # should we use the cake or not?
-                # if we use the cake, the most kilograms we can include in addition to the cake
-                # we're adding is the current capacity minus the cake's weight. we find the max
-                # value at that integer capacity in our array max_values_at_capacities
-                max_value_using_cake = cake_value + max_values_at_capacities[current_capacity - cake_weight]
-
-                # now we see if it's worth taking the cake. how does the
-                # value with the cake compare to the current_max_value?
-                current_max_value = max(max_value_using_cake, current_max_value)
-
-        # add each capacity's max value to our array so we can use them
-        # when calculating all the remaining capacities
-        max_values_at_capacities[current_capacity] = current_max_value
+## Compelxity
+- Time: O(n) since we are parsing through the string only once
+- Space: O(n) for the number + operator stack
