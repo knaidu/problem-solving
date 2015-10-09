@@ -1,5 +1,5 @@
 # Reader writers problem
-Given a variable that is allowed to be read parallely by multiple threads but only one thread
+Given a variable that is allowed to be read in parallel by multiple threads but only one thread
 can write to it at any time to maintain consistency. Implement the reader-writers.
 
 ## Solution
