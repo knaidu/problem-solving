@@ -34,6 +34,7 @@ def partition_problem(elements)
         if t[i]
             return sum - (2 * i) # minimum difference
         end
+        i -= 1 
     end
     
     return sum
