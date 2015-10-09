@@ -2,7 +2,7 @@
 Create a scheduler that manages execution of deferred tasks. It takes as input a runnable object,
 a string as the name of the task. It must support
 - Starting a thread identified by name based on  a future time provided
-- Cancelling a thread based on its name
+- Canceling a thread based on its name
 
 ## Solution
 - Use a min heap to keep track of objects, keys being the time
