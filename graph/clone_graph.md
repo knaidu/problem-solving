@@ -17,7 +17,7 @@ end
 def clone_graph(start_node)
     return nil if start_node.nil?
 
-    BFS traversal
+    # BFS traversal
     q = [start_node]
     cloned_nodes = {q => []}
     cloned_graph
