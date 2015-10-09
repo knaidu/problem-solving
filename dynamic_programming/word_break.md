@@ -1,5 +1,5 @@
 # Word break
-Given a set of words contatented together, break them apart.
+Given a set of words concatenated together, break them apart.
 
 ## Solution
 - Keep an array to keep track of all breaking points and the length to break them by
