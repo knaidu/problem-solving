@@ -6,7 +6,7 @@ a string as the name of the task. It must support
 
 ## Solution
 - Use a min heap to keep track of objects, keys being the time
-- Use a dispatch thread to monitor if he top of heap is ready for execution
+- Use a dispatch thread to monitor if the top of heap is ready for execution
 - This thread sleeps for a time between now and time at the top of heap
 - When woken up, it extracts the top of heap, checks if its valid or cancelled (use a hash for state)
 - It processes the object, then removes from queue
