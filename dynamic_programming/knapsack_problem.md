@@ -14,8 +14,8 @@ def knapsack(objects, capacity)
     for cap in 0..capacity do
         max_value_for_cap = 0
         objects.each do |object|
-            if object.value <= cap 
-                value_with_curr_object = max_val_at_capacity[cap - object.weight]
+            if object.weight <= cap 
+                value_with_curr_object = object.value + max_val_at_capacity[cap - object.weight]
                 max_value_for_cap = [max_value_for_cap, value_with_curr_object]
             end
         end
