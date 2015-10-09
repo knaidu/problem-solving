@@ -11,7 +11,7 @@ S: 1 2 3 5, Result: false
 ```
 
 ## Solution
-- Use recursion to test of a particular sequence exists starting from each cell in the matrix
+- Use recursion to test if a particular sequence exists starting from each cell in the matrix
 - For use an index variable to track where in the sequence we are and how much of the string is left to be compared
 - Use a cache to speed up computations, cache would store all the failed indices that we've tried in the past recursions
 
