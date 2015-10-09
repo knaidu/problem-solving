@@ -19,19 +19,20 @@ def clone_graph(start_node)
 
     # BFS traversal
     q = [start_node]
-    cloned_nodes = {q => []}
+    cloned_q = GraphNode.new(q.label)
+    cloned_nodes = {q => cloned_q}
     cloned_graph
     while !q.empty?
         x = q.pop
-        x.each do |v|
-            if cloned_nodes[x]
-                # Add edge to existing node
-                cloned_nodes[v].edges.push(x)
-            else
+        x.edges.each do |v|
+            if cloned_nodes[v].nil?
                 # Add new node
-                cloned_nodes[x] = []
-                q.add(x)
+                cloned_v = GraphNode.new(v.label)
+                cloned_nodes[v] = cloned_v
+                q.add(v)
             end
+            
+            cloned_nodes[x].edges.push(cloned_nodes[v])
         end
     end
 
