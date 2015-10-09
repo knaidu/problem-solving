@@ -22,7 +22,7 @@ def n_queens(n)
     result = [] # array of valid placements
     starting_row = 0
     solve_n_queens(n, starting_row, placement)
-endx
+end
 
 def solve_n_queens(n, row, placement)
     if row == n
