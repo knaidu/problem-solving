@@ -110,7 +110,7 @@
    * [Sort a stack](stacks_and_queues/sort_a_stack.md)
    * [Sunset view](stacks_and_queues/sunset_view.md)
    * [BST Level order](stacks_and_queues/level_order.md)
-   * [Expression evaluator](expression_evaluator.md)
+   * [Expression evaluator](.stacks_and_queues/expression_evaluator.md)
    * [Longest matching paranthesis](stacks_and_queues/longest_matching_paranthesis.md)
    * [Sliding window max](stacks_and_queues/sliding_window_max.md)
    * [Most visited page](stacks_and_queues/most_visited_page.md)
