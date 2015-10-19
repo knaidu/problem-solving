@@ -4,7 +4,7 @@ You have a binary tree where each node has parent pointers, find the successor f
 ## Solution
 - If right subtree exists, successor is the left most node in the right subtree
 - If not, successor is the parent node in the ancestor chain for which the current node belongs in the left subtree.
-- Else there is no successor to the node probided
+- Else there is no successor to the node provided
 
 ## Code
 ```ruby
