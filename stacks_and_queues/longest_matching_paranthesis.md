@@ -11,7 +11,7 @@ Output: 6 (from index 0 to 6)
 - Use a stack to keep track of indices of left paren
 - Parse the string
     - When char is left paren, push index to stack
-    - When char is right paren, pop from stack, and calculate len = i - stack.top()
+    - When char is right paren, pop index from stack, and calculate len = i - stack.top()
     - Keep track of the max length seen so far
     
 ## Code
