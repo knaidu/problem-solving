@@ -1,6 +1,6 @@
 # Substring check
 
-Given a string s and substring sub, find if it exists.
+Given a string s and sub-string sub, find if it exists.
 
 ## Algorithm
 
