@@ -7,7 +7,7 @@ to earth assuming earch is at co-ordinate 0,0.
 - Insert the distance into a max-heap, each time a new distance is added remove the max element
   from the heap.
 - The goal is after n elements are processed the largest n-k elements woould have been removed
-  from the heap and the smalles k elements will remain in the heap
+  from the heap and the smallest k elements will remain in the heap
 - For this problem let's assume the relative distances have been calculated and given in the array
 
 ## Code
