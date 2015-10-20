@@ -8,7 +8,7 @@ the denominations provided.
   until the amount exceeds
   ```
   while amount < 0
-    num_ways += recursive_function(amount, other_denomications)
+    num_ways += recursive_function(amount, other_denominations)
     amount -= chosen_coin
   end
   ```
