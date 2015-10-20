@@ -1,6 +1,6 @@
 # Making change
 Given a set of denominations and an amount, find number of ways the amount can be expressed using
-the denominatinos provided.
+the denominations provided.
 
 ## Solution
 - Start with a top down approach
