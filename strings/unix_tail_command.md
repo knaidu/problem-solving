@@ -1,14 +1,17 @@
 # Unix tail command
+
 Implement UNIX tail command. You are given the filename and the number of lines to print from the
 end of the file.
 
 ## Solution
-- Unix does allow random file access, so treat it like an array and read chars from the end of
+
+* Unix does allow random file access, so treat it like an array and read chars from the end of
   file moving towards the start.
-- When the desired number of lines are read, stop the pointer there and print from that point
+* When the desired number of lines are read, stop the pointer there and print from that point
   until end of file.
 
 ## Code
+
 ```ruby
 def tail(filename, num_lines)
     return nil if filename.nil? or num_lines == 0
@@ -22,7 +25,7 @@ def tail(filename, num_lines)
         c = file_ptr.read_char(file.end - i)
         lines_read += 1 if c == '\n'
         break if lines_read > num_lines
-        file_ptr -= 1
+        i += 1
     end
 
     # Print last num_lines
@@ -34,5 +37,7 @@ end
 ```
 
 ## Time complexity
-- Time O(n), when n is the num of lines requested
-- Space O(1), no extra space is used to store temp lines
+
+* Time O\(n\), when n is the num of lines requested
+* Space O\(1\), no extra space is used to store temp lines
+
