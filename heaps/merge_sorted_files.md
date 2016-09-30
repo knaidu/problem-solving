@@ -1,15 +1,18 @@
 # Merge sorted files
+
 Given an array of sorted numbers, sort them into a single sorted array.
 
 ## Solution
-- Use heap to store 1 element from each array
-- Extract min and isert it into the sorted result
-- Add the next element from the array to which the extracted result belonged
-- Repeat this until all elements are exhausted
-- This is applicable to files stored on disk, and is effecient since we're only holding
- one element per file in memory(heap) and writing the sorted result out to disk again.
+
+* Use heap to store 1 element from each array
+* Extract min and insert it into the sorted result
+* Add the next element from the array to which the extracted result belonged
+* Repeat this until all elements are exhausted
+* This is applicable to files stored on disk, and is effecient since we're only holding
+  one element per file in memory\(heap\) and writing the sorted result out to disk again.
 
 ## Code
+
 ```ruby
 class ArrayOfArraysSorter
     # Comparator for min heap
@@ -54,7 +57,9 @@ class ArrayOfArraysSorter
 ```
 
 ## Complexity
-- Time: O(h) to insert element into heap, O(1) to extract min, total time O(h * n), where h is
+
+* Time: O\(h\) to insert element into heap, O\(1\) to extract min, total time O\(h \* n\), where h is
   the number of sorted arrays or the number of elements in the heap = log n, therefore
-  time complexity for sort is O(n * log n)
-- Space: O(h) the number of files or sorted arrays provided.
+  time complexity for sort is O\(n \* log n\)
+* Space: O\(h\) the number of files or sorted arrays provided.
+

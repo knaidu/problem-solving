@@ -1,16 +1,19 @@
 # Closest stars
+
 Given an array of integers that consists co-ordinates of n starts, find the k closest starts
-to earth assuming earch is at co-ordinate 0,0.
+to earth assuming earth is at co-ordinate 0,0.
 
 ## Solution
-- Evaluate each co-ordinate, compute the distance from earth to that start
-- Insert the distance into a max-heap, each time a new distance is added remove the max element
+
+* Evaluate each co-ordinate, compute the distance from earth to that start
+* Insert the distance into a max-heap, each time a new distance is added remove the max element
   from the heap.
-- The goal is after n elements are processed the largest n-k elements woould have been removed
+* The goal is after n elements are processed the largest n-k elements woould have been removed
   from the heap and the smallest k elements will remain in the heap
-- For this problem let's assume the relative distances have been calculated and given in the array
+* For this problem let's assume the relative distances have been calculated and given in the array
 
 ## Code
+
 ```ruby
 def k_closest_elements(arr, k)
     max_heap = MaxHeap.new
@@ -40,5 +43,7 @@ end
 ```
 
 ## Complexity
-- Time: O(n * log k), processing n elements, with k in the heap at any point of time
-- Space: O(k) heap size
+
+* Time: O\(n \* log k\), processing n elements, with k in the heap at any point of time
+* Space: O\(k\) heap size
+
