@@ -13,7 +13,7 @@ def offline_sampling(arr, k)
     i = 0
     result = []
     while i<k
-        r = random(i, k)
+        r = random(i, arr.size)
         result << arr[r]
         swap(arr, i, r)
         i += 1
