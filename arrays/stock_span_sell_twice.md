@@ -30,6 +30,7 @@ def buy_and_sell_stock_twice(arr)
   while i >= 0
     max_so_far = [max_so_far, arr[i]].max
     total_max_profit = [total_max_profit, (max_so_far - arr[i]) + (first_max_profit[i - 1])].max
+    i -= 1
   end
 
   total_max_profit
